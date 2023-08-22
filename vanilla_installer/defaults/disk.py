@@ -269,8 +269,6 @@ class PartitionSelector(Adw.PreferencesPage):
             )
             self.__selected_partitions["root_part_expand"]["fstype"] = "btrfs"
 
-        )
-
         self.__home_part_rows = self.__generate_partition_list_widgets(
             self.home_part_expand
         )
@@ -376,7 +374,7 @@ class PartitionSelector(Adw.PreferencesPage):
                         self.efi_part_expand.get_style_context().add_class("error")
                         self.efi_small_error.set_description(error_description)
                         self.efi_small_error.set_visible(True)
-                    elif partition == "root_part_expand"
+                    elif partition == "root_part_expand":
                         self.root_part_expand.get_style_context().add_class("error")
                         self.root_small_error.set_description(
                             error_description)
