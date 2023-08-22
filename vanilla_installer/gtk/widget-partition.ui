@@ -90,7 +90,7 @@
     <child>
       <object class="AdwPreferencesGroup" id="root_part">
         <property name="title" translatable="yes">Root Partition</property>
-        <property name="description" translatable="yes">The partition to mount under “/”. This directory stores system files.</property>
+        <property name="description" translatable="yes">The partition to mount under “/”. This directory stores all system files.</property>
         <child>
           <object class="AdwExpanderRow" id="root_part_expand">
             <property name="title" translatable="yes">No partition selected</property>
@@ -105,9 +105,10 @@
           <class name="error"/>
         </style>
         <property name="visible">false</property>
-        <property name="title" translatable="yes">root partition is too small.</property>
+        <property name="title" translatable="yes">Root partition is too small.</property>
       </object>
     </child>
+    <child>
       <object class="AdwPreferencesGroup" id="home_part">
         <property name="title" translatable="yes">Home Partition</property>
         <property name="description" translatable="yes">The partition to mount under “/home”. This directory stores all user data.</property>
