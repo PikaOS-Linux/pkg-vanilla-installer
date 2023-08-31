@@ -26,12 +26,8 @@ from vanilla_installer.core.system import Systeminfo
 
 logger = logging.getLogger("Installer::Processor")
 
-_cr = """insmod gzio
-insmod part_gpt
-insmod ext2
-search --no-floppy --fs-uuid --set=root %s
-linux   /.system/boot/vmlinuz-%s root=%s quiet splash bgrt_disable $vt_handoff
-initrd  /.system/boot/initrd.img-%s
+_CRYPTTAB_FILE = """crypt_root	UUID=%s	none	luks,discard
+crypt_home	UUID=%s	none	luks,discard
 """
 
 AlbiusSetupStep = dict[str, Union[str, list[Any]]]
