@@ -183,7 +183,7 @@ class Processor:
 
             def _params(*args):
                 base_params = [*args]
-                if encrypt and values["mp"] in ["/var"]:
+                if encrypt and values["mp"] in ["/", "/home"]:
                     assert isinstance(password, str)
                     base_params.append(password)
                 return base_params
@@ -302,47 +302,30 @@ class Processor:
             efi_part_uuid = f"$(lsblk -d -y -n -o UUID {efi_part})"
             root_part_uuid = f"$(lsblk -d -y -n -o UUID {root_part})"
             home_part_uuid = f"$(lsblk -d -y -n -o UUID {home_part})"
+            # Mount /boot and /home into the chroot
             recipe.add_postinstall_step(
                 "shell",
                 [
-                    "mkdir /mnt/a/boot",
-                    f"mount {boot_part} /mnt/a/boot",
-                    "mkdir /mnt/a/home",
-                    f"mount {home_part} /mnt/a/home",
+                    "mount -av",
                 ],
             )
 
-            if Systeminfo.is_uefi():
-                recipe.add_postinstall_step(
-                    "shell",
-                    [
-                        "mkdir /mnt/a/boot/efi",
-                        f"mount {efi_part} /mnt/a/boot/efi",
-                        "touch /mnt/a/etc/fstab",
-                        "genfstab -U /mnt/a > /mnt/a/etc/fstab"
-                    ],
-                )
-            else:
-                recipe.add_postinstall_step(
-                    "shell",
-                    [
-                        "touch /mnt/a/etc/fstab",
-                        "genfstab -U /mnt/a > /mnt/a/etc/fstab"
-                    ],
-                )
-
+            # if the system is encrypted create /etc/crypttab
             if encrypt:
+                with open("/tmp/albuis-crypttab.cfg", "w") as file:
+                    albuis_crypttab_file = _CRYPTTAB_FILE % (
+                        f"{root_part_uuid}",
+                        f"{home_part_uuid}",
+                    )
+                file.write(albuis_crypttab_file)
                 recipe.add_postinstall_step(
                     "shell",
                     [
-                        "touch /mnt/a/etc/crypttab",
-                        f"echo {root_part_uuid} "
+                        "cp -vf /tmp/albuis-crypttab.cfg /mnt/a/etc/crypttab",
                     ],
                 )
 
             # Create default user
-            # This needs to be done after mounting `/etc` overlay, so set it as
-            # late post-install
             recipe.add_postinstall_step(
                 "adduser",
                 [
@@ -355,24 +338,24 @@ class Processor:
                 late=True,
             )
 
-            # Set vanilla user to autologin
+            # Set pikaos user to autologin
             recipe.add_postinstall_step(
                 "shell",
                 [
                     "mkdir -p /etc/gdm3",
-                    "echo '[daemon]\nAutomaticLogin=vanilla\nAutomaticLoginEnable=True' > /etc/gdm3/daemon.conf",
-                    "mkdir -p /home/vanilla/.config/dconf",
-                    "chmod 700 /home/vanilla/.config/dconf",
+                    "echo '[daemon]\nAutomaticLogin=pikaos\nAutomaticLoginEnable=True' > /etc/gdm3/daemon.conf",
+                    "mkdir -p /home/pikaos/.config/dconf",
+                    "chmod 700 /home/pikaos/.config/dconf",
                 ],
                 chroot=True,
             )
 
-            # Make sure the vanilla user uses the first-setup session
+            # Make sure the pikaos user uses the first-setup session
             recipe.add_postinstall_step(
                 "shell",
                 [
                     "mkdir -p /var/lib/AccountsService/users",
-                    "echo '[User]\nSession=firstsetup' > /var/lib/AccountsService/users/vanilla",
+                    "echo '[User]\nSession=firstsetup' > /var/lib/AccountsService/users/pikaos",
                 ],
                 chroot=True,
             )
@@ -381,111 +364,56 @@ class Processor:
             recipe.add_postinstall_step(
                 "shell",
                 [
-                    "mkdir -p /home/vanilla/.config/autostart",
-                    "cp /usr/share/applications/org.vanillaos.FirstSetup.desktop /home/vanilla/.config/autostart",
+                    "mkdir -p /home/pikaos/.config/autostart",
+                    "cp /usr/share/applications/org.vanillaos.FirstSetup.desktop /home/pikaos/.config/autostart",
                 ],
                 chroot=True,
                 late=True,
             )
 
-            # TODO: Install grub-pc if target is BIOS
+            # Install Refind if target is UEFI, Install grub-pc if target is BIOS
             # Run `grub-install` with the boot partition as target
-            grub_type = "efi" if Systeminfo.is_uefi() else "bios"
-            recipe.add_postinstall_step(
-                "grub-install", ["/mnt/a/boot", boot_disk, grub_type]
-            )
-            recipe.add_postinstall_step(
-                "grub-install", ["/boot", boot_disk, grub_type], chroot=True
-            )
-
-            # Run `grub-mkconfig` to generate files for the boot partition
-            recipe.add_postinstall_step(
-                "grub-mkconfig", ["/boot/grub/grub.cfg"], chroot=True
-            )
-
-            # Replace main GRUB entry in the boot partition
-            with open("/tmp/boot-grub.cfg", "w") as file:
-                boot_entry = _BOOT_GRUB_CFG % (
-                    "$ROOTA_UUID",
-                    "$ROOTB_UUID",
-                )
-                file.write(boot_entry)
-            recipe.add_postinstall_step(
-                "shell",
-                [
-                    " ".join(
-                        f"ROOTA_UUID=$(lsblk -d -n -o UUID {root_a_part}) \
-                        ROOTB_UUID=$(lsblk -d -n -o UUID {root_b_part}) \
-                        BOOT_UUID=$(lsblk -d -n -o UUID {boot_part}) \
-                        envsubst < /tmp/boot-grub.cfg > /mnt/a/boot/grub/grub.cfg \
-                        '$ROOTA_UUID $ROOTB_UUID'".split()
+            if Systeminfo.is_uefi():
+                with open("/tmp/albuis-refind_linux.cfg", "w") as file:
+                    albuis_refind_file = _REFIND_LINUX_CFG % (
+                        f"{root_part_uuid}",
+                        f"{root_part_uuid}",
+                        f"{root_part_uuid}",
                     )
-                ],
-            )
-
-            # Unmount boot partition so we can modify the root GRUB config
-            recipe.add_postinstall_step(
-                "shell", ["umount -l /mnt/a/boot", "mkdir -p /mnt/a/boot/grub"]
-            )
-
-            # Run `grub-mkconfig` inside the root partition
-            recipe.add_postinstall_step(
-                "grub-mkconfig", ["/boot/grub/grub.cfg"], chroot=True
-            )
-
-            # Add `/boot/grub/abroot.cfg` to the root partition
-            with open("/tmp/abroot.cfg", "w") as file:
-                root_entry = _ROOT_GRUB_CFG % (
-                    "$ROOTA_UUID",
-                    "$KERNEL_VERSION",
-                    "UUID=$ROOTA_UUID",
-                    "$KERNEL_VERSION",
+                file.write(albuis_refind_file)
+                recipe.add_postinstall_step(
+                    "shell",
+                    [
+                        "cp -vf /tmp/albuis-refind_linux.cfg /mnt/a/boot/refind_linux.conf",
+                    ],
                 )
-                file.write(root_entry)
-            recipe.add_postinstall_step(
-                "shell",
-                [
-                    " ".join(
-                        f"BOOT_UUID=$(lsblk -d -n -o UUID {boot_part}) \
-                        ROOTA_UUID=$(lsblk -d -n -o UUID {root_a_part}) \
-                        KERNEL_VERSION=$(ls -1 /mnt/a/usr/lib/modules | sed '1p;d') \
-                        envsubst < /tmp/abroot.cfg > /mnt/a/.system/boot/grub/abroot.cfg \
-                        '$BOOT_UUID $ROOTA_UUID $KERNEL_VERSION'".split()
-                    )
-                ],
-            )
+                recipe.add_postinstall_step(
+                    "refind-install", chroot=True
+                )
+            else:
+                grub_type = "bios"
+                recipe.add_postinstall_step(
+                    "grub-install", ["/mnt/a/boot", boot_disk, grub_type]
+                )
+                recipe.add_postinstall_step(
+                    "grub-install", ["/boot", boot_disk, grub_type], chroot=True
+                )
+                # Run `grub-mkconfig` to generate files for the boot partition
+                recipe.add_postinstall_step(
+                    "grub-mkconfig", ["/boot/grub/grub.cfg"], chroot=True
+                )
 
-            # Keep only root A entry in fstab
-            fstab_regex = r"/^[^#]\S+\s+\/\S+\s+.+$/d"
+            # Final Chroot Steps
             recipe.add_postinstall_step(
                 "shell",
                 [
-                    f'ROOTB_UUID=$(lsblk -d -y -n -o UUID {root_b_part}) && sed -i "/UUID=$ROOTB_UUID/d" /mnt/a/etc/fstab',
-                    f"sed -i -r '{fstab_regex}' /mnt/a/etc/fstab",
-                ],
-            )
-
-            # Mount `/etc` as overlay; `/home`, `/opt` and `/usr` as bind
-            recipe.add_postinstall_step(
-                "shell",
-                [
-                    "mv /.system/home /var",
-                    "mv /.system/opt /var",
-                    "mv /.system/tmp /var",
-                    "mkdir -p /var/lib/abroot/etc/linux-a /var/lib/abroot/etc/linux-b /var/lib/abroot/etc/linux-a-work /var/lib/abroot/etc/linux-b-work",
-                    "mount -t overlay overlay -o lowerdir=/.system/etc,upperdir=/var/lib/abroot/etc/linux-a,workdir=/var/lib/abroot/etc/linux-a-work /etc",
-                    "mv /var/storage /var/lib/abroot/",
-                    "mount -o bind /var/home /home",
-                    "mount -o bind /var/opt /opt",
-                    "mount -o bind,ro /.system/usr /usr",
-                    "mkdir -p /var/lib/abroot/etc/linux-a/locales",
-                    "mount -o bind /var/lib/abroot/etc/linux-a/locales /usr/lib/locale",
+                    "touch /nice",
                 ],
                 chroot=True,
             )
 
         # Set hostname
-        recipe.add_postinstall_step("hostname", ["vanilla"], chroot=True)
+        recipe.add_postinstall_step("hostname", ["pikaos"], chroot=True)
         for final in finals:
             for key, value in final.items():
                 # Set timezone
@@ -508,30 +436,10 @@ class Processor:
                         chroot=True,
                     )
 
-            # Create /abimage.abr
-            with open("/tmp/abimage.abr", "w") as file:
-                abimage = _ABIMAGE_FILE % (
-                    "$IMAGE_DIGEST",
-                    datetime.now().astimezone().isoformat(),
-                    oci_image,
-                )
-                file.write(abimage)
-
-            recipe.add_postinstall_step(
-                "shell",
-                [
-                    " ".join(
-                        "IMAGE_DIGEST=$(cat /mnt/a/.oci_digest) \
-                        envsubst < /tmp/abimage.abr > /mnt/a/abimage.abr \
-                        '$IMAGE_DIGEST'".split()
-                    )
-                ],
-            )
-
         # Set the default user as the owned of it's home directory
         recipe.add_postinstall_step(
             "shell",
-            ["chown -R vanilla:vanilla /home/vanilla"],
+            ["chown -R pikaos:pikaos /home/pikaos"],
             chroot=True,
             late=True,
         )

@@ -195,7 +195,7 @@ class PartitionSelector(Adw.PreferencesPage):
             "fstype": None,
         },
         "home_part_expand": {
-            "mountpoint": "/var",
+            "mountpoint": "/home",
             "min_size": 10_737_418_240,  # 10 GB
             "partition": None,
             "fstype": None,
