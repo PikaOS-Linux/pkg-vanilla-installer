@@ -30,6 +30,11 @@ _CRYPTTAB_FILE = """crypt_root	UUID=%s	none	luks,discard
 crypt_home	UUID=%s	none	luks,discard
 """
 
+_REFIND_LINUX_CFG = """"Boot with standard options"  "nvidia-drm.modeset=1 root=UUID=%s quiet splash ---"
+"Boot with logging"  "nvidia-drm.modeset=1 root=UUID=%s ---"
+"Boot with safe graphics"  "nvidia-drm.modeset=1 root=UUID=%s nomodeset ---"
+"""
+
 AlbiusSetupStep = dict[str, Union[str, list[Any]]]
 AlbiusMountpoint = dict[str, str]
 AlbiusInstallation = dict[str, str, list[str], list[str]]
