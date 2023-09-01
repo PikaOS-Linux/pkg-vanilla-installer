@@ -19,7 +19,6 @@ import logging
 import os
 import re
 import tempfile
-from datetime import datetime
 from typing import Any, Union
 
 from vanilla_installer.core.system import Systeminfo
@@ -30,10 +29,11 @@ _CRYPTTAB_FILE = """crypt_root	UUID=%s	none	luks,discard
 crypt_home	UUID=%s	none	luks,discard
 """
 
-_REFIND_LINUX_CFG = """"Boot with standard options"  "nvidia-drm.modeset=1 root=UUID=%s quiet splash ---"
-"Boot with logging"  "nvidia-drm.modeset=1 root=UUID=%s ---"
-"Boot with safe graphics"  "nvidia-drm.modeset=1 root=UUID=%s nomodeset ---"
-"""
+_REFIND_LINUX_CFG = (
+    '"Boot with standard options"  "nvidia-drm.modeset=1 root=UUID={ROOT_PART_UUID} quiet splash ---"\n'
+    '"Boot with logging"  "nvidia-drm.modeset=1 root=UUID={ROOT_PART_UUID} ---"\n'
+    '"Boot with safe graphics"  "nvidia-drm.modeset=1 root=UUID={ROOT_PART_UUID} nomodeset ---"\n'
+)
 
 AlbiusSetupStep = dict[str, Union[str, list[Any]]]
 AlbiusMountpoint = dict[str, str]
@@ -135,7 +135,13 @@ class Processor:
             return base_params
 
         # Root
-        setup_steps.append([disk, "mkpart", _params("linux-root", fs, part_offset, part_offset + root_size)])
+        setup_steps.append(
+            [
+                disk,
+                "mkpart",
+                _params("linux-root", fs, part_offset, part_offset + root_size),
+            ]
+        )
         part_offset += root_size
 
         # Home
@@ -317,7 +323,7 @@ class Processor:
                         f"{root_part_uuid}",
                         f"{home_part_uuid}",
                     )
-                file.write(albuis_crypttab_file)
+                    file.write(albuis_crypttab_file)
                 recipe.add_postinstall_step(
                     "shell",
                     [
@@ -375,12 +381,10 @@ class Processor:
             # Run `grub-install` with the boot partition as target
             if Systeminfo.is_uefi():
                 with open("/tmp/albuis-refind_linux.cfg", "w") as file:
-                    albuis_refind_file = _REFIND_LINUX_CFG % (
-                        f"{root_part_uuid}",
-                        f"{root_part_uuid}",
-                        f"{root_part_uuid}",
+                    albuis_refind_file = _REFIND_LINUX_CFG.format(
+                        ROOT_PART_UUID=root_part_uuid
                     )
-                file.write(albuis_refind_file)
+                    file.write(albuis_refind_file)
                 recipe.add_postinstall_step(
                     "shell",
                     [
@@ -388,7 +392,11 @@ class Processor:
                     ],
                 )
                 recipe.add_postinstall_step(
-                    "refind-install", chroot=True
+                    "shell",
+                    [
+                        "refind-install",
+                    ],
+                    chroot=True,
                 )
             else:
                 grub_type = "bios"
