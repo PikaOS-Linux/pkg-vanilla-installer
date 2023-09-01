@@ -70,8 +70,8 @@ class AlbiusRecipe:
         self.installation = {
             "method": method,
             "source": source,
-            "initramfsPre": ["lpkg --unlock"],
-            "initramfsPost": ["lpkg --lock"],
+            "initramfsPre": ["echo this_is_initramfsPre"],
+            "initramfsPost": ["echo this_is_initramfsPost"],
         }
 
     def add_postinstall_step(
