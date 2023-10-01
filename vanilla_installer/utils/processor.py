@@ -27,14 +27,16 @@ from vanilla_installer.core.system import Systeminfo
 logger = logging.getLogger("Installer::Processor")
 
 _REFIND_SETUP_FILE = """#!/usr/bin/bash
-echo '"Boot with standard options"  "nvidia-drm.modeset=1 root=UUID={ROOT_PART_UUID} quiet splash ---"'  > /mnt/a/boot/refind_linux.conf
-echo '"Boot with logging"  "nvidia-drm.modeset=1 root=UUID={ROOT_PART_UUID} ---"' >>  /mnt/a/boot/refind_linux.con
-echo '"Boot with safe graphics"  "nvidia-drm.modeset=1 root=UUID={ROOT_PART_UUID} nomodeset ---"' >>  /mnt/a/boot/refind_linux.con
+touch /mnt/a/boot/refind_linux.conf
+echo '"'Boot with standard options'"'  '"'nvidia-drm.modeset=1 root={ROOT_PART_UUID} quiet splash ---'"'  > /mnt/a/boot/refind_linux.conf
+echo '"'Boot with standard options'"'  '"'nvidia-drm.modeset=1 root={ROOT_PART_UUID} ---'"'  >>  /mnt/a/boot/refind_linux.conf
+echo '"'Boot with standard options'"'  '"'nvidia-drm.modeset=1 root={ROOT_PART_UUID} nomodeset ---'"'  >>  /mnt/a/boot/refind_linux.conf
 """
 
 _CRYPTTAB_SETUP_FILE = """#!/usr/bin/bash
-echo 'crypt_root	UUID={ROOT_PART_UUID}	none	luks,discard' > /mnt/a/etc/crypttab
-echo 'crypt_home	UUID={HOME_PART_UUID}	none	luks,discard' >> /mnt/a/etc/crypttab
+cat /mnt/a/etc/crypttab
+echo "crypt_root	UUID={ROOT_PART_UUID}	none	luks,discard" > /mnt/a/etc/crypttab
+echo "crypt_home	UUID={HOME_PART_UUID}	none	luks,discard" >> /mnt/a/etc/crypttab
 """
 
 AlbiusSetupStep = dict[str, Union[str, list[Any]]]
@@ -387,7 +389,7 @@ class Processor:
                 recipe.add_postinstall_step(
                     "shell",
                     [
-                        "chmod +x /tmp/albuis-refind_linux.sh"
+                        "chmod +x /tmp/albuis-refind_linux.sh",
                         "/tmp/albuis-refind_linux.sh",
                     ],
                 )
