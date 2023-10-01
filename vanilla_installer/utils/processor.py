@@ -325,8 +325,8 @@ class Processor:
             if encrypt:
                 with open("/tmp/albuis-crypttab.cfg", "w") as file:
                     albuis_crypttab_file = _CRYPTTAB_FILE.format(
-                        ROOT_PART_UUID=root_part_uuid
-                        HOME_PART_UUID=home_part_uuid
+                        ROOT_PART_UUID=root_part_uuid,
+                        HOME_PART_UUID=home_part_uuid,
                     )
                     file.write(albuis_crypttab_file)
                 recipe.add_postinstall_step(
