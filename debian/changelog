@@ -1,4 +1,4 @@
-vanilla-installer (2.3.6-99pika3) unstable; urgency=critical
+vanilla-installer (2.3.6-99pika4) unstable; urgency=critical
 
   * Improve startup speed
   * Fix incorrect default language

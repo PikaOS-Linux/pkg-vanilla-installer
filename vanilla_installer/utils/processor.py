@@ -337,6 +337,7 @@ class Processor:
                         "chmod +x /tmp/albuis-crypttab.sh",
                         "/tmp/albuis-crypttab.sh",
                     ],
+                    late=True,
                 )
 
             # Create default user
@@ -392,12 +393,14 @@ class Processor:
                         "chmod +x /tmp/albuis-refind_linux.sh",
                         "/tmp/albuis-refind_linux.sh",
                     ],
+                    late=True,
                 )
                 recipe.add_postinstall_step(
                     "shell",
                     [
                         "refind-install",
                     ],
+                    late=True,
                     chroot=True,
                 )
             else:
