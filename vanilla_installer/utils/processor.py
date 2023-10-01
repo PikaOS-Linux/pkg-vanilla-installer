@@ -333,7 +333,7 @@ class Processor:
                     "shell",
                     [
                         "chmod +x /tmp/albuis-crypttab.sh",
-                        "/tmp/albuis-crypttab.sh"",
+                        "/tmp/albuis-crypttab.sh",
                     ],
                 )
 
