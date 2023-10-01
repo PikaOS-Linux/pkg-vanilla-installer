@@ -116,7 +116,7 @@ class Processor:
         # Boot
         setup_steps.append([disk, "mkpart", ["linux-boot", "ext4", 1, 1025]])
         if Systeminfo.is_uefi():
-            ssetup_steps.append([disk, "mkpart", ["linux-efi", "fat32", 1025, 1537]])
+            setup_steps.append([disk, "mkpart", ["linux-efi", "fat32", 1025, 1537]])
             part_offset = 1537
         else:
             setup_steps.append([disk, "mkpart", ["BIOS", "fat32", 1025, 1026]])
@@ -315,8 +315,8 @@ class Processor:
                 "shell",
                 [
                     "mount -av",
-                    f"echo {var_label} /mnt/a/var",
-                    f"echo {boot_part} /mnt/a/boot{f' && mount {efi_part} /mnt/a/boot/efi' if efi_part else ''}",
+                    f"echo {root_part_uuid}",
+                    f"echo {home_part_uuid}",
                 ],
             )
 
