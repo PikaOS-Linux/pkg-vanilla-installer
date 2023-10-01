@@ -26,16 +26,16 @@ from vanilla_installer.core.system import Systeminfo
 
 logger = logging.getLogger("Installer::Processor")
 
-_CRYPTTAB_FILE = (
-    'crypt_root	UUID={ROOT_PART_UUID}	none	luks,discard\n'
-    'crypt_home	UUID={HOME_PART_UUID}	none	luks,discard\n'
-)
+_REFIND_SETUP_FILE = """#!/usr/bin/bash
+echo '"Boot with standard options"  "nvidia-drm.modeset=1 root=UUID={ROOT_PART_UUID} quiet splash ---"'  > /mnt/a/boot/refind_linux.conf
+echo '"Boot with logging"  "nvidia-drm.modeset=1 root=UUID={ROOT_PART_UUID} ---"' >>  /mnt/a/boot/refind_linux.con
+echo '"Boot with safe graphics"  "nvidia-drm.modeset=1 root=UUID={ROOT_PART_UUID} nomodeset ---"' >>  /mnt/a/boot/refind_linux.con
+"""
 
-_REFIND_LINUX_CFG = (
-    '"Boot with standard options"  "nvidia-drm.modeset=1 root=UUID={ROOT_PART_UUID} quiet splash ---"\n'
-    '"Boot with logging"  "nvidia-drm.modeset=1 root=UUID={ROOT_PART_UUID} ---"\n'
-    '"Boot with safe graphics"  "nvidia-drm.modeset=1 root=UUID={ROOT_PART_UUID} nomodeset ---"\n'
-)
+_CRYPTTAB_SETUP_FILE = """#!/usr/bin/bash
+echo 'crypt_root	UUID={ROOT_PART_UUID}	none	luks,discard' > /mnt/a/etc/crypttab
+echo 'crypt_home	UUID={HOME_PART_UUID}	none	luks,discard' >> /mnt/a/etc/crypttab
+"""
 
 AlbiusSetupStep = dict[str, Union[str, list[Any]]]
 AlbiusMountpoint = dict[str, str]
@@ -323,8 +323,8 @@ class Processor:
 
             # if the system is encrypted create /etc/crypttab
             if encrypt:
-                with open("/tmp/albuis-crypttab.cfg", "w") as file:
-                    albuis_crypttab_file = _CRYPTTAB_FILE.format(
+                with open("/tmp/albuis-crypttab.sh", "w") as file:
+                    albuis_crypttab_file = _CRYPTTAB_SETUP_FILE.format(
                         ROOT_PART_UUID=root_part_uuid,
                         HOME_PART_UUID=home_part_uuid,
                     )
@@ -332,7 +332,8 @@ class Processor:
                 recipe.add_postinstall_step(
                     "shell",
                     [
-                        "cp -vf /tmp/albuis-crypttab.cfg /mnt/a/etc/crypttab",
+                        "chmod +x /tmp/albuis-crypttab.sh",
+                        "/tmp/albuis-crypttab.sh"",
                     ],
                 )
 
@@ -373,32 +374,12 @@ class Processor:
                 chroot=True,
             )
 
-            # Add autostart script to pikaos-first-setup
-            recipe.add_postinstall_step(
-                "shell",
-                [
-                    "mkdir -p /home/pikaos/.config/autostart",
-                    "cp /usr/share/applications/org.pikaosos.FirstSetup.desktop /home/pikaos/.config/autostart",
-                ],
-                chroot=True,
-                late=True,
-            )
-
-            recipe.add_postinstall_step(
-                "shell",
-                [
-                    "mkdir -p /home/pikaos/.config/autostart",
-                    "cp /usr/share/applications/org.vanillaos.FirstSetup.desktop /home/pikaos/.config/autostart",
-                ],
-                chroot=True,
-                late=True,
-            )
-
+            
             # Install Refind if target is UEFI, Install grub-pc if target is BIOS
             # Run `grub-install` with the boot partition as target
             if Systeminfo.is_uefi():
-                with open("/tmp/albuis-refind_linux.cfg", "w") as file:
-                    albuis_refind_file = _REFIND_LINUX_CFG.format(
+                with open("/tmp/albuis-refind_linux.sh", "w") as file:
+                    albuis_refind_file = _REFIND_SETUP_FILE.format(
                         ROOT_PART_UUID=root_part_uuid
                     )
 
@@ -406,7 +387,8 @@ class Processor:
                 recipe.add_postinstall_step(
                     "shell",
                     [
-                        "cp -vf /tmp/albuis-refind_linux.cfg /mnt/a/boot/refind_linux.conf",
+                        "chmod +x /tmp/albuis-refind_linux.sh"
+                        "/tmp/albuis-refind_linux.sh",
                     ],
                 )
                 recipe.add_postinstall_step(
