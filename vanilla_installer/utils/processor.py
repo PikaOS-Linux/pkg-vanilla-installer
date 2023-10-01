@@ -26,8 +26,10 @@ from vanilla_installer.core.system import Systeminfo
 
 logger = logging.getLogger("Installer::Processor")
 
-_CRYPTTAB_FILE = """crypt_root	UUID=%s	none	luks,discard
-crypt_home	UUID=%s	none	luks,discard"""
+_CRYPTTAB_FILE = (
+    'crypt_root	UUID={ROOT_PART_UUID}	none	luks,discard\n'
+    'crypt_home	UUID={HOME_PART_UUID}	none	luks,discard\n'
+)
 
 _REFIND_LINUX_CFG = (
     '"Boot with standard options"  "nvidia-drm.modeset=1 root=UUID={ROOT_PART_UUID} quiet splash ---"\n'
@@ -322,9 +324,9 @@ class Processor:
             # if the system is encrypted create /etc/crypttab
             if encrypt:
                 with open("/tmp/albuis-crypttab.cfg", "w") as file:
-                    albuis_crypttab_file = _CRYPTTAB_FILE % (
-                        f"{root_part_uuid}",
-                        f"{home_part_uuid}",
+                    albuis_crypttab_file = _CRYPTTAB_FILE.format(
+                        ROOT_PART_UUID=root_part_uuid
+                        HOME_PART_UUID=home_part_uuid
                     )
                     file.write(albuis_crypttab_file)
                 recipe.add_postinstall_step(
