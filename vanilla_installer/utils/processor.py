@@ -428,8 +428,6 @@ class Processor:
                     "shell",
                     [
                         f"refind-install --usedefault {efi_part}",
-                        "mkdir -p /boot/efi/EFI/BOOT",
-                        "cp -vf /boot/efi/EFI/refind/refind_x64.efi /boot/EFI/BOOT/BOOTX64.EFI",
                         "apt install -y /var/cache/apt/archives/pika-refind-theme*.deb",
                         "apt install -y /var/cache/apt/archives/booster*.deb",
                     ],
