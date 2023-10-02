@@ -178,7 +178,7 @@ class Processor:
         # Since manual partitioning uses GParted to handle partitions (for now),
         # we don't need to create any partitions or label disks (for now).
         # But we still need to format partitions.
-        root_a_set = False
+        root_set = False
         for part, values in disk_final.items():
             part_disk = re.match(
                 r"^/dev/[a-zA-Z]+([0-9]+[a-z][0-9]+)?", part, re.MULTILINE
@@ -317,7 +317,7 @@ class Processor:
             recipe.add_postinstall_step(
                 "shell",
                 [
-                   "mount --rbind /dev /mnt/a/dev",
+                    "mount --rbind /dev /mnt/a/dev",
                     "mount --rbind /dev/pts /mnt/a/dev/pts",
                     "mount --rbind /proc /mnt/a/proc",
                     "mount --rbind /sys /mnt/a/sys",
