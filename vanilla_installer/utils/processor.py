@@ -317,9 +317,6 @@ class Processor:
             recipe.add_postinstall_step(
                 "shell",
                 [
-                    "mount -av",
-                    "mkdir -pv /mnt/a/media/cdrom",
-                    "mount --bind /cdrom /mnt/a/media/cdrom",
                     "mount --rbind /dev /mnt/a/dev",
                     "mount --rbind /dev/pts /mnt/a/dev/pts",
                     "mount --rbind /proc /mnt/a/proc",
@@ -327,6 +324,12 @@ class Processor:
                     "mount --rbind /run /mnt/a/run",
                     "mkdir -p /mnt/a/var/cache/apt/archives",
                     "cp -rvf /cdrom/pool/main/* /mnt/a/var/cache/apt/archives/",
+                ],
+            )
+            recipe.add_postinstall_step(
+                "shell",
+                [
+                    "mount -av",
                 ],
                 chroot=True,
             )
@@ -438,6 +441,7 @@ class Processor:
                         "mkdir -p /boot/efi/EFI/BOOT",
                         "cp -vf /boot/efi/EFI/refind/refind_x64.efi /boot/EFI/BOOT/BOOTX64.EFI",
                         "apt install -y /var/cache/apt/archives/pika-refind-theme*.deb",
+                        "/var/lib/dpkg/info/booster.postinst",
                     ],
                     late=True,
                     chroot=True,
