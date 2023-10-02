@@ -28,9 +28,9 @@ logger = logging.getLogger("Installer::Processor")
 
 _REFIND_SETUP_FILE = """#!/usr/bin/bash
 touch /mnt/a/boot/refind_linux.conf
-echo '"'Boot with standard options'"'  '"'nvidia-drm.modeset=1 root={ROOT_PART_UUID} quiet splash ---'"'  > /mnt/a/boot/refind_linux.conf
-echo '"'Boot with standard options'"'  '"'nvidia-drm.modeset=1 root={ROOT_PART_UUID} ---'"'  >>  /mnt/a/boot/refind_linux.conf
-echo '"'Boot with standard options'"'  '"'nvidia-drm.modeset=1 root={ROOT_PART_UUID} nomodeset ---'"'  >>  /mnt/a/boot/refind_linux.conf
+echo '"'Boot with standard options'"'  '"'nvidia-drm.modeset=1 root=UUID=$(blkid -s UUID -o value $(df /mnt/a | grep "$MOUNTPOINT\$"| cut -f1 -d" ") quiet splash ---'"'  > /mnt/a/boot/refind_linux.conf
+echo '"'Boot with logging'"'  '"'nvidia-drm.modeset=1 root=UUID=$(blkid -s UUID -o value $(df /mnt/a | grep "$MOUNTPOINT\$"| cut -f1 -d" ") ---'"'  >>  /mnt/a/boot/refind_linux.conf
+echo '"'Boot with safe graphics'"'  '"'nvidia-drm.modeset=1 root=UUID=$(blkid -s UUID -o value $(df /mnt/a | grep "$MOUNTPOINT\$"| cut -f1 -d" ") nomodeset ---'"'  >>  /mnt/a/boot/refind_linux.conf
 """
 
 _CRYPTTAB_SETUP_FILE = """#!/usr/bin/bash
@@ -403,12 +403,8 @@ class Processor:
             # Install Refind if target is UEFI, Install grub-pc if target is BIOS
             # Run `grub-install` with the boot partition as target
             if Systeminfo.is_uefi():
-                with open("/tmp/albuis-refind_linux.sh", "w") as file:
-                    albuis_refind_file = _REFIND_SETUP_FILE.format(
-                        ROOT_PART_UUID=root_part_uuid
-                    )
-
-                    file.write(albuis_refind_file)
+                albuis_refind_file = open("/tmp/albuis-refind_linux.sh", "w") as file:
+                albuis_refind_file.write(albuis_refind_file)
                 recipe.add_postinstall_step(
                     "shell",
                     [
