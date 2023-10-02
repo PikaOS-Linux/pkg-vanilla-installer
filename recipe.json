@@ -4,7 +4,7 @@
     "distro_logo": "pika-logo",
     "image_type": "unsquashfs",
     "images": {
-    		"default": "/cdrom/casper/filesystem.squashfs",
+    		"default": "/cdrom/casper/filesystem.squashfs"
     },
     "default_root_size": 12288,
     "min_disk_size": 28680,
