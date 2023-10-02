@@ -47,7 +47,7 @@ class RecipeLoader:
         sys.exit(1)
 
     def __validate(self):
-        essential_keys = ["log_file", "distro_name", "distro_logo", "steps"]
+        essential_keys = ["log_file", "distro_name", "distro_logo", "steps", "image_type"]
         if not isinstance(self.__recipe, dict):
             logger.error(_("Recipe is not a dictionary"))
             return False

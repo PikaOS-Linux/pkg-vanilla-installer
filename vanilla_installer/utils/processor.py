@@ -72,8 +72,8 @@ class AlbiusRecipe:
 
     def set_installation(self, method: str, source: str) -> None:
         self.installation = {
-            "method": "unsquashfs",
-            "source": "/cdrom/casper/filesystem.squashfs",
+            "method": method,
+            "source": source,
             "initramfsPre": ["echo this_is_initramfsPre"],
             "initramfsPost": ["echo this_is_initramfsPost"],
         }
@@ -260,6 +260,7 @@ class Processor:
         images = sys_recipe.get("images")
         root_size = sys_recipe.get("default_root_size")
         oci_image = images["default"]
+        image_method = sys_recipe.get("image_type")
 
         # Setup encryption if user selected it
         encrypt = False
@@ -293,7 +294,7 @@ class Processor:
                     oci_image = images["nvidia"]
 
         # Installation
-        recipe.set_installation("oci", oci_image)
+        recipe.set_installation(image_method, oci_image)
 
         # Post-installation
         (
@@ -312,14 +313,22 @@ class Processor:
             efi_part_uuid = f"$(lsblk -d -y -n -o UUID {efi_part})"
             root_part_uuid = f"$(lsblk -d -y -n -o UUID {root_part})"
             home_part_uuid = f"$(lsblk -d -y -n -o UUID {home_part})"
-            # Mount /boot and /home into the chroot
+            # Mount all what's in fstab
             recipe.add_postinstall_step(
                 "shell",
                 [
                     "mount -av",
-                    f"echo {root_part_uuid}",
-                    f"echo {home_part_uuid}",
+                    "mkdir -pv /mnt/a/media/cdrom",
+                    "mount --bind /cdrom /mnt/a/media/cdrom",
+                    "mount --rbind /dev /mnt/a/dev",
+                    "mount --rbind /dev/pts /mnt/a/dev/pts",
+                    "mount --rbind /proc /mnt/a/proc",
+                    "mount --rbind /sys /mnt/a/sys",
+                    "mount --rbind /run /mnt/a/run",
+                    "mkdir -p /mnt/a/var/cache/apt/archives",
+                    "cp -rvf /cdrom/pool/main/* /mnt/a/var/cache/apt/archives/",
                 ],
+                chroot=True,
             )
 
 
@@ -377,6 +386,26 @@ class Processor:
                 chroot=True,
             )
 
+            # Add autostart script to pika-first-setup
+            recipe.add_postinstall_step(
+                "shell",
+                [
+                    "mkdir -p /home/pikaos/.config/autostart",
+                    "cp /usr/share/applications/pika-first-setup.desktop /home/pikaos/.config/autostart",
+                ],
+                chroot=True,
+                late=True,
+            )
+
+            # Get the booster init system installed
+            recipe.add_postinstall_step(
+                "shell",
+                [
+                    "apt install -y /var/cache/apt/archives/booster*.deb",
+                ],
+                chroot=True,
+                late=True,
+            )
             
             # Install Refind if target is UEFI, Install grub-pc if target is BIOS
             # Run `grub-install` with the boot partition as target
@@ -398,11 +427,22 @@ class Processor:
                 recipe.add_postinstall_step(
                     "shell",
                     [
-                        "refind-install",
+                        f"refind-install --usedefault {efi_part}",
+                    ],
+                    late=True,
+                )
+                recipe.add_postinstall_step(
+                    "shell",
+                    [
+                        f"refind-install --usedefault {efi_part}",
+                        "mkdir -p /boot/efi/EFI/BOOT",
+                        "cp -vf /boot/efi/EFI/refind/refind_x64.efi /boot/EFI/BOOT/BOOTX64.EFI",
+                        "apt install -y /var/cache/apt/archives/pika-refind-theme*.deb",
                     ],
                     late=True,
                     chroot=True,
                 )
+
             else:
                 grub_type = "bios"
                 recipe.add_postinstall_step(
@@ -415,15 +455,6 @@ class Processor:
                 recipe.add_postinstall_step(
                     "grub-mkconfig", ["/boot/grub/grub.cfg"], chroot=True
                 )
-
-            # Final Chroot Steps
-            recipe.add_postinstall_step(
-                "shell",
-                [
-                    "touch /nice",
-                ],
-                chroot=True,
-            )
 
         # Set hostname
         recipe.add_postinstall_step("hostname", ["pikaos"], chroot=True)
@@ -453,6 +484,14 @@ class Processor:
         recipe.add_postinstall_step(
             "shell",
             ["chown -R pikaos:pikaos /home/pikaos"],
+            chroot=True,
+            late=True,
+        )
+
+        # Final Chroot Steps
+        recipe.add_postinstall_step(
+            "shell",
+            ["pika-installer-final-step"],
             chroot=True,
             late=True,
         )
