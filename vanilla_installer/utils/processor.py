@@ -317,11 +317,6 @@ class Processor:
             recipe.add_postinstall_step(
                 "shell",
                 [
-                    "mount --rbind /dev /mnt/a/dev",
-                    "mount --rbind /dev/pts /mnt/a/dev/pts",
-                    "mount --rbind /proc /mnt/a/proc",
-                    "mount --rbind /sys /mnt/a/sys",
-                    "mount --rbind /run /mnt/a/run",
                     "mkdir -p /mnt/a/var/cache/apt/archives",
                     "cp -rvf /cdrom/pool/main/* /mnt/a/var/cache/apt/archives/",
                 ],
