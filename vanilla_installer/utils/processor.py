@@ -399,16 +399,6 @@ class Processor:
                 chroot=True,
                 late=True,
             )
-
-            # Get the booster init system installed
-            recipe.add_postinstall_step(
-                "shell",
-                [
-                    "apt install -y /var/cache/apt/archives/booster*.deb",
-                ],
-                chroot=True,
-                late=True,
-            )
             
             # Install Refind if target is UEFI, Install grub-pc if target is BIOS
             # Run `grub-install` with the boot partition as target
@@ -441,7 +431,7 @@ class Processor:
                         "mkdir -p /boot/efi/EFI/BOOT",
                         "cp -vf /boot/efi/EFI/refind/refind_x64.efi /boot/EFI/BOOT/BOOTX64.EFI",
                         "apt install -y /var/cache/apt/archives/pika-refind-theme*.deb",
-                        "/var/lib/dpkg/info/booster.postinst",
+                        "apt install -y /var/cache/apt/archives/booster*.deb",
                     ],
                     late=True,
                     chroot=True,
