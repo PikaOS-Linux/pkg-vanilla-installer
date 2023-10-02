@@ -36,7 +36,10 @@ echo '"'Boot with safe graphics'"'  '"'nvidia-drm.modeset=1 root=UUID=$(blkid -s
 _CRYPTTAB_SETUP_FILE = """#!/usr/bin/bash
 cat /mnt/a/etc/crypttab
 echo "crypt_root	UUID={ROOT_PART_UUID}	none	luks,discard" > /mnt/a/etc/crypttab
-echo "crypt_home	UUID={HOME_PART_UUID}	none	luks,discard" >> /mnt/a/etc/crypttab
+echo "crypt_home	UUID={HOME_PART_UUID}	/keyfile.txt    	luks" >> /mnt/a/etc/crypttab
+touch /mnt/a/keyfile.txt
+echo "{LUKS_PASSWD}" > /mnt/a/keyfile.txt
+echo "{LUKS_PASSWD}" | cryptsetup luksAddKey UUID={HOME_PART_UUID}	/mnt/a/keyfile.txt -
 """
 
 AlbiusSetupStep = dict[str, Union[str, list[Any]]]
@@ -341,6 +344,7 @@ class Processor:
                     albius_crypttab_file = _CRYPTTAB_SETUP_FILE.format(
                         ROOT_PART_UUID=root_part_uuid,
                         HOME_PART_UUID=home_part_uuid,
+                        LUKS_PASSWD=password,
                     )
                     file.write(albius_crypttab_file)
                 recipe.add_postinstall_step(
