@@ -480,14 +480,6 @@ class Processor:
             late=True,
         )
 
-        # Final Chroot Steps
-        recipe.add_postinstall_step(
-            "shell",
-            ["pika-installer-final-step"],
-            chroot=True,
-            late=True,
-        )
-
         recipe.merge_postinstall_steps()
 
         if "VANILLA_FAKE" in os.environ:
