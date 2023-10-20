@@ -41,7 +41,7 @@
                   <object class="AdwActionRow" id="row_documentation">
                     <property name="icon-name">folder-documents-symbolic</property>
                     <property name="title" translatable="yes">Documentation</property>
-                    <property name="subtitle" translatable="yes">Read the Vanilla OS Documentation</property>
+                    <property name="subtitle" translatable="yes">Read the PikaOS Documentation</property>
                     <property name="activatable">true</property>
                     <child type="suffix">
                       <object class="GtkImage">
@@ -75,7 +75,7 @@
                   <object class="AdwActionRow" id="row_handbook">
                     <property name="icon-name">accessories-dictionary-symbolic</property>
                     <property name="title" translatable="yes">Handbook</property>
-                    <property name="subtitle" translatable="yes">Read tutorials and guides about Vanilla OS.</property>
+                    <property name="subtitle" translatable="yes">Read tutorials and guides about PikaOS.</property>
                     <property name="activatable">true</property>
                     <child type="suffix">
                       <object class="GtkImage">

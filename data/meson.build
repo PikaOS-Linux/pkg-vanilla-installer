@@ -1,16 +1,6 @@
 install_data(
-    'installer.desktop',
-    install_dir: join_paths(get_option('datadir'), 'xsessions')
-)
-
-install_data(
     'installer.json',
     install_dir: join_paths(get_option('datadir'), 'gnome-shell', 'modes')
-)
-
-install_data(
-    'installer.session',
-    install_dir: join_paths(get_option('datadir'), 'gnome-session', 'sessions')
 )
 
 install_data(
