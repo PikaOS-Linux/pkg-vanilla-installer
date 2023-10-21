@@ -211,7 +211,7 @@ class Processor:
                 setup_steps.append(
                     [part_disk, "setflag", [part_number, "bios_grub", True]]
                 )
-            elif Systeminfo.is_uefi() and values["mp"] == "":
+            elif Systeminfo.is_uefi() and values["mp"] == "/boot/efi":
                 setup_steps.append(
                     [part_disk, "setflag", [part_number, "bls_boot", True]]
                 )
