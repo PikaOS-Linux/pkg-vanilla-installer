@@ -391,6 +391,15 @@ class Processor:
             # This needs to be done after mounting `/etc` overlay, so set it as
             # late post-install
             recipe.add_postinstall_step(
+                "shell",
+                [
+                    "userdel -r -f pikaos || true",
+                ],
+                chroot=True,
+                late=True,
+            )
+
+            recipe.add_postinstall_step(
                 "adduser",
                 [
                     "pikaos",
