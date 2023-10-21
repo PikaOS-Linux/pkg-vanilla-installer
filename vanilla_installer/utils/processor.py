@@ -339,7 +339,7 @@ class Processor:
                 "shell",
                 [
                     "touch /etc/fstab",
-                    "genfstab -U / | grep -v zram  > /etc/fstab",
+                    "genfstab -U / | grep -v zram | grep -v portal  > /etc/fstab",
                     "mount -av",
                 ],
                 chroot=True,
@@ -410,19 +410,7 @@ class Processor:
                     "mkdir -p /etc/sddm.conf.d/",
                     "echo '[daemon]\nAutomaticLogin=pikaos\nAutomaticLoginEnable=True' >> /etc/gdm3/custom.conf",
                     "echo '[Autologin]\nUser=pikaos\nSession=plasma' > /etc/sddm.conf.d/autologin.conf",
-                    "mkdir -p /home/pikaos/.config/dconf",
-                    "cp -rvf /etc/skel/.* /home/pikaos/",
-                    "chmod 700 /home/pikaos/.config/dconf",
-                ],
-                chroot=True,
-            )
-
-            # Make sure the pikaos user uses the first-setup session
-            recipe.add_postinstall_step(
-                "shell",
-                [
-                    "mkdir -p /var/lib/AccountsService/users",
-                    "echo '[User]\nSession=firstsetup' > /var/lib/AccountsService/users/pikaos",
+                    "cp -rvf /etc/skel/.* /home/pikaos/ || true",
                 ],
                 chroot=True,
             )
