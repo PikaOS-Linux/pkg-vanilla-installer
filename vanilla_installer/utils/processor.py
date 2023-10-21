@@ -35,6 +35,16 @@ echo '"'Boot with logging'"'  '"'nvidia-drm.modeset=1 root=UUID=$(blkid "$(df -P
 echo '"'Boot with safe graphics'"'  '"'nvidia-drm.modeset=1 root=UUID=$(blkid "$(df -P -h -T /mnt/a | awk 'END{print $1}')" -s UUID -o value) nomodeset ---'"'  >>  /mnt/a/boot/refind_linux.conf
 """
 
+_REFIND_SETUP_FILE_CRYPT = """#!/usr/bin/bash
+rm -rfv /mnt/a/boot/*arch*
+/usr/lib/pika/pikainstall/partition-helper.sh flag /mnt/a/boot/efi bls_boot on
+touch /mnt/a/boot/refind_linux.conf
+echo '"'Boot with standard options'"'  '"'nvidia-drm.modeset=1 root=/dev/mapper/crypt_root quiet splash ---'"'  > /mnt/a/boot/refind_linux.conf
+echo '"'Boot with logging'"'  '"'nvidia-drm.modeset=1 root=/dev/mapper/crypt_root ---'"'  >>  /mnt/a/boot/refind_linux.conf
+echo '"'Boot with safe graphics'"'  '"'nvidia-drm.modeset=1 root=/dev/mapper/crypt_root nomodeset ---'"'  >>  /mnt/a/boot/refind_linux.conf
+"""
+
+
 _CRYPTTAB_SETUP_FILE = """#!/usr/bin/bash
 echo "crypt_root	UUID={ROOT_PART_UUID}	none	luks,discard" > /mnt/a/etc/crypttab
 echo "crypt_home	UUID={HOME_PART_UUID}	/keyfile.txt    	luks" >> /mnt/a/etc/crypttab
@@ -412,7 +422,38 @@ class Processor:
 
             # Install Refind if target is UEFI, Install grub-pc if target is BIOS
             # Run `grub-install` with the boot partition as target
-            if Systeminfo.is_uefi():
+            if encrypt and Systeminfo.is_uefi():
+                with open("/tmp/albius-refind_linux.sh", "w+") as f:
+                    f.write(_REFIND_SETUP_FILE_CRYPT)
+
+                recipe.add_postinstall_step(
+                    "shell",
+                    [
+                        "chmod +x /tmp/albius-refind_linux.sh",
+                        "/tmp/albius-refind_linux.sh",
+                    ],
+                    late=True,
+                )
+                recipe.add_postinstall_step(
+                    "shell",
+                    [
+                        "refind-install",
+                    ],
+                    late=True,
+                )
+                recipe.add_postinstall_step(
+                    "shell",
+                    [
+                        "refind-install",
+                        "apt install -y /var/cache/apt/archives/pika-refind-theme*.deb",
+                        "apt install -y /var/cache/apt/archives/booster*.deb",
+                        "apt remove casper vanilla-installer -y",
+                        "apt autoremove -y",
+                    ],
+                    late=True,
+                    chroot=True,
+                )
+            elif not encrypt and Systeminfo.is_uefi():
                 with open("/tmp/albius-refind_linux.sh", "w+") as f:
                     f.write(_REFIND_SETUP_FILE)
 
@@ -443,7 +484,6 @@ class Processor:
                     late=True,
                     chroot=True,
                 )
-
             else:
                 grub_type = "bios"
                 recipe.add_postinstall_step(
