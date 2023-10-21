@@ -392,7 +392,9 @@ class Processor:
                 "shell",
                 [
                     "mkdir -p /etc/gdm3",
+                    "mkdir -p /etc/sddm.conf.d/"
                     "echo '[daemon]\nAutomaticLogin=pikaos\nAutomaticLoginEnable=True' > /etc/gdm3/daemon.conf",
+                    "echo '[Autologin]\nUser=pikaos\nSession=plasma' > /etc/sddm.conf.d/autologin.conf",
                     "mkdir -p /home/pikaos/.config/dconf",
                     "chmod 700 /home/pikaos/.config/dconf",
                 ],
