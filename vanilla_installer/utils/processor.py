@@ -35,16 +35,6 @@ echo '"'Boot with logging'"'  '"'nvidia-drm.modeset=1 root=UUID=$(blkid "$(df -P
 echo '"'Boot with safe graphics'"'  '"'nvidia-drm.modeset=1 root=UUID=$(blkid "$(df -P -h -T /mnt/a | awk 'END{print $1}')" -s UUID -o value) nomodeset ---'"'  >>  /mnt/a/boot/refind_linux.conf
 """
 
-_REFIND_SETUP_FILE_CRYPT = """#!/usr/bin/bash
-rm -rfv /mnt/a/boot/*arch*
-/usr/lib/pika/pikainstall/partition-helper.sh flag /mnt/a/boot/efi bls_boot on
-touch /mnt/a/boot/refind_linux.conf
-echo '"'Boot with standard options'"'  '"'nvidia-drm.modeset=1 root=/dev/mapper/crypt_root quiet splash ---'"'  > /mnt/a/boot/refind_linux.conf
-echo '"'Boot with logging'"'  '"'nvidia-drm.modeset=1 root=/dev/mapper/crypt_root ---'"'  >>  /mnt/a/boot/refind_linux.conf
-echo '"'Boot with safe graphics'"'  '"'nvidia-drm.modeset=1 root=/dev/mapper/crypt_root nomodeset ---'"'  >>  /mnt/a/boot/refind_linux.conf
-"""
-
-
 _CRYPTTAB_SETUP_FILE = """#!/usr/bin/bash
 echo "crypt_root	UUID={ROOT_PART_UUID}	none	luks,discard" > /mnt/a/etc/crypttab
 echo "crypt_home	UUID={HOME_PART_UUID}	/keyfile.txt    	luks" >> /mnt/a/etc/crypttab
@@ -344,6 +334,8 @@ class Processor:
                     "mount --rbind /run /mnt/a/run",
                     "mkdir -p /mnt/a/var/cache/apt/archives",
                     "cp -rvf /cdrom/pool/main/* /mnt/a/var/cache/apt/archives/",
+                    "genfstab -U /mnt/a > /mnt/a/etc/fstab",
+                    "cat /mnt/a/etc/fstab | grep -v zram > /mnt/a/etc/fstab",
                 ],
             )
             recipe.add_postinstall_step(
@@ -440,6 +432,7 @@ class Processor:
                     "shell",
                     [
                         "refind-install",
+                        f"echo"
                         "apt install -y /var/cache/apt/archives/pika-refind-theme*.deb",
                         "apt install -y /var/cache/apt/archives/booster*.deb",
                         "apt remove casper vanilla-installer -y",
