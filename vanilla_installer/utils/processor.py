@@ -438,13 +438,6 @@ class Processor:
                     "shell",
                     [
                         "refind-install",
-                    ],
-                    late=True,
-                )
-                recipe.add_postinstall_step(
-                    "shell",
-                    [
-                        "refind-install",
                         "apt install -y /var/cache/apt/archives/pika-refind-theme*.deb",
                         "apt install -y /var/cache/apt/archives/booster*.deb",
                         "apt remove casper vanilla-installer -y",
@@ -462,13 +455,6 @@ class Processor:
                     [
                         "chmod +x /tmp/albius-refind_linux.sh",
                         "/tmp/albius-refind_linux.sh",
-                    ],
-                    late=True,
-                )
-                recipe.add_postinstall_step(
-                    "shell",
-                    [
-                        "refind-install",
                     ],
                     late=True,
                 )
@@ -495,6 +481,15 @@ class Processor:
                 # Run `grub-mkconfig` to generate files for the boot partition
                 recipe.add_postinstall_step(
                     "grub-mkconfig", ["/boot/grub/grub.cfg"], chroot=True
+                )
+                recipe.add_postinstall_step(
+                    "shell",
+                    [
+                        "apt remove casper vanilla-installer -y",
+                        "apt autoremove -y",
+                    ],
+                    late=True,
+                    chroot=True,
                 )
 
         # Set hostname
