@@ -1,6 +1,6 @@
 # disk.py
 #
-# Copyright 2022 mirkobrombin
+# Copyright 2023 mirkobrombin
 #
 # This program is free software: you can redistribute it and/or modify
 # it under the terms of the GNU General Public License as published by
@@ -195,8 +195,8 @@ class PartitionSelector(Adw.PreferencesPage):
             "fstype": None,
         },
         "home_part_expand": {
-            "mountpoint": "/home",
-            "min_size": 10_737_418_240,  # 10 GB
+            "mountpoint": "/var",
+            "min_size": 5_368_709_120,  # 5 GB
             "partition": None,
             "fstype": None,
         },
