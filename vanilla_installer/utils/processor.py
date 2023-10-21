@@ -28,10 +28,11 @@ logger = logging.getLogger("Installer::Processor")
 
 _REFIND_SETUP_FILE = """#!/usr/bin/bash
 rm -rfv /mnt/a/boot/*arch*
+/usr/lib/pika/pikainstall/partition-helper.sh flag /mnt/a/boot/efi bls_boot on
 touch /mnt/a/boot/refind_linux.conf
-echo '"'Boot with standard options'"'  '"'nvidia-drm.modeset=1 root=UUID=$(blkid -s UUID -o value $(df /mnt/a | grep "$MOUNTPOINT\$"| cut -f1 -d" ")) quiet splash ---'"'  > /mnt/a/boot/refind_linux.conf
-echo '"'Boot with logging'"'  '"'nvidia-drm.modeset=1 root=UUID=$(blkid -s UUID -o value $(df /mnt/a | grep "$MOUNTPOINT\$"| cut -f1 -d" ")) ---'"'  >>  /mnt/a/boot/refind_linux.conf
-echo '"'Boot with safe graphics'"'  '"'nvidia-drm.modeset=1 root=UUID=$(blkid -s UUID -o value $(df /mnt/a | grep "$MOUNTPOINT\$"| cut -f1 -d" ")) nomodeset ---'"'  >>  /mnt/a/boot/refind_linux.conf
+echo '"'Boot with standard options'"'  '"'nvidia-drm.modeset=1 root=UUID=$(blkid "$(df -P -h -T /mnt/a | awk 'END{print $1}')" -s UUID -o value) quiet splash ---'"'  > /mnt/a/boot/refind_linux.conf
+echo '"'Boot with logging'"'  '"'nvidia-drm.modeset=1 root=UUID=$(blkid "$(df -P -h -T /mnt/a | awk 'END{print $1}')" -s UUID -o value) ---'"'  >>  /mnt/a/boot/refind_linux.conf
+echo '"'Boot with safe graphics'"'  '"'nvidia-drm.modeset=1 root=UUID=$(blkid "$(df -P -h -T /mnt/a | awk 'END{print $1}')" -s UUID -o value) nomodeset ---'"'  >>  /mnt/a/boot/refind_linux.conf
 """
 
 _CRYPTTAB_SETUP_FILE = """#!/usr/bin/bash
@@ -123,6 +124,7 @@ class Processor:
         setup_steps.append([disk, "mkpart", ["linux-boot", "ext4", 1, 1025]])
         if Systeminfo.is_uefi():
             setup_steps.append([disk, "mkpart", ["linux-efi", "fat32", 1025, 1537]])
+            setup_steps.append([disk, "setflag", ["2", "bls_boot", True]])
             part_offset = 1537
         else:
             setup_steps.append([disk, "mkpart", ["BIOS", "fat32", 1025, 1026]])
@@ -209,6 +211,10 @@ class Processor:
             if not Systeminfo.is_uefi() and values["mp"] == "":
                 setup_steps.append(
                     [part_disk, "setflag", [part_number, "bios_grub", True]]
+                )
+            elif Systeminfo.is_uefi() and values["mp"] == "":
+                setup_steps.append(
+                    [part_disk, "setflag", [part_number, "bls_boot", True]]
                 )
 
             # Set partition labels for Linux
@@ -421,14 +427,14 @@ class Processor:
                 recipe.add_postinstall_step(
                     "shell",
                     [
-                        f"refind-install --usedefault {efi_part}",
+                        "refind-install",
                     ],
                     late=True,
                 )
                 recipe.add_postinstall_step(
                     "shell",
                     [
-                        f"refind-install --usedefault {efi_part}",
+                        "refind-install",
                         "apt install -y /var/cache/apt/archives/pika-refind-theme*.deb",
                         "apt install -y /var/cache/apt/archives/booster*.deb",
                         "apt remove casper vanilla-installer -y",
