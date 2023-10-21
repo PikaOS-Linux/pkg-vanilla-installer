@@ -30,8 +30,6 @@ _REFIND_SETUP_FILE = """#!/usr/bin/bash
 rm -rfv /mnt/a/boot/*arch*
 echo "KEYMAP=$(cat /mnt/a/etc/vconsole.conf | grep XKBLAYOUT | cut -d"=" -f2)" >> /mnt/a/etc/vconsole.conf 
 /usr/lib/pika/pikainstall/partition-helper.sh flag /mnt/a/boot/efi bls_boot on
-touch /mnt/a/etc/fstab
-genfstab -U /mnt/a/ | grep -v zram  > /mnt/a/etc/fstab
 touch /mnt/a/boot/refind_linux.conf
 echo '"'Boot with standard options'"'  '"'nvidia-drm.modeset=1 root=UUID=$(blkid "$(df -P -h -T /mnt/a | awk 'END{print $1}')" -s UUID -o value) quiet splash ---'"'  > /mnt/a/boot/refind_linux.conf
 echo '"'Boot with logging'"'  '"'nvidia-drm.modeset=1 root=UUID=$(blkid "$(df -P -h -T /mnt/a | awk 'END{print $1}')" -s UUID -o value) ---'"'  >>  /mnt/a/boot/refind_linux.conf
@@ -337,13 +335,15 @@ class Processor:
                     "cp -rvf /cdrom/pool/main/* /mnt/a/var/cache/apt/archives/",
                 ],
             )
-#            recipe.add_postinstall_step(
-#                "shell",
-#                [
-#                    "mount -av",
-#                ],
-#                chroot=True,
-#            )
+            recipe.add_postinstall_step(
+                "shell",
+                [
+                    "touch /etc/fstab",
+                    "genfstab -U /mnt/a/ | grep -v zram  > /etc/fstab",
+                    "mount -av",
+                ],
+                chroot=True,
+            )
 
         # Set hostname
         recipe.add_postinstall_step("hostname", ["pikaos"], chroot=True)
