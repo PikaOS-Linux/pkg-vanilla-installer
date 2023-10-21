@@ -185,7 +185,6 @@ class Processor:
         # Since manual partitioning uses GParted to handle partitions (for now),
         # we don't need to create any partitions or label disks (for now).
         # But we still need to format partitions.
-        root_set = False
         for part, values in disk_final.items():
             part_disk = re.match(
                 r"^/dev/[a-zA-Z]+([0-9]+[a-z][0-9]+)?", part, re.MULTILINE
@@ -193,10 +192,9 @@ class Processor:
             part_number = re.sub(r".*[a-z]([0-9]+)", r"\1", part)
 
             # Should we encrypt?
-            if encrypt and values["mp"] in ["/", "/home"]:
-                operation = "luks-format"
-            else:
-                operation = "format"
+            operation = (
+                "luks-format" if encrypt and values["mp"] in ["/", "/home"] else "format"
+            )
 
             def _params(*args):
                 base_params = [*args]
