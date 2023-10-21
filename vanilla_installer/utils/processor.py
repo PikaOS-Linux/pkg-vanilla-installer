@@ -431,6 +431,7 @@ class Processor:
                 recipe.add_postinstall_step(
                     "shell",
                     [
+                        f"echo KEYMAP={layout} >> /etc/vconsole.conf",
                         "refind-install",
                         "apt install -y /var/cache/apt/archives/pika-refind-theme*.deb",
                         "apt install -y /var/cache/apt/archives/booster*.deb",
