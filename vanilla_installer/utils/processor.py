@@ -338,7 +338,6 @@ class Processor:
                 chroot=True,
             )
 
-
             # if the system is encrypted create /etc/crypttab
             if encrypt:
                 with open("/tmp/albius-crypttab.sh", "w") as file:
@@ -404,12 +403,13 @@ class Processor:
                 chroot=True,
                 late=True,
             )
-            
+
             # Install Refind if target is UEFI, Install grub-pc if target is BIOS
             # Run `grub-install` with the boot partition as target
             if Systeminfo.is_uefi():
-                with albius_refind_file = open("/tmp/albius-refind_linux.sh", "w") as file:
-                albius_refind_file.write(albius_refind_file)
+                with open("/tmp/albius-refind_linux.sh", "w+") as albius_refind_file:
+                    albius_refind_file.write(albius_refind_file.read())
+
                 recipe.add_postinstall_step(
                     "shell",
                     [
