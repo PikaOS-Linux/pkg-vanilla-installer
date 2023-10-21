@@ -29,9 +29,9 @@ logger = logging.getLogger("Installer::Processor")
 _REFIND_SETUP_FILE = """#!/usr/bin/bash
 rm -rfv /mnt/a/boot/*arch*
 touch /mnt/a/boot/refind_linux.conf
-echo '"'Boot with standard options'"'  '"'nvidia-drm.modeset=1 root=UUID=$(blkid -s UUID -o value $(df /mnt/a | grep "$MOUNTPOINT\$"| cut -f1 -d" ") quiet splash ---'"'  > /mnt/a/boot/refind_linux.conf
-echo '"'Boot with logging'"'  '"'nvidia-drm.modeset=1 root=UUID=$(blkid -s UUID -o value $(df /mnt/a | grep "$MOUNTPOINT\$"| cut -f1 -d" ") ---'"'  >>  /mnt/a/boot/refind_linux.conf
-echo '"'Boot with safe graphics'"'  '"'nvidia-drm.modeset=1 root=UUID=$(blkid -s UUID -o value $(df /mnt/a | grep "$MOUNTPOINT\$"| cut -f1 -d" ") nomodeset ---'"'  >>  /mnt/a/boot/refind_linux.conf
+echo '"'Boot with standard options'"'  '"'nvidia-drm.modeset=1 root=UUID=$(blkid -s UUID -o value $(df /mnt/a | grep "$MOUNTPOINT\$"| cut -f1 -d" ")) quiet splash ---'"'  > /mnt/a/boot/refind_linux.conf
+echo '"'Boot with logging'"'  '"'nvidia-drm.modeset=1 root=UUID=$(blkid -s UUID -o value $(df /mnt/a | grep "$MOUNTPOINT\$"| cut -f1 -d" ")) ---'"'  >>  /mnt/a/boot/refind_linux.conf
+echo '"'Boot with safe graphics'"'  '"'nvidia-drm.modeset=1 root=UUID=$(blkid -s UUID -o value $(df /mnt/a | grep "$MOUNTPOINT\$"| cut -f1 -d" ")) nomodeset ---'"'  >>  /mnt/a/boot/refind_linux.conf
 """
 
 _CRYPTTAB_SETUP_FILE = """#!/usr/bin/bash
