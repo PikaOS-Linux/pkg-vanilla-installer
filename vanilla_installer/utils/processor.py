@@ -333,7 +333,7 @@ class Processor:
                     "mount --rbind /run /mnt/a/run",
                     "mkdir -p /mnt/a/var/cache/apt/archives",
                     "cp -rvf /cdrom/pool/main/* /mnt/a/var/cache/apt/archives/",
-                    "genfstab -U /mnt/a > /mnt/a/etc/fstab",
+                    "genfstab -U /mnt/a/ > /mnt/a/etc/fstab",
                     "cat /mnt/a/etc/fstab | grep -v zram > /mnt/a/etc/fstab",
                 ],
             )
