@@ -388,6 +388,7 @@ class Processor:
                     "echo '[daemon]\nAutomaticLogin=pikaos\nAutomaticLoginEnable=True' >> /etc/gdm3/custom.conf",
                     "echo '[Autologin]\nUser=pikaos\nSession=plasma' > /etc/sddm.conf.d/autologin.conf",
                     "mkdir -p /home/pikaos/.config/dconf",
+                    "cp -rvf /etc/skel/.* /home/pikaos/"
                     "chmod 700 /home/pikaos/.config/dconf",
                 ],
                 chroot=True,
