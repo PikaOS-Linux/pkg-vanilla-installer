@@ -6,8 +6,8 @@
     "images": {
     		"default": "/cdrom/casper/filesystem.squashfs"
     },
-    "default_root_size": 12288,
-    "min_disk_size": 28680,
+    "default_root_size": 35000,
+    "min_disk_size": 45000,
     "tour": {
         "welcome": {
             "resource": "/org/vanillaos/Installer/assets/welcome.svg",
