@@ -28,6 +28,7 @@ logger = logging.getLogger("Installer::Processor")
 
 _REFIND_SETUP_FILE = """#!/usr/bin/bash
 rm -rfv /mnt/a/boot/*arch*
+echo "KEYMAP=$(cat /mnt/a/etc/vconsole.conf | grep XKBLAYOUT | cut -d"=" -f2)" >> /mnt/a/etc/vconsole.conf 
 /usr/lib/pika/pikainstall/partition-helper.sh flag /mnt/a/boot/efi bls_boot on
 touch /mnt/a/boot/refind_linux.conf
 echo '"'Boot with standard options'"'  '"'nvidia-drm.modeset=1 root=UUID=$(blkid "$(df -P -h -T /mnt/a | awk 'END{print $1}')" -s UUID -o value) quiet splash ---'"'  > /mnt/a/boot/refind_linux.conf
@@ -346,6 +347,30 @@ class Processor:
                 chroot=True,
             )
 
+        # Set hostname
+        recipe.add_postinstall_step("hostname", ["pikaos"], chroot=True)
+        for final in finals:
+            for key, value in final.items():
+                # Set timezone
+                if key == "timezone":
+                    recipe.add_postinstall_step(
+                        "timezone", [f"{value['region']}/{value['zone']}"], chroot=True
+                    )
+                # Set locale
+                if key == "language":
+                    recipe.add_postinstall_step("locale", [value], chroot=True)
+                # Set keyboard
+                if key == "keyboard":
+                    recipe.add_postinstall_step(
+                        "keyboard",
+                        [
+                            value["layout"],
+                            value["model"],
+                            value["variant"],
+                        ],
+                        chroot=True,
+                    )
+
             # if the system is encrypted create /etc/crypttab
             if encrypt:
                 with open("/tmp/albius-crypttab.sh", "w") as file:
@@ -432,7 +457,6 @@ class Processor:
                 recipe.add_postinstall_step(
                     "shell",
                     [
-                        f"echo KEYMAP={layout} >> /etc/vconsole.conf",
                         "refind-install",
                         "apt install -y /var/cache/apt/archives/pika-refind-theme*.deb",
                         "apt install -y /var/cache/apt/archives/booster*.deb",
@@ -463,30 +487,6 @@ class Processor:
                     late=True,
                     chroot=True,
                 )
-
-        # Set hostname
-        recipe.add_postinstall_step("hostname", ["pikaos"], chroot=True)
-        for final in finals:
-            for key, value in final.items():
-                # Set timezone
-                if key == "timezone":
-                    recipe.add_postinstall_step(
-                        "timezone", [f"{value['region']}/{value['zone']}"], chroot=True
-                    )
-                # Set locale
-                if key == "language":
-                    recipe.add_postinstall_step("locale", [value], chroot=True)
-                # Set keyboard
-                if key == "keyboard":
-                    recipe.add_postinstall_step(
-                        "keyboard",
-                        [
-                            value["layout"],
-                            value["model"],
-                            value["variant"],
-                        ],
-                        chroot=True,
-                    )
 
         # Set the default user as the owned of it's home directory
         recipe.add_postinstall_step(
