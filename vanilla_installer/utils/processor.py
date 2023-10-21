@@ -408,7 +408,7 @@ class Processor:
             # Install Refind if target is UEFI, Install grub-pc if target is BIOS
             # Run `grub-install` with the boot partition as target
             if Systeminfo.is_uefi():
-                albius_refind_file = open("/tmp/albius-refind_linux.sh", "w") as file:
+                with albius_refind_file = open("/tmp/albius-refind_linux.sh", "w") as file:
                 albius_refind_file.write(albius_refind_file)
                 recipe.add_postinstall_step(
                     "shell",
