@@ -416,32 +416,7 @@ class Processor:
 
             # Install Refind if target is UEFI, Install grub-pc if target is BIOS
             # Run `grub-install` with the boot partition as target
-            if encrypt and Systeminfo.is_uefi():
-                with open("/tmp/albius-refind_linux.sh", "w+") as f:
-                    f.write(_REFIND_SETUP_FILE_CRYPT)
-
-                recipe.add_postinstall_step(
-                    "shell",
-                    [
-                        "chmod +x /tmp/albius-refind_linux.sh",
-                        "/tmp/albius-refind_linux.sh",
-                    ],
-                    late=True,
-                )
-                recipe.add_postinstall_step(
-                    "shell",
-                    [
-                        "refind-install",
-                        f"echo"
-                        "apt install -y /var/cache/apt/archives/pika-refind-theme*.deb",
-                        "apt install -y /var/cache/apt/archives/booster*.deb",
-                        "apt remove casper vanilla-installer -y",
-                        "apt autoremove -y",
-                    ],
-                    late=True,
-                    chroot=True,
-                )
-            elif not encrypt and Systeminfo.is_uefi():
+            if Systeminfo.is_uefi():
                 with open("/tmp/albius-refind_linux.sh", "w+") as f:
                     f.write(_REFIND_SETUP_FILE)
 
