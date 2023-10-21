@@ -339,7 +339,7 @@ class Processor:
                 "shell",
                 [
                     "touch /etc/fstab",
-                    "genfstab -U /mnt/a/ | grep -v zram  > /etc/fstab",
+                    "genfstab -U / | grep -v zram  > /etc/fstab",
                     "mount -av",
                 ],
                 chroot=True,
