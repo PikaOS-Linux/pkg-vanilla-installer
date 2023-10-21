@@ -23,12 +23,12 @@ msgstr ""
 "X-Generator: Weblate 4.18-dev\n"
 
 #: data/org.vanillaos.Installer.desktop.in:3 vanilla_installer/gtk/window.ui:8
-msgid "Vanilla OS Installer"
-msgstr "Installasi Vanilla OS"
+msgid "PikaOS Installer"
+msgstr "Installasi PikaOS"
 
 #: data/org.vanillaos.Installer.appdata.xml.in:7
-msgid "Tweak your Vanilla OS installation."
-msgstr "Sesuaikan instalasi Vanilla OS mu."
+msgid "Tweak your PikaOS installation."
+msgstr "Sesuaikan instalasi PikaOS mu."
 
 #: data/org.vanillaos.Installer.appdata.xml.in:10
 msgid "No description"
@@ -47,8 +47,8 @@ msgid "The following changes will be made to your system:"
 msgstr "Perubahan berikut akan di buat pada sistem anda:"
 
 #: vanilla_installer/gtk/confirm.ui:28
-msgid "Install Vanilla OS"
-msgstr "Install Vanilla OS"
+msgid "Install PikaOS"
+msgstr "Install PikaOS"
 
 #: vanilla_installer/gtk/default-disk.ui:19
 #: vanilla_installer/gtk/default-encryption.ui:18
@@ -69,7 +69,7 @@ msgstr "Konfirmasi Instalasi"
 
 #: vanilla_installer/gtk/default-disk.ui:30
 msgid ""
-"Select the disk where you want to install Vanilla OS. Alternatively, you can "
+"Select the disk where you want to install PikaOS. Alternatively, you can "
 "select one or more disks to configure manually."
 msgstr ""
 
@@ -93,7 +93,7 @@ msgstr ""
 
 #: vanilla_installer/gtk/default-encryption.ui:29
 msgid ""
-"Vanilla OS provides full-disk encryption through LUKS2 to protect your "
+"PikaOS provides full-disk encryption through LUKS2 to protect your "
 "personal information in case your device gets stolen."
 msgstr ""
 
@@ -162,7 +162,7 @@ msgstr ""
 
 #: vanilla_installer/gtk/default-nvidia.ui:78
 msgid ""
-"A proprietary driver has private code that neither Vanilla OS nor Debian "
+"A proprietary driver has private code that neither PikaOS nor Debian "
 "developers can review.\n"
 "\n"
 "Security and other updates are dependent on the driver vendor."
@@ -222,9 +222,9 @@ msgstr "Nama Pengguna"
 
 #: vanilla_installer/gtk/default-welcome.ui:12
 #, fuzzy
-#| msgid "Try Vanilla OS"
-msgid "Welcome to Vanilla OS!"
-msgstr "Coba Vanilla OS"
+#| msgid "Try PikaOS"
+msgid "Welcome to PikaOS!"
+msgstr "Coba PikaOS"
 
 #: vanilla_installer/gtk/default-welcome.ui:19
 #, fuzzy
@@ -312,8 +312,8 @@ msgstr "Buku Panduan"
 
 #: vanilla_installer/gtk/dialog-recovery.ui:61
 #, fuzzy
-#| msgid "Read the Vanilla OS Handbook."
-msgid "Read the Vanilla OS Handbook"
+#| msgid "Read the PikaOS Handbook."
+msgid "Read the PikaOS Handbook"
 msgstr "Baca Buku Panduan OS Vanilla."
 
 #: vanilla_installer/gtk/dialog-recovery.ui:77
@@ -331,7 +331,7 @@ msgid "All done!"
 msgstr "Selesai!"
 
 #: vanilla_installer/gtk/done.ui:13
-msgid "Restart your device to enjoy your Vanilla OS experience"
+msgid "Restart your device to enjoy your PikaOS experience"
 msgstr ""
 "Mulai kembali perangkat Anda untuk menikmati pengalaman menggunakan Vanilla "
 "OS"
@@ -379,10 +379,10 @@ msgstr "Partisi Boot"
 #: vanilla_installer/gtk/widget-partition.ui:30
 msgid ""
 "The partition to mount under “/boot”. This directory stores files for "
-"booting in Vanilla OS."
+"booting in PikaOS."
 msgstr ""
 "Partisi yang akan dipasang pada \"/boot\". Direktori ini menyimpan file "
-"untuk booting kedalam Vanilla OS."
+"untuk booting kedalam PikaOS."
 
 #: vanilla_installer/gtk/widget-partition.ui:33
 #: vanilla_installer/gtk/widget-partition.ui:54
@@ -456,10 +456,10 @@ msgstr ""
 
 #: vanilla_installer/gtk/widget-partition.ui:106
 msgid ""
-"Vanilla OS uses an A/B partition system managed by ABRoot,\n"
+"PikaOS uses an A/B partition system managed by ABRoot,\n"
 "which switches between two root partitions between updates."
 msgstr ""
-"Vanilla OS menggunakan sistem partisi A/B yang dikelola oleh ABRoot,\n"
+"PikaOS menggunakan sistem partisi A/B yang dikelola oleh ABRoot,\n"
 "yang beralih di antara dua partisi root di antara pembaruan."
 
 #: vanilla_installer/gtk/widget-partition.ui:150
@@ -499,10 +499,10 @@ msgstr "Partisi Swap"
 #: vanilla_installer/gtk/widget-partition.ui:187
 msgid ""
 "Swap acts as a virtual extension of your RAM and enables hibernation. "
-"Vanilla OS already uses zram to provide swapping at no storage cost."
+"PikaOS already uses zram to provide swapping at no storage cost."
 msgstr ""
 "Swap bertindak sebagai tambahan virtual untuk RAM Anda dan memungkinkan "
-"hibernasi. Vanilla OS sudah menggunakan zram untuk menyediakan swap tanpa "
+"hibernasi. PikaOS sudah menggunakan zram untuk menyediakan swap tanpa "
 "biaya penyimpanan."
 
 #: vanilla_installer/gtk/widget-partition.ui:191
@@ -688,14 +688,14 @@ msgstr "Silakan hubungi pengembang distro."
 #~ msgid "page-changed"
 #~ msgstr "halaman berubah"
 
-#~ msgid "Vanilla OS Recovery"
-#~ msgstr "Pemulihan Vanilla OS"
+#~ msgid "PikaOS Recovery"
+#~ msgstr "Pemulihan PikaOS"
 
 #~ msgid "Select a Disk"
 #~ msgstr "Pilih sebuah disk"
 
-#~ msgid "Select the disk where you want to install Vanilla OS"
-#~ msgstr "Pilih disk untuk instalasi Vanilla OS"
+#~ msgid "Select the disk where you want to install PikaOS"
+#~ msgstr "Pilih disk untuk instalasi PikaOS"
 
 #~ msgid "Configure"
 #~ msgstr "Konfigurasi"
@@ -703,8 +703,8 @@ msgstr "Silakan hubungi pengembang distro."
 #~ msgid "Disk Allocation"
 #~ msgstr "Alokasi Disk"
 
-#~ msgid "Choose how to install Vanilla OS on your drive."
-#~ msgstr "Pilih cara menginstal Vanilla OS pada drive Anda."
+#~ msgid "Choose how to install PikaOS on your drive."
+#~ msgstr "Pilih cara menginstal PikaOS pada drive Anda."
 
 #~ msgid "This will erase all data on the disk."
 #~ msgstr "Ini akan menghapus seluruh data pada penyimpanan."

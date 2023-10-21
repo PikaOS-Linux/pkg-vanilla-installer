@@ -19,12 +19,12 @@ msgstr ""
 "X-Generator: Weblate 5.0-dev\n"
 
 #: data/org.vanillaos.Installer.desktop.in:3 vanilla_installer/gtk/window.ui:8
-msgid "Vanilla OS Installer"
-msgstr "Vanilla OS-ის დაყენების პროგრამა"
+msgid "PikaOS Installer"
+msgstr "PikaOS-ის დაყენების პროგრამა"
 
 #: data/org.vanillaos.Installer.appdata.xml.in:7
-msgid "Tweak your Vanilla OS installation."
-msgstr "მოირგეთ თქვენი Vanilla OS."
+msgid "Tweak your PikaOS installation."
+msgstr "მოირგეთ თქვენი PikaOS."
 
 #: data/org.vanillaos.Installer.appdata.xml.in:10
 msgid "No description"
@@ -43,8 +43,8 @@ msgid "The following changes will be made to your system:"
 msgstr "თქვენს სისტემაში განხორციელდება შემდეგი ცვლილებები:"
 
 #: vanilla_installer/gtk/confirm.ui:28
-msgid "Install Vanilla OS"
-msgstr "Vanilla OS-ის დაყენება"
+msgid "Install PikaOS"
+msgstr "PikaOS-ის დაყენება"
 
 #: vanilla_installer/gtk/default-disk.ui:19
 #: vanilla_installer/gtk/default-encryption.ui:18
@@ -65,7 +65,7 @@ msgstr "დაყენების დადასტურება"
 
 #: vanilla_installer/gtk/default-disk.ui:30
 msgid ""
-"Select the disk where you want to install Vanilla OS. Alternatively, you can "
+"Select the disk where you want to install PikaOS. Alternatively, you can "
 "select one or more disks to configure manually."
 msgstr ""
 
@@ -89,7 +89,7 @@ msgstr ""
 
 #: vanilla_installer/gtk/default-encryption.ui:29
 msgid ""
-"Vanilla OS provides full-disk encryption through LUKS2 to protect your "
+"PikaOS provides full-disk encryption through LUKS2 to protect your "
 "personal information in case your device gets stolen."
 msgstr ""
 
@@ -158,7 +158,7 @@ msgstr ""
 
 #: vanilla_installer/gtk/default-nvidia.ui:78
 msgid ""
-"A proprietary driver has private code that neither Vanilla OS nor Debian "
+"A proprietary driver has private code that neither PikaOS nor Debian "
 "developers can review.\n"
 "\n"
 "Security and other updates are dependent on the driver vendor."
@@ -218,9 +218,9 @@ msgstr "მომხმარებლის სახელი"
 
 #: vanilla_installer/gtk/default-welcome.ui:12
 #, fuzzy
-#| msgid "Install Vanilla OS"
-msgid "Welcome to Vanilla OS!"
-msgstr "Vanilla OS-ის დაყენება"
+#| msgid "Install PikaOS"
+msgid "Welcome to PikaOS!"
+msgstr "PikaOS-ის დაყენება"
 
 #: vanilla_installer/gtk/default-welcome.ui:19
 #, fuzzy
@@ -308,9 +308,9 @@ msgstr "სახელმძღვანელო"
 
 #: vanilla_installer/gtk/dialog-recovery.ui:61
 #, fuzzy
-#| msgid "Read the Vanilla OS Handbook."
-msgid "Read the Vanilla OS Handbook"
-msgstr "წაიკითხეთ Vanilla OS-ის სახელმძღვანელო."
+#| msgid "Read the PikaOS Handbook."
+msgid "Read the PikaOS Handbook"
+msgstr "წაიკითხეთ PikaOS-ის სახელმძღვანელო."
 
 #: vanilla_installer/gtk/dialog-recovery.ui:77
 msgid "Web Browser"
@@ -327,8 +327,8 @@ msgid "All done!"
 msgstr "ყველაფერი მზადაა!"
 
 #: vanilla_installer/gtk/done.ui:13
-msgid "Restart your device to enjoy your Vanilla OS experience"
-msgstr "Vanilla OS-თან მუშაობის დასაწყებად გადატვირთეთ მოწყობილობა"
+msgid "Restart your device to enjoy your PikaOS experience"
+msgstr "PikaOS-თან მუშაობის დასაწყებად გადატვირთეთ მოწყობილობა"
 
 #: vanilla_installer/gtk/done.ui:23
 msgid "Show Log"
@@ -373,9 +373,9 @@ msgstr "ჩამტვირთავი დანაყოფები"
 #: vanilla_installer/gtk/widget-partition.ui:30
 msgid ""
 "The partition to mount under “/boot”. This directory stores files for "
-"booting in Vanilla OS."
+"booting in PikaOS."
 msgstr ""
-"\"/boot\"-ზე მიმაგრებული დანაყოფი. ეს საქაღალდე Vanilla OS-ის ჩატვირთვისთვის "
+"\"/boot\"-ზე მიმაგრებული დანაყოფი. ეს საქაღალდე PikaOS-ის ჩატვირთვისთვის "
 "საჭირო ფაილებს შეიცავს."
 
 #: vanilla_installer/gtk/widget-partition.ui:33
@@ -450,10 +450,10 @@ msgstr ""
 
 #: vanilla_installer/gtk/widget-partition.ui:106
 msgid ""
-"Vanilla OS uses an A/B partition system managed by ABRoot,\n"
+"PikaOS uses an A/B partition system managed by ABRoot,\n"
 "which switches between two root partitions between updates."
 msgstr ""
-"Vanilla OS-ი ABRoot-ის მიერ მართულ A/B დანაყოფების სისტემას იყენებს,\n"
+"PikaOS-ი ABRoot-ის მიერ მართულ A/B დანაყოფების სისტემას იყენებს,\n"
 "რომელიც განახლებებს შორის 2 root დანაყოფს შორის გადართვას უზრუნველყოფს."
 
 #: vanilla_installer/gtk/widget-partition.ui:150
@@ -493,10 +493,10 @@ msgstr "სვოპის დანაყოფი"
 #: vanilla_installer/gtk/widget-partition.ui:187
 msgid ""
 "Swap acts as a virtual extension of your RAM and enables hibernation. "
-"Vanilla OS already uses zram to provide swapping at no storage cost."
+"PikaOS already uses zram to provide swapping at no storage cost."
 msgstr ""
 "სვოპი თქვენი RAM-ის ვირტუალური გაფართოებასავით იქცევა და პროგრამული ძილის "
-"საშუალებას გაძლევთ. Vanilla OS, სვოპის საცავის გარეშე გამოსაყენებლად, ZRAM-ს "
+"საშუალებას გაძლევთ. PikaOS, სვოპის საცავის გარეშე გამოსაყენებლად, ZRAM-ს "
 "იყენებს."
 
 #: vanilla_installer/gtk/widget-partition.ui:191
@@ -683,14 +683,14 @@ msgstr "დაუკავშირდით დისტრიბუტივ�
 #~ msgid "page-changed"
 #~ msgstr "გვერდი-შეიცვალა"
 
-#~ msgid "Vanilla OS Recovery"
-#~ msgstr "Vanilla OS-ის აღდგენა"
+#~ msgid "PikaOS Recovery"
+#~ msgstr "PikaOS-ის აღდგენა"
 
 #~ msgid "Select a Disk"
 #~ msgstr "აირჩიეთ დისკი"
 
-#~ msgid "Select the disk where you want to install Vanilla OS"
-#~ msgstr "აირჩიეთ დისკი, სადაც გნებავთ, Vanilla OS-ი დააყენოთ"
+#~ msgid "Select the disk where you want to install PikaOS"
+#~ msgstr "აირჩიეთ დისკი, სადაც გნებავთ, PikaOS-ი დააყენოთ"
 
 #~ msgid "Configure"
 #~ msgstr "მორგება"
@@ -698,8 +698,8 @@ msgstr "დაუკავშირდით დისტრიბუტივ�
 #~ msgid "Disk Allocation"
 #~ msgstr "დისკის განაწილება"
 
-#~ msgid "Choose how to install Vanilla OS on your drive."
-#~ msgstr "აირჩიეთ, როგორ დავაყენოთ Vanilla OS-ი თქვენს დისკზე."
+#~ msgid "Choose how to install PikaOS on your drive."
+#~ msgstr "აირჩიეთ, როგორ დავაყენოთ PikaOS-ი თქვენს დისკზე."
 
 #~ msgid "This will erase all data on the disk."
 #~ msgstr "ეს დისკზე ყველა მონაცემს წაშლის."

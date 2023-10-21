@@ -75,7 +75,7 @@
                             </child>
                             <child>
                               <object class="GtkLabel">
-                                <property name="label" translatable="yes">A proprietary driver has private code that neither Vanilla OS nor Debian developers can review.
+                                <property name="label" translatable="yes">A proprietary driver has private code that neither PikaOS nor Debian developers can review.
 
 Security and other updates are dependent on the driver vendor.</property>
                                 <property name="wrap">true</property>

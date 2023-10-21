@@ -20,11 +20,11 @@ msgstr ""
 "X-Generator: Weblate 4.17-dev\n"
 
 #: data/org.vanillaos.Installer.desktop.in:3 vanilla_installer/gtk/window.ui:8
-msgid "Vanilla OS Installer"
+msgid "PikaOS Installer"
 msgstr "ভ্যানিলা ওএস ইনস্টলার"
 
 #: data/org.vanillaos.Installer.appdata.xml.in:7
-msgid "Tweak your Vanilla OS installation."
+msgid "Tweak your PikaOS installation."
 msgstr "আপনার ভ্যানিলা ওএস ইনস্টলেশনটি টুইক করুন।"
 
 #: data/org.vanillaos.Installer.appdata.xml.in:10
@@ -44,7 +44,7 @@ msgid "The following changes will be made to your system:"
 msgstr "আপনার সিস্টেমে নিম্নলিখিত পরিবর্তনগুলি করা হবে:"
 
 #: vanilla_installer/gtk/confirm.ui:28
-msgid "Install Vanilla OS"
+msgid "Install PikaOS"
 msgstr "ভ্যানিলা ওএস ইনস্টল করুন"
 
 #: vanilla_installer/gtk/default-disk.ui:19
@@ -66,7 +66,7 @@ msgstr "ইনস্টলেশন নিশ্চিত করুন"
 
 #: vanilla_installer/gtk/default-disk.ui:30
 msgid ""
-"Select the disk where you want to install Vanilla OS. Alternatively, you can "
+"Select the disk where you want to install PikaOS. Alternatively, you can "
 "select one or more disks to configure manually."
 msgstr ""
 
@@ -90,7 +90,7 @@ msgstr ""
 
 #: vanilla_installer/gtk/default-encryption.ui:29
 msgid ""
-"Vanilla OS provides full-disk encryption through LUKS2 to protect your "
+"PikaOS provides full-disk encryption through LUKS2 to protect your "
 "personal information in case your device gets stolen."
 msgstr ""
 
@@ -159,7 +159,7 @@ msgstr ""
 
 #: vanilla_installer/gtk/default-nvidia.ui:78
 msgid ""
-"A proprietary driver has private code that neither Vanilla OS nor Debian "
+"A proprietary driver has private code that neither PikaOS nor Debian "
 "developers can review.\n"
 "\n"
 "Security and other updates are dependent on the driver vendor."
@@ -219,8 +219,8 @@ msgstr "ব্যবহারকারীর নাম"
 
 #: vanilla_installer/gtk/default-welcome.ui:12
 #, fuzzy
-#| msgid "Try Vanilla OS"
-msgid "Welcome to Vanilla OS!"
+#| msgid "Try PikaOS"
+msgid "Welcome to PikaOS!"
 msgstr "ভ্যানিলা ওএস ব্যবহার করে দেখুন"
 
 #: vanilla_installer/gtk/default-welcome.ui:19
@@ -307,8 +307,8 @@ msgstr "হ্যান্ডবুক"
 
 #: vanilla_installer/gtk/dialog-recovery.ui:61
 #, fuzzy
-#| msgid "Read the Vanilla OS Handbook."
-msgid "Read the Vanilla OS Handbook"
+#| msgid "Read the PikaOS Handbook."
+msgid "Read the PikaOS Handbook"
 msgstr "ভ্যানিলা ওএস হ্যান্ডবুক পড়ুন।"
 
 #: vanilla_installer/gtk/dialog-recovery.ui:77
@@ -326,7 +326,7 @@ msgid "All done!"
 msgstr "সব শেষ!"
 
 #: vanilla_installer/gtk/done.ui:13
-msgid "Restart your device to enjoy your Vanilla OS experience"
+msgid "Restart your device to enjoy your PikaOS experience"
 msgstr "আপনার ভ্যানিলা ওএস অভিজ্ঞতা উপভোগ করতে আপনার ডিভাইস পুনরায় চালু করুন"
 
 #: vanilla_installer/gtk/done.ui:23
@@ -372,7 +372,7 @@ msgstr "বুট পার্টিশন (বিভাজন)"
 #: vanilla_installer/gtk/widget-partition.ui:30
 msgid ""
 "The partition to mount under “/boot”. This directory stores files for "
-"booting in Vanilla OS."
+"booting in PikaOS."
 msgstr ""
 "পার্টিশন (বিভাজন) টি \"/boot\" এর অধীনে মাউন্ট (বাঁধাই করা) হবে। এই ডিরেক্টরিটি "
 "ভ্যানিলা ওএসে বুট করার জন্য ফাইলগুলি সঞ্চয় করে।"
@@ -450,7 +450,7 @@ msgstr ""
 
 #: vanilla_installer/gtk/widget-partition.ui:106
 msgid ""
-"Vanilla OS uses an A/B partition system managed by ABRoot,\n"
+"PikaOS uses an A/B partition system managed by ABRoot,\n"
 "which switches between two root partitions between updates."
 msgstr ""
 "ভ্যানিলা ওএস ABRoot দ্বারা পরিচালিত একটি A/B পার্টিশন সিস্টেম ব্যবহার করে,\n"
@@ -494,7 +494,7 @@ msgstr "Swap পার্টিশন"
 #: vanilla_installer/gtk/widget-partition.ui:187
 msgid ""
 "Swap acts as a virtual extension of your RAM and enables hibernation. "
-"Vanilla OS already uses zram to provide swapping at no storage cost."
+"PikaOS already uses zram to provide swapping at no storage cost."
 msgstr ""
 "সোয়াপ আপনার RAM এর ভার্চুয়াল এক্সটেনশন হিসাবে কাজ করে এবং হাইবারনেশনের সক্ষমতা "
 "প্রদান করে। ভ্যানিলা ওএস ইতিমধ্যেই কোন স্টোরেজ খরচ ছাড়াই সোয়াপিং ক্ষমতা প্রদান "
@@ -683,13 +683,13 @@ msgstr "ডিস্ট্রিবিউশন ডেভেলপারদে�
 #~ msgid "page-changed"
 #~ msgstr "পৃষ্ঠা-পরিবর্তিত"
 
-#~ msgid "Vanilla OS Recovery"
+#~ msgid "PikaOS Recovery"
 #~ msgstr "ভ্যানিলা ওএস পুনরুদ্ধার"
 
 #~ msgid "Select a Disk"
 #~ msgstr "একটি ডিস্ক নির্বাচন করুন"
 
-#~ msgid "Select the disk where you want to install Vanilla OS"
+#~ msgid "Select the disk where you want to install PikaOS"
 #~ msgstr "যেখানে ভ্যানিলা ওএস ইনস্টল করতে চান ঐ ডিস্ক নির্বাচন করুন"
 
 #~ msgid "Configure"
@@ -698,7 +698,7 @@ msgstr "ডিস্ট্রিবিউশন ডেভেলপারদে�
 #~ msgid "Disk Allocation"
 #~ msgstr "ডিস্ক বরাদ্দ"
 
-#~ msgid "Choose how to install Vanilla OS on your drive."
+#~ msgid "Choose how to install PikaOS on your drive."
 #~ msgstr "আপনার ড্রাইভে ভ্যানিলা ওএস কিভাবে ইনস্টল করবেন তা নির্বাচন করুন।"
 
 #~ msgid "This will erase all data on the disk."

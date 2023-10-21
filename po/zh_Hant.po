@@ -23,12 +23,12 @@ msgstr ""
 "X-Generator: Weblate 5.0.1-dev\n"
 
 #: data/org.vanillaos.Installer.desktop.in:3 vanilla_installer/gtk/window.ui:8
-msgid "Vanilla OS Installer"
-msgstr "Vanilla OS 安裝程式"
+msgid "PikaOS Installer"
+msgstr "PikaOS 安裝程式"
 
 #: data/org.vanillaos.Installer.appdata.xml.in:7
-msgid "Tweak your Vanilla OS installation."
-msgstr "自訂您的 Vanilla OS。"
+msgid "Tweak your PikaOS installation."
+msgstr "自訂您的 PikaOS。"
 
 #: data/org.vanillaos.Installer.appdata.xml.in:10
 msgid "No description"
@@ -48,8 +48,8 @@ msgstr "將對系統進行以下變更："
 
 #: vanilla_installer/gtk/confirm.ui:28
 #: vanilla_installer/gtk/default-welcome.ui:38
-msgid "Install Vanilla OS"
-msgstr "安裝 Vanilla OS"
+msgid "Install PikaOS"
+msgstr "安裝 PikaOS"
 
 #: vanilla_installer/gtk/default-disk.ui:19
 #: vanilla_installer/gtk/default-encryption.ui:18
@@ -69,9 +69,9 @@ msgstr "安裝位置"
 
 #: vanilla_installer/gtk/default-disk.ui:30
 msgid ""
-"Select the disk where you want to install Vanilla OS. Alternatively, you can "
+"Select the disk where you want to install PikaOS. Alternatively, you can "
 "select one or more disks to configure manually."
-msgstr "選取要安裝 Vanilla OS 的磁碟。您也可以選取一個或多個磁碟進行手動設定。"
+msgstr "選取要安裝 PikaOS 的磁碟。您也可以選取一個或多個磁碟進行手動設定。"
 
 #: vanilla_installer/gtk/default-disk.ui:44
 msgid "Use entire disk"
@@ -87,10 +87,10 @@ msgstr "裝置加密"
 
 #: vanilla_installer/gtk/default-encryption.ui:29
 msgid ""
-"Vanilla OS provides full-disk encryption through LUKS2 to protect your "
+"PikaOS provides full-disk encryption through LUKS2 to protect your "
 "personal information in case your device gets stolen."
 msgstr ""
-"Vanilla OS 透過 LUKS2 提供完整磁碟加密，可在裝置丟失時保護您的個人資訊。"
+"PikaOS 透過 LUKS2 提供完整磁碟加密，可在裝置丟失時保護您的個人資訊。"
 
 #: vanilla_installer/gtk/default-encryption.ui:36
 msgid "Encrypt device"
@@ -162,12 +162,12 @@ msgstr "關於專有驅動程式"
 
 #: vanilla_installer/gtk/default-nvidia.ui:78
 msgid ""
-"A proprietary driver has private code that neither Vanilla OS nor Debian "
+"A proprietary driver has private code that neither PikaOS nor Debian "
 "developers can review.\n"
 "\n"
 "Security and other updates are dependent on the driver vendor."
 msgstr ""
-"專有驅動程式含有私有程式碼，Vanilla OS 及 Debian 開發人員都無法查看這些程式"
+"專有驅動程式含有私有程式碼，PikaOS 及 Debian 開發人員都無法查看這些程式"
 "碼。\n"
 "\n"
 "安全性及其他更新取決於提供驅動程式的廠商。"
@@ -284,8 +284,8 @@ msgid "Handbook"
 msgstr "手冊"
 
 #: vanilla_installer/gtk/dialog-recovery.ui:61
-msgid "Read the Vanilla OS Handbook"
-msgstr "閱讀 Vanilla OS 的手冊"
+msgid "Read the PikaOS Handbook"
+msgstr "閱讀 PikaOS 的手冊"
 
 #: vanilla_installer/gtk/dialog-recovery.ui:77
 msgid "Web Browser"
@@ -300,8 +300,8 @@ msgid "All done!"
 msgstr "大功告成！"
 
 #: vanilla_installer/gtk/done.ui:13
-msgid "Restart your device to enjoy your Vanilla OS experience"
-msgstr "裝置重新開機，開始您的 Vanilla OS 之旅"
+msgid "Restart your device to enjoy your PikaOS experience"
+msgstr "裝置重新開機，開始您的 PikaOS 之旅"
 
 #: vanilla_installer/gtk/done.ui:23
 msgid "Show Log"
@@ -346,8 +346,8 @@ msgstr "開機磁碟分割"
 #: vanilla_installer/gtk/widget-partition.ui:30
 msgid ""
 "The partition to mount under “/boot”. This directory stores files for "
-"booting in Vanilla OS."
-msgstr "要掛接到「/boot」的分割區。這個目錄中儲存的檔案將用於啟動 Vanilla OS。"
+"booting in PikaOS."
+msgstr "要掛接到「/boot」的分割區。這個目錄中儲存的檔案將用於啟動 PikaOS。"
 
 #: vanilla_installer/gtk/widget-partition.ui:33
 #: vanilla_installer/gtk/widget-partition.ui:54
@@ -420,10 +420,10 @@ msgstr "要掛接到「/」的分割區。兩個分割區的大小必須相同�
 
 #: vanilla_installer/gtk/widget-partition.ui:106
 msgid ""
-"Vanilla OS uses an A/B partition system managed by ABRoot,\n"
+"PikaOS uses an A/B partition system managed by ABRoot,\n"
 "which switches between two root partitions between updates."
 msgstr ""
-"Vanilla OS 使用由 ABRoot 管理的 A/B 分割區系統， \n"
+"PikaOS 使用由 ABRoot 管理的 A/B 分割區系統， \n"
 " 每次更新會在兩個 Root 分割區之間切換。"
 
 #: vanilla_installer/gtk/widget-partition.ui:150
@@ -459,9 +459,9 @@ msgstr "交換分割區"
 #: vanilla_installer/gtk/widget-partition.ui:187
 msgid ""
 "Swap acts as a virtual extension of your RAM and enables hibernation. "
-"Vanilla OS already uses zram to provide swapping at no storage cost."
+"PikaOS already uses zram to provide swapping at no storage cost."
 msgstr ""
-"交換區是您 RAM 的虛擬擴充，並且可以啟用休眠。Vanilla OS 預設使用 zram 以提供"
+"交換區是您 RAM 的虛擬擴充，並且可以啟用休眠。PikaOS 預設使用 zram 以提供"
 "交換功能，無需消耗存儲空間。"
 
 #: vanilla_installer/gtk/widget-partition.ui:191
@@ -594,8 +594,8 @@ msgid "Search for language"
 msgstr "搜尋語言"
 
 #: vanilla_installer/gtk/default-welcome.ui:12
-msgid "Welcome to Vanilla OS!"
-msgstr "歡迎使用 Vanilla OS！"
+msgid "Welcome to PikaOS!"
+msgstr "歡迎使用 PikaOS！"
 
 #: vanilla_installer/gtk/default-welcome.ui:19
 msgid "Install"
@@ -681,14 +681,14 @@ msgstr "線纜已拔出"
 #~ msgid "page-changed"
 #~ msgstr "頁面變更"
 
-#~ msgid "Vanilla OS Recovery"
-#~ msgstr "Vanilla OS 修復程式"
+#~ msgid "PikaOS Recovery"
+#~ msgstr "PikaOS 修復程式"
 
 #~ msgid "Select a Disk"
 #~ msgstr "選取磁碟"
 
-#~ msgid "Select the disk where you want to install Vanilla OS"
-#~ msgstr "選取要安裝 Vanilla OS 的磁碟"
+#~ msgid "Select the disk where you want to install PikaOS"
+#~ msgstr "選取要安裝 PikaOS 的磁碟"
 
 #~ msgid "Configure"
 #~ msgstr "調配組態"
@@ -696,8 +696,8 @@ msgstr "線纜已拔出"
 #~ msgid "Disk Allocation"
 #~ msgstr "磁碟配置"
 
-#~ msgid "Choose how to install Vanilla OS on your drive."
-#~ msgstr "選取要安裝 Vanilla OS 的磁碟。"
+#~ msgid "Choose how to install PikaOS on your drive."
+#~ msgstr "選取要安裝 PikaOS 的磁碟。"
 
 #~ msgid "This will erase all data on the disk."
 #~ msgstr "這將清除磁碟上的所有資料。"
@@ -718,8 +718,8 @@ msgstr "線纜已拔出"
 #~ msgid "This is the only disk available and cannot be deselected!"
 #~ msgstr "這是唯一可用的磁碟，無法取消選取！"
 
-#~ msgid "Try Vanilla OS"
-#~ msgstr "試用 Vanilla OS"
+#~ msgid "Try PikaOS"
+#~ msgstr "試用 PikaOS"
 
 #~ msgid "Welcome"
 #~ msgstr "歡迎"

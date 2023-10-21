@@ -21,12 +21,12 @@ msgstr ""
 "X-Generator: Weblate 4.18.1\n"
 
 #: data/org.vanillaos.Installer.desktop.in:3 vanilla_installer/gtk/window.ui:8
-msgid "Vanilla OS Installer"
-msgstr "ตัวติดตั้ง Vanilla OS"
+msgid "PikaOS Installer"
+msgstr "ตัวติดตั้ง PikaOS"
 
 #: data/org.vanillaos.Installer.appdata.xml.in:7
-msgid "Tweak your Vanilla OS installation."
-msgstr "ปรับแต่งการติดตั้ง Vanilla OS ของคุณ"
+msgid "Tweak your PikaOS installation."
+msgstr "ปรับแต่งการติดตั้ง PikaOS ของคุณ"
 
 #: data/org.vanillaos.Installer.appdata.xml.in:10
 msgid "No description"
@@ -45,7 +45,7 @@ msgid "The following changes will be made to your system:"
 msgstr ""
 
 #: vanilla_installer/gtk/confirm.ui:28
-msgid "Install Vanilla OS"
+msgid "Install PikaOS"
 msgstr ""
 
 #: vanilla_installer/gtk/default-disk.ui:19
@@ -67,7 +67,7 @@ msgstr "กำลังติดตั้ง..."
 
 #: vanilla_installer/gtk/default-disk.ui:30
 msgid ""
-"Select the disk where you want to install Vanilla OS. Alternatively, you can "
+"Select the disk where you want to install PikaOS. Alternatively, you can "
 "select one or more disks to configure manually."
 msgstr ""
 
@@ -89,7 +89,7 @@ msgstr ""
 
 #: vanilla_installer/gtk/default-encryption.ui:29
 msgid ""
-"Vanilla OS provides full-disk encryption through LUKS2 to protect your "
+"PikaOS provides full-disk encryption through LUKS2 to protect your "
 "personal information in case your device gets stolen."
 msgstr ""
 
@@ -158,7 +158,7 @@ msgstr ""
 
 #: vanilla_installer/gtk/default-nvidia.ui:78
 msgid ""
-"A proprietary driver has private code that neither Vanilla OS nor Debian "
+"A proprietary driver has private code that neither PikaOS nor Debian "
 "developers can review.\n"
 "\n"
 "Security and other updates are dependent on the driver vendor."
@@ -217,7 +217,7 @@ msgid "Username"
 msgstr "ชื่อผู้ใช้"
 
 #: vanilla_installer/gtk/default-welcome.ui:12
-msgid "Welcome to Vanilla OS!"
+msgid "Welcome to PikaOS!"
 msgstr ""
 
 #: vanilla_installer/gtk/default-welcome.ui:19
@@ -299,7 +299,7 @@ msgid "Handbook"
 msgstr ""
 
 #: vanilla_installer/gtk/dialog-recovery.ui:61
-msgid "Read the Vanilla OS Handbook"
+msgid "Read the PikaOS Handbook"
 msgstr ""
 
 #: vanilla_installer/gtk/dialog-recovery.ui:77
@@ -315,7 +315,7 @@ msgid "All done!"
 msgstr ""
 
 #: vanilla_installer/gtk/done.ui:13
-msgid "Restart your device to enjoy your Vanilla OS experience"
+msgid "Restart your device to enjoy your PikaOS experience"
 msgstr ""
 
 #: vanilla_installer/gtk/done.ui:23
@@ -361,7 +361,7 @@ msgstr ""
 #: vanilla_installer/gtk/widget-partition.ui:30
 msgid ""
 "The partition to mount under “/boot”. This directory stores files for "
-"booting in Vanilla OS."
+"booting in PikaOS."
 msgstr ""
 
 #: vanilla_installer/gtk/widget-partition.ui:33
@@ -430,7 +430,7 @@ msgstr ""
 
 #: vanilla_installer/gtk/widget-partition.ui:106
 msgid ""
-"Vanilla OS uses an A/B partition system managed by ABRoot,\n"
+"PikaOS uses an A/B partition system managed by ABRoot,\n"
 "which switches between two root partitions between updates."
 msgstr ""
 
@@ -467,7 +467,7 @@ msgstr ""
 #: vanilla_installer/gtk/widget-partition.ui:187
 msgid ""
 "Swap acts as a virtual extension of your RAM and enables hibernation. "
-"Vanilla OS already uses zram to provide swapping at no storage cost."
+"PikaOS already uses zram to provide swapping at no storage cost."
 msgstr ""
 
 #: vanilla_installer/gtk/widget-partition.ui:191
@@ -645,22 +645,22 @@ msgstr "โปรดติดต่อผู้พัฒนาดิสทริ
 #~ msgstr "เลือกภาษาของคุณ"
 
 #, fuzzy
-#~ msgid "Vanilla OS Recovery"
-#~ msgstr "ตัวติดตั้ง Vanilla OS"
+#~ msgid "PikaOS Recovery"
+#~ msgstr "ตัวติดตั้ง PikaOS"
 
 #~ msgid "Select a Disk"
 #~ msgstr "เลือกดิสก์"
 
 #, fuzzy
-#~ msgid "Select the disk where you want to install Vanilla OS"
-#~ msgstr "เลือกดิสก์ที่จะติดตั้ง Vanilla OS ลงไป"
+#~ msgid "Select the disk where you want to install PikaOS"
+#~ msgstr "เลือกดิสก์ที่จะติดตั้ง PikaOS ลงไป"
 
 #~ msgid "Configure"
 #~ msgstr "กำหนดค่า"
 
 #, fuzzy
-#~ msgid "Choose how to install Vanilla OS on your drive."
-#~ msgstr "เลือกดิสก์ที่จะติดตั้ง Vanilla OS ลงไป"
+#~ msgid "Choose how to install PikaOS on your drive."
+#~ msgstr "เลือกดิสก์ที่จะติดตั้ง PikaOS ลงไป"
 
 #~ msgid "Welcome"
 #~ msgstr "ยินดีต้อนรับ"

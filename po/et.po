@@ -22,12 +22,12 @@ msgstr ""
 "X-Generator: Weblate 4.17-dev\n"
 
 #: data/org.vanillaos.Installer.desktop.in:3 vanilla_installer/gtk/window.ui:8
-msgid "Vanilla OS Installer"
-msgstr "Vanilla OS paigaldaja"
+msgid "PikaOS Installer"
+msgstr "PikaOS paigaldaja"
 
 #: data/org.vanillaos.Installer.appdata.xml.in:7
-msgid "Tweak your Vanilla OS installation."
-msgstr "Kohanda oma Vanilla OS-i paidalgust."
+msgid "Tweak your PikaOS installation."
+msgstr "Kohanda oma PikaOS-i paidalgust."
 
 #: data/org.vanillaos.Installer.appdata.xml.in:10
 msgid "No description"
@@ -46,8 +46,8 @@ msgid "The following changes will be made to your system:"
 msgstr "Sinu süsteemis tehakse järgmised muudatused:"
 
 #: vanilla_installer/gtk/confirm.ui:28
-msgid "Install Vanilla OS"
-msgstr "Paigalda Vanilla OS"
+msgid "Install PikaOS"
+msgstr "Paigalda PikaOS"
 
 #: vanilla_installer/gtk/default-disk.ui:19
 #: vanilla_installer/gtk/default-encryption.ui:18
@@ -68,7 +68,7 @@ msgstr "Kinnita paigaldamine"
 
 #: vanilla_installer/gtk/default-disk.ui:30
 msgid ""
-"Select the disk where you want to install Vanilla OS. Alternatively, you can "
+"Select the disk where you want to install PikaOS. Alternatively, you can "
 "select one or more disks to configure manually."
 msgstr ""
 
@@ -92,7 +92,7 @@ msgstr ""
 
 #: vanilla_installer/gtk/default-encryption.ui:29
 msgid ""
-"Vanilla OS provides full-disk encryption through LUKS2 to protect your "
+"PikaOS provides full-disk encryption through LUKS2 to protect your "
 "personal information in case your device gets stolen."
 msgstr ""
 
@@ -161,7 +161,7 @@ msgstr ""
 
 #: vanilla_installer/gtk/default-nvidia.ui:78
 msgid ""
-"A proprietary driver has private code that neither Vanilla OS nor Debian "
+"A proprietary driver has private code that neither PikaOS nor Debian "
 "developers can review.\n"
 "\n"
 "Security and other updates are dependent on the driver vendor."
@@ -221,9 +221,9 @@ msgstr "Kasutajanimi"
 
 #: vanilla_installer/gtk/default-welcome.ui:12
 #, fuzzy
-#| msgid "Try Vanilla OS"
-msgid "Welcome to Vanilla OS!"
-msgstr "Proovi Vanilla OS-i"
+#| msgid "Try PikaOS"
+msgid "Welcome to PikaOS!"
+msgstr "Proovi PikaOS-i"
 
 #: vanilla_installer/gtk/default-welcome.ui:19
 #, fuzzy
@@ -307,7 +307,7 @@ msgid "Handbook"
 msgstr ""
 
 #: vanilla_installer/gtk/dialog-recovery.ui:61
-msgid "Read the Vanilla OS Handbook"
+msgid "Read the PikaOS Handbook"
 msgstr ""
 
 #: vanilla_installer/gtk/dialog-recovery.ui:77
@@ -323,8 +323,8 @@ msgid "All done!"
 msgstr "Kõik tehtud!"
 
 #: vanilla_installer/gtk/done.ui:13
-msgid "Restart your device to enjoy your Vanilla OS experience"
-msgstr "Vanilla OS-i kogemuse nautimiseks taaskäivita seade"
+msgid "Restart your device to enjoy your PikaOS experience"
+msgstr "PikaOS-i kogemuse nautimiseks taaskäivita seade"
 
 #: vanilla_installer/gtk/done.ui:23
 msgid "Show Log"
@@ -369,10 +369,10 @@ msgstr "Käivituspartitsioon"
 #: vanilla_installer/gtk/widget-partition.ui:30
 msgid ""
 "The partition to mount under “/boot”. This directory stores files for "
-"booting in Vanilla OS."
+"booting in PikaOS."
 msgstr ""
 "Partitsioon, mis paigaldatakse \"/boot\" alla. Selles kaustas hoitakse "
-"Vanilla OS-i käivitamiseks vajalikke faile."
+"PikaOS-i käivitamiseks vajalikke faile."
 
 #: vanilla_installer/gtk/widget-partition.ui:33
 #: vanilla_installer/gtk/widget-partition.ui:54
@@ -447,10 +447,10 @@ msgstr ""
 
 #: vanilla_installer/gtk/widget-partition.ui:106
 msgid ""
-"Vanilla OS uses an A/B partition system managed by ABRoot,\n"
+"PikaOS uses an A/B partition system managed by ABRoot,\n"
 "which switches between two root partitions between updates."
 msgstr ""
-"Vanilla OS kasutab A/B partitsioonisüsteemi, mida haldab ABRoot,\n"
+"PikaOS kasutab A/B partitsioonisüsteemi, mida haldab ABRoot,\n"
 "mis lülitub värskenduste vahel kahe juurpartitsiooni vahel."
 
 #: vanilla_installer/gtk/widget-partition.ui:150
@@ -490,10 +490,10 @@ msgstr "Swap partitsioon"
 #: vanilla_installer/gtk/widget-partition.ui:187
 msgid ""
 "Swap acts as a virtual extension of your RAM and enables hibernation. "
-"Vanilla OS already uses zram to provide swapping at no storage cost."
+"PikaOS already uses zram to provide swapping at no storage cost."
 msgstr ""
 "Swap toimib arvuti töömälu virtuaalse laiendina ja võimaldab hibernatsiooni. "
-"Vanilla OS kasutab juba praegu zram'i, et pakkuda swap'i ilma salvestusruumi "
+"PikaOS kasutab juba praegu zram'i, et pakkuda swap'i ilma salvestusruumi "
 "kuluta."
 
 #: vanilla_installer/gtk/widget-partition.ui:191
@@ -680,14 +680,14 @@ msgstr "Palun võta ühendust distributsiooni arendajatega."
 #~ msgstr "leht-muudetud"
 
 #, fuzzy
-#~ msgid "Vanilla OS Recovery"
-#~ msgstr "Vanilla OS paigaldaja"
+#~ msgid "PikaOS Recovery"
+#~ msgstr "PikaOS paigaldaja"
 
 #~ msgid "Select a Disk"
 #~ msgstr "Vali ketas"
 
-#~ msgid "Select the disk where you want to install Vanilla OS"
-#~ msgstr "Vali ketas, kuhu soovid Vanilla OS-i paigaldada"
+#~ msgid "Select the disk where you want to install PikaOS"
+#~ msgstr "Vali ketas, kuhu soovid PikaOS-i paigaldada"
 
 #~ msgid "Configure"
 #~ msgstr "Konfigureeri"
@@ -695,8 +695,8 @@ msgstr "Palun võta ühendust distributsiooni arendajatega."
 #~ msgid "Disk Allocation"
 #~ msgstr "Ketta eraldamine"
 
-#~ msgid "Choose how to install Vanilla OS on your drive."
-#~ msgstr "Vali, kuidas paigaldada Vanilla OS oma kettale."
+#~ msgid "Choose how to install PikaOS on your drive."
+#~ msgstr "Vali, kuidas paigaldada PikaOS oma kettale."
 
 #~ msgid "This will erase all data on the disk."
 #~ msgstr "See kustutab kõik kettal olevad andmed."

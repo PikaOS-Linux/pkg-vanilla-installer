@@ -35,9 +35,9 @@ echo '"'Boot with safe graphics'"'  '"'nvidia-drm.modeset=1 root=UUID=$(blkid -s
 """
 
 _CRYPTTAB_SETUP_FILE = """#!/usr/bin/bash
-cat /mnt/a/etc/crypttab
 echo "crypt_root	UUID={ROOT_PART_UUID}	none	luks,discard" > /mnt/a/etc/crypttab
 echo "crypt_home	UUID={HOME_PART_UUID}	/keyfile.txt    	luks" >> /mnt/a/etc/crypttab
+cat /mnt/a/etc/crypttab
 touch /mnt/a/keyfile.txt
 openssl genrsa > /mnt/a/keyfile.txt
 echo "{LUKS_PASSWD}" | cryptsetup luksAddKey UUID={HOME_PART_UUID}	/mnt/a/keyfile.txt -

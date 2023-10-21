@@ -1,6 +1,6 @@
 <div align="center">
     <img src="data/icons/hicolor/scalable/apps/org.vanillaos.Installer.svg" height="64">
-    <h1>Vanilla OS Installer</h1>
+    <h1>PikaOS Installer</h1>
     <p>A frontend in GTK 4 and Libadwaita for Albius.</p>
     <hr />
     <a href="https://hosted.weblate.org/engage/vanilla-os/">

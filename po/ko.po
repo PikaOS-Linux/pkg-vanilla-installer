@@ -22,11 +22,11 @@ msgstr ""
 "X-Generator: Weblate 5.0-dev\n"
 
 #: data/org.vanillaos.Installer.desktop.in:3 vanilla_installer/gtk/window.ui:8
-msgid "Vanilla OS Installer"
+msgid "PikaOS Installer"
 msgstr "바닐라 OS 설치 프로그램"
 
 #: data/org.vanillaos.Installer.appdata.xml.in:7
-msgid "Tweak your Vanilla OS installation."
+msgid "Tweak your PikaOS installation."
 msgstr "사용자의 바닐라 OS 설치를 수정합니다."
 
 #: data/org.vanillaos.Installer.appdata.xml.in:10
@@ -46,7 +46,7 @@ msgid "The following changes will be made to your system:"
 msgstr "사용자의 시스템에 다음과 같은 변경사항이 적용됩니다:"
 
 #: vanilla_installer/gtk/confirm.ui:28
-msgid "Install Vanilla OS"
+msgid "Install PikaOS"
 msgstr "바닐라 OS 설치하기"
 
 #: vanilla_installer/gtk/default-disk.ui:19
@@ -68,7 +68,7 @@ msgstr "설치 확인하기"
 
 #: vanilla_installer/gtk/default-disk.ui:30
 msgid ""
-"Select the disk where you want to install Vanilla OS. Alternatively, you can "
+"Select the disk where you want to install PikaOS. Alternatively, you can "
 "select one or more disks to configure manually."
 msgstr ""
 
@@ -91,7 +91,7 @@ msgstr ""
 
 #: vanilla_installer/gtk/default-encryption.ui:29
 msgid ""
-"Vanilla OS provides full-disk encryption through LUKS2 to protect your "
+"PikaOS provides full-disk encryption through LUKS2 to protect your "
 "personal information in case your device gets stolen."
 msgstr ""
 
@@ -160,7 +160,7 @@ msgstr ""
 
 #: vanilla_installer/gtk/default-nvidia.ui:78
 msgid ""
-"A proprietary driver has private code that neither Vanilla OS nor Debian "
+"A proprietary driver has private code that neither PikaOS nor Debian "
 "developers can review.\n"
 "\n"
 "Security and other updates are dependent on the driver vendor."
@@ -220,8 +220,8 @@ msgstr "사용자이름"
 
 #: vanilla_installer/gtk/default-welcome.ui:12
 #, fuzzy
-#| msgid "Try Vanilla OS"
-msgid "Welcome to Vanilla OS!"
+#| msgid "Try PikaOS"
+msgid "Welcome to PikaOS!"
 msgstr "바닐라 OS 사용해보기"
 
 #: vanilla_installer/gtk/default-welcome.ui:19
@@ -303,7 +303,7 @@ msgid "Handbook"
 msgstr ""
 
 #: vanilla_installer/gtk/dialog-recovery.ui:61
-msgid "Read the Vanilla OS Handbook"
+msgid "Read the PikaOS Handbook"
 msgstr ""
 
 #: vanilla_installer/gtk/dialog-recovery.ui:77
@@ -319,7 +319,7 @@ msgid "All done!"
 msgstr "모두 완료되었습니다!"
 
 #: vanilla_installer/gtk/done.ui:13
-msgid "Restart your device to enjoy your Vanilla OS experience"
+msgid "Restart your device to enjoy your PikaOS experience"
 msgstr "사용자의 기기를 다시 시작하여 바닐라 OS 환경을 즐기십시오"
 
 #: vanilla_installer/gtk/done.ui:23
@@ -367,7 +367,7 @@ msgstr "파티션"
 #: vanilla_installer/gtk/widget-partition.ui:30
 msgid ""
 "The partition to mount under “/boot”. This directory stores files for "
-"booting in Vanilla OS."
+"booting in PikaOS."
 msgstr "\"/boot\" 파티션. 바닐라 OS 부팅 파일들을 위한 디렉토리 입니다."
 
 #: vanilla_installer/gtk/widget-partition.ui:33
@@ -440,7 +440,7 @@ msgstr ""
 
 #: vanilla_installer/gtk/widget-partition.ui:106
 msgid ""
-"Vanilla OS uses an A/B partition system managed by ABRoot,\n"
+"PikaOS uses an A/B partition system managed by ABRoot,\n"
 "which switches between two root partitions between updates."
 msgstr ""
 
@@ -479,7 +479,7 @@ msgstr "파티션"
 #: vanilla_installer/gtk/widget-partition.ui:187
 msgid ""
 "Swap acts as a virtual extension of your RAM and enables hibernation. "
-"Vanilla OS already uses zram to provide swapping at no storage cost."
+"PikaOS already uses zram to provide swapping at no storage cost."
 msgstr ""
 
 #: vanilla_installer/gtk/widget-partition.ui:191
@@ -657,14 +657,14 @@ msgstr "배포 개발자에게 문의하십시오."
 #~ msgstr "사용자의 언어 선택하기"
 
 #, fuzzy
-#~ msgid "Vanilla OS Recovery"
+#~ msgid "PikaOS Recovery"
 #~ msgstr "바닐라 OS 설치 프로그램"
 
 #~ msgid "Select a Disk"
 #~ msgstr "디스크 선택하기"
 
 #, fuzzy
-#~ msgid "Select the disk where you want to install Vanilla OS"
+#~ msgid "Select the disk where you want to install PikaOS"
 #~ msgstr "바닐라 OS를 설치할 디스크 선택하기"
 
 #~ msgid "Configure"
@@ -674,7 +674,7 @@ msgstr "배포 개발자에게 문의하십시오."
 #~ msgstr "디스크 할당"
 
 #, fuzzy
-#~ msgid "Choose how to install Vanilla OS on your drive."
+#~ msgid "Choose how to install PikaOS on your drive."
 #~ msgstr "바닐라 OS를 설치할 디스크 선택하기"
 
 #~ msgid "This will erase all data on the disk."

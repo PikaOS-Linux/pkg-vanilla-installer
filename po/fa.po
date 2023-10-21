@@ -22,11 +22,11 @@ msgstr ""
 "X-Generator: Weblate 4.18.1\n"
 
 #: data/org.vanillaos.Installer.desktop.in:3 vanilla_installer/gtk/window.ui:8
-msgid "Vanilla OS Installer"
+msgid "PikaOS Installer"
 msgstr "نصاب سیستم‌عامل وانیلا"
 
 #: data/org.vanillaos.Installer.appdata.xml.in:7
-msgid "Tweak your Vanilla OS installation."
+msgid "Tweak your PikaOS installation."
 msgstr "نصب سیستم‌عامل وانیلای خود را سیخونک بزنید."
 
 #: data/org.vanillaos.Installer.appdata.xml.in:10
@@ -46,7 +46,7 @@ msgid "The following changes will be made to your system:"
 msgstr "تغییرات زیر در سامانهٔ شما ایجاد خواهند شد:"
 
 #: vanilla_installer/gtk/confirm.ui:28
-msgid "Install Vanilla OS"
+msgid "Install PikaOS"
 msgstr "نصب سیستم‌عامل وانیلا"
 
 #: vanilla_installer/gtk/default-disk.ui:19
@@ -68,7 +68,7 @@ msgstr "تأیید نصب"
 
 #: vanilla_installer/gtk/default-disk.ui:30
 msgid ""
-"Select the disk where you want to install Vanilla OS. Alternatively, you can "
+"Select the disk where you want to install PikaOS. Alternatively, you can "
 "select one or more disks to configure manually."
 msgstr ""
 
@@ -92,7 +92,7 @@ msgstr ""
 
 #: vanilla_installer/gtk/default-encryption.ui:29
 msgid ""
-"Vanilla OS provides full-disk encryption through LUKS2 to protect your "
+"PikaOS provides full-disk encryption through LUKS2 to protect your "
 "personal information in case your device gets stolen."
 msgstr ""
 
@@ -161,7 +161,7 @@ msgstr ""
 
 #: vanilla_installer/gtk/default-nvidia.ui:78
 msgid ""
-"A proprietary driver has private code that neither Vanilla OS nor Debian "
+"A proprietary driver has private code that neither PikaOS nor Debian "
 "developers can review.\n"
 "\n"
 "Security and other updates are dependent on the driver vendor."
@@ -221,8 +221,8 @@ msgstr "نام کاربری"
 
 #: vanilla_installer/gtk/default-welcome.ui:12
 #, fuzzy
-#| msgid "Install Vanilla OS"
-msgid "Welcome to Vanilla OS!"
+#| msgid "Install PikaOS"
+msgid "Welcome to PikaOS!"
 msgstr "نصب سیستم‌عامل وانیلا"
 
 #: vanilla_installer/gtk/default-welcome.ui:19
@@ -310,8 +310,8 @@ msgstr "دفترچهٔ راهنما"
 
 #: vanilla_installer/gtk/dialog-recovery.ui:61
 #, fuzzy
-#| msgid "Read the Vanilla OS Handbook."
-msgid "Read the Vanilla OS Handbook"
+#| msgid "Read the PikaOS Handbook."
+msgid "Read the PikaOS Handbook"
 msgstr "دفترچهٔ راهنمای سیستم‌عامل وانیلا را بخوانید."
 
 #: vanilla_installer/gtk/dialog-recovery.ui:77
@@ -329,7 +329,7 @@ msgid "All done!"
 msgstr "تمام شد!"
 
 #: vanilla_installer/gtk/done.ui:13
-msgid "Restart your device to enjoy your Vanilla OS experience"
+msgid "Restart your device to enjoy your PikaOS experience"
 msgstr ""
 "افزارهٔ خود را دوباره راه‌اندازی کنید و از تجربهٔ سیستم‌عامل وانیلای خود لذت "
 "ببرید"
@@ -377,7 +377,7 @@ msgstr "افراز راه‌اندازی"
 #: vanilla_installer/gtk/widget-partition.ui:30
 msgid ""
 "The partition to mount under “/boot”. This directory stores files for "
-"booting in Vanilla OS."
+"booting in PikaOS."
 msgstr ""
 "افرازی که در «‎/boot» سوار می‌شود. این شاخه پرونده‌هایی را برای راه‌اندازی در "
 "سیستم‌عامل وانیلا نگه می‌دارد."
@@ -450,7 +450,7 @@ msgstr "افرازهایی که در «/» سوار می‌شوند. هر دو �
 
 #: vanilla_installer/gtk/widget-partition.ui:106
 msgid ""
-"Vanilla OS uses an A/B partition system managed by ABRoot,\n"
+"PikaOS uses an A/B partition system managed by ABRoot,\n"
 "which switches between two root partitions between updates."
 msgstr ""
 "سیستم‌عامل وانیلا از یک سامانهٔ افراز آ/ب مدیریت شده توسط ABRoot\n"
@@ -492,7 +492,7 @@ msgstr "افراز مبادله"
 #: vanilla_installer/gtk/widget-partition.ui:187
 msgid ""
 "Swap acts as a virtual extension of your RAM and enables hibernation. "
-"Vanilla OS already uses zram to provide swapping at no storage cost."
+"PikaOS already uses zram to provide swapping at no storage cost."
 msgstr ""
 "مبادله به عنوان افزونه‌ای مجازی برای حافظه عمل می‌کند و خواب زمستانی را به کار "
 "می‌اندازد. سیستم‌عامل وانیلا در حال حاظر از zram برای ارائهٔ مبادله بدون هزینهٔ "
@@ -679,13 +679,13 @@ msgstr "لطفاً با توسعه‌دهندگان توزیع تماس بگیر
 #~ msgid "page-changed"
 #~ msgstr "صفحه تغییر کرد"
 
-#~ msgid "Vanilla OS Recovery"
+#~ msgid "PikaOS Recovery"
 #~ msgstr "بازیابی سیستم‌عامل وانیلا"
 
 #~ msgid "Select a Disk"
 #~ msgstr "یک دیسک را برگزینید"
 
-#~ msgid "Select the disk where you want to install Vanilla OS"
+#~ msgid "Select the disk where you want to install PikaOS"
 #~ msgstr "دیسکی که می خواهید سیستم‌عامل وانیلا در آن نصب شود را برگزینید"
 
 #~ msgid "Configure"
@@ -694,7 +694,7 @@ msgstr "لطفاً با توسعه‌دهندگان توزیع تماس بگیر
 #~ msgid "Disk Allocation"
 #~ msgstr "تخصیص دیسک"
 
-#~ msgid "Choose how to install Vanilla OS on your drive."
+#~ msgid "Choose how to install PikaOS on your drive."
 #~ msgstr "چگونگی نصب سیستم‌عامل وانیلا روی گردانندهٔ خود را انخاب کنید."
 
 #~ msgid "This will erase all data on the disk."

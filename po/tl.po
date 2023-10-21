@@ -21,12 +21,12 @@ msgstr ""
 "X-Generator: Weblate 4.15-dev\n"
 
 #: data/org.vanillaos.Installer.desktop.in:3 vanilla_installer/gtk/window.ui:8
-msgid "Vanilla OS Installer"
-msgstr "Vanilla OS Installer"
+msgid "PikaOS Installer"
+msgstr "PikaOS Installer"
 
 #: data/org.vanillaos.Installer.appdata.xml.in:7
-msgid "Tweak your Vanilla OS installation."
-msgstr "Kalikutin ang iyong installer ng Vanilla OS."
+msgid "Tweak your PikaOS installation."
+msgstr "Kalikutin ang iyong installer ng PikaOS."
 
 #: data/org.vanillaos.Installer.appdata.xml.in:10
 msgid "No description"
@@ -45,8 +45,8 @@ msgid "The following changes will be made to your system:"
 msgstr "Ang mga sumusunod na pagbabago ay mangyayari sa iyong system:"
 
 #: vanilla_installer/gtk/confirm.ui:28
-msgid "Install Vanilla OS"
-msgstr "Install ang Vanilla OS"
+msgid "Install PikaOS"
+msgstr "Install ang PikaOS"
 
 #: vanilla_installer/gtk/default-disk.ui:19
 #: vanilla_installer/gtk/default-encryption.ui:18
@@ -67,7 +67,7 @@ msgstr "Kunpirmahin ang Installation"
 
 #: vanilla_installer/gtk/default-disk.ui:30
 msgid ""
-"Select the disk where you want to install Vanilla OS. Alternatively, you can "
+"Select the disk where you want to install PikaOS. Alternatively, you can "
 "select one or more disks to configure manually."
 msgstr ""
 
@@ -90,7 +90,7 @@ msgstr ""
 
 #: vanilla_installer/gtk/default-encryption.ui:29
 msgid ""
-"Vanilla OS provides full-disk encryption through LUKS2 to protect your "
+"PikaOS provides full-disk encryption through LUKS2 to protect your "
 "personal information in case your device gets stolen."
 msgstr ""
 
@@ -159,7 +159,7 @@ msgstr ""
 
 #: vanilla_installer/gtk/default-nvidia.ui:78
 msgid ""
-"A proprietary driver has private code that neither Vanilla OS nor Debian "
+"A proprietary driver has private code that neither PikaOS nor Debian "
 "developers can review.\n"
 "\n"
 "Security and other updates are dependent on the driver vendor."
@@ -219,9 +219,9 @@ msgstr "Palayaw"
 
 #: vanilla_installer/gtk/default-welcome.ui:12
 #, fuzzy
-#| msgid "Try Vanilla OS"
-msgid "Welcome to Vanilla OS!"
-msgstr "Subukin ang Vanilla OS"
+#| msgid "Try PikaOS"
+msgid "Welcome to PikaOS!"
+msgstr "Subukin ang PikaOS"
 
 #: vanilla_installer/gtk/default-welcome.ui:19
 #, fuzzy
@@ -303,7 +303,7 @@ msgid "Handbook"
 msgstr ""
 
 #: vanilla_installer/gtk/dialog-recovery.ui:61
-msgid "Read the Vanilla OS Handbook"
+msgid "Read the PikaOS Handbook"
 msgstr ""
 
 #: vanilla_installer/gtk/dialog-recovery.ui:77
@@ -319,10 +319,10 @@ msgid "All done!"
 msgstr "Tapos na!"
 
 #: vanilla_installer/gtk/done.ui:13
-msgid "Restart your device to enjoy your Vanilla OS experience"
+msgid "Restart your device to enjoy your PikaOS experience"
 msgstr ""
 "I-restart niyo ang iyong device para ma-aliw kayo sa mararanasan niyo sa "
-"Vanilla OS"
+"PikaOS"
 
 #: vanilla_installer/gtk/done.ui:23
 msgid "Show Log"
@@ -369,7 +369,7 @@ msgstr "Partitions"
 #: vanilla_installer/gtk/widget-partition.ui:30
 msgid ""
 "The partition to mount under “/boot”. This directory stores files for "
-"booting in Vanilla OS."
+"booting in PikaOS."
 msgstr ""
 
 #: vanilla_installer/gtk/widget-partition.ui:33
@@ -442,7 +442,7 @@ msgstr ""
 
 #: vanilla_installer/gtk/widget-partition.ui:106
 msgid ""
-"Vanilla OS uses an A/B partition system managed by ABRoot,\n"
+"PikaOS uses an A/B partition system managed by ABRoot,\n"
 "which switches between two root partitions between updates."
 msgstr ""
 
@@ -481,7 +481,7 @@ msgstr "Partitions"
 #: vanilla_installer/gtk/widget-partition.ui:187
 msgid ""
 "Swap acts as a virtual extension of your RAM and enables hibernation. "
-"Vanilla OS already uses zram to provide swapping at no storage cost."
+"PikaOS already uses zram to provide swapping at no storage cost."
 msgstr ""
 
 #: vanilla_installer/gtk/widget-partition.ui:191
@@ -659,22 +659,22 @@ msgstr "Pakiusap na ipag-alam sa mga developers na namahagi ng system."
 #~ msgstr "Piliin ang iyong wika"
 
 #, fuzzy
-#~ msgid "Vanilla OS Recovery"
-#~ msgstr "Vanilla OS Installer"
+#~ msgid "PikaOS Recovery"
+#~ msgstr "PikaOS Installer"
 
 #~ msgid "Select a Disk"
 #~ msgstr "Mamili ng Disk"
 
 #, fuzzy
-#~ msgid "Select the disk where you want to install Vanilla OS"
-#~ msgstr "Piliin ang disk kung saan pwedeng i-install ang Vanilla OS"
+#~ msgid "Select the disk where you want to install PikaOS"
+#~ msgstr "Piliin ang disk kung saan pwedeng i-install ang PikaOS"
 
 #~ msgid "Configure"
 #~ msgstr "Ayusin"
 
 #, fuzzy
-#~ msgid "Choose how to install Vanilla OS on your drive."
-#~ msgstr "Piliin ang disk kung saan pwedeng i-install ang Vanilla OS"
+#~ msgid "Choose how to install PikaOS on your drive."
+#~ msgstr "Piliin ang disk kung saan pwedeng i-install ang PikaOS"
 
 #~ msgid "This will erase all data on the disk."
 #~ msgstr "Ito ay buburahin lahat ng nilalaman ng iyong disk."

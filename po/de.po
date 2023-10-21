@@ -28,12 +28,12 @@ msgstr ""
 "X-Generator: Weblate 5.0.1-dev\n"
 
 #: data/org.vanillaos.Installer.desktop.in:3 vanilla_installer/gtk/window.ui:8
-msgid "Vanilla OS Installer"
-msgstr "Vanilla OS-Installer"
+msgid "PikaOS Installer"
+msgstr "PikaOS-Installer"
 
 #: data/org.vanillaos.Installer.appdata.xml.in:7
-msgid "Tweak your Vanilla OS installation."
-msgstr "Passe die Vanilla OS-Installation an."
+msgid "Tweak your PikaOS installation."
+msgstr "Passe die PikaOS-Installation an."
 
 #: data/org.vanillaos.Installer.appdata.xml.in:10
 msgid "No description"
@@ -52,8 +52,8 @@ msgid "The following changes will be made to your system:"
 msgstr "Die folgenden Änderungen werden am System vorgenommen:"
 
 #: vanilla_installer/gtk/confirm.ui:28
-msgid "Install Vanilla OS"
-msgstr "Vanilla OS installieren"
+msgid "Install PikaOS"
+msgstr "PikaOS installieren"
 
 #: vanilla_installer/gtk/default-disk.ui:19
 #: vanilla_installer/gtk/default-encryption.ui:18
@@ -72,10 +72,10 @@ msgstr "Installationsort"
 
 #: vanilla_installer/gtk/default-disk.ui:30
 msgid ""
-"Select the disk where you want to install Vanilla OS. Alternatively, you can "
+"Select the disk where you want to install PikaOS. Alternatively, you can "
 "select one or more disks to configure manually."
 msgstr ""
-"Wählen Sie die Festplatte aus, auf der Sie Vanilla OS installieren möchten. "
+"Wählen Sie die Festplatte aus, auf der Sie PikaOS installieren möchten. "
 "Alternativ können Sie auch eine oder mehrere Festplatten auswählen und "
 "manuell konfigurieren."
 
@@ -99,10 +99,10 @@ msgstr "Geräteverschlüsselung"
 
 #: vanilla_installer/gtk/default-encryption.ui:29
 msgid ""
-"Vanilla OS provides full-disk encryption through LUKS2 to protect your "
+"PikaOS provides full-disk encryption through LUKS2 to protect your "
 "personal information in case your device gets stolen."
 msgstr ""
-"Vanilla OS bietet eine vollständige Festplattenverschlüsselung durch LUKS2, "
+"PikaOS bietet eine vollständige Festplattenverschlüsselung durch LUKS2, "
 "um Ihre persönlichen Daten zu schützen, falls Ihr Gerät gestohlen wird."
 
 #: vanilla_installer/gtk/default-encryption.ui:36
@@ -171,12 +171,12 @@ msgstr "Über proprietäre Treiber"
 
 #: vanilla_installer/gtk/default-nvidia.ui:78
 msgid ""
-"A proprietary driver has private code that neither Vanilla OS nor Debian "
+"A proprietary driver has private code that neither PikaOS nor Debian "
 "developers can review.\n"
 "\n"
 "Security and other updates are dependent on the driver vendor."
 msgstr ""
-"Ein proprietärer Treiber hat privaten Code, den weder Vanilla OS- noch "
+"Ein proprietärer Treiber hat privaten Code, den weder PikaOS- noch "
 "Debian-Entwickler überprüfen können.\n"
 "\n"
 "Sicherheits- und andere Aktualisierungen sind vom Hersteller des Treibers "
@@ -235,8 +235,8 @@ msgid "Username"
 msgstr "Benutzername"
 
 #: vanilla_installer/gtk/default-welcome.ui:12
-msgid "Welcome to Vanilla OS!"
-msgstr "Willkommen bei Vanilla OS!"
+msgid "Welcome to PikaOS!"
+msgstr "Willkommen bei PikaOS!"
 
 #: vanilla_installer/gtk/default-welcome.ui:19
 msgid "Install"
@@ -317,8 +317,8 @@ msgid "Handbook"
 msgstr "Handbuch"
 
 #: vanilla_installer/gtk/dialog-recovery.ui:61
-msgid "Read the Vanilla OS Handbook"
-msgstr "Lesen Sie das Vanilla OS-Handbuch"
+msgid "Read the PikaOS Handbook"
+msgstr "Lesen Sie das PikaOS-Handbuch"
 
 #: vanilla_installer/gtk/dialog-recovery.ui:77
 msgid "Web Browser"
@@ -333,8 +333,8 @@ msgid "All done!"
 msgstr "Alles erledigt!"
 
 #: vanilla_installer/gtk/done.ui:13
-msgid "Restart your device to enjoy your Vanilla OS experience"
-msgstr "Starte das Gerät neu, um das Vanilla OS-Erlebnis zu genießen"
+msgid "Restart your device to enjoy your PikaOS experience"
+msgstr "Starte das Gerät neu, um das PikaOS-Erlebnis zu genießen"
 
 #: vanilla_installer/gtk/done.ui:23
 msgid "Show Log"
@@ -379,10 +379,10 @@ msgstr "Boot-Partition"
 #: vanilla_installer/gtk/widget-partition.ui:30
 msgid ""
 "The partition to mount under “/boot”. This directory stores files for "
-"booting in Vanilla OS."
+"booting in PikaOS."
 msgstr ""
 "Die Partition, die unter \"/boot\" eingebunden werden soll. In diesem "
-"Verzeichnis werden Dateien für das Booten in Vanilla OS gespeichert."
+"Verzeichnis werden Dateien für das Booten in PikaOS gespeichert."
 
 #: vanilla_installer/gtk/widget-partition.ui:33
 #: vanilla_installer/gtk/widget-partition.ui:54
@@ -457,10 +457,10 @@ msgstr ""
 
 #: vanilla_installer/gtk/widget-partition.ui:106
 msgid ""
-"Vanilla OS uses an A/B partition system managed by ABRoot,\n"
+"PikaOS uses an A/B partition system managed by ABRoot,\n"
 "which switches between two root partitions between updates."
 msgstr ""
-"Vanilla OS verwendet ein A/B-Partitionssystem, das von ABRoot verwaltet "
+"PikaOS verwendet ein A/B-Partitionssystem, das von ABRoot verwaltet "
 "wird,\n"
 "das bei Aktualisierungen zwischen zwei Root-Partitionen umschaltet."
 
@@ -501,10 +501,10 @@ msgstr "Swap-Partition"
 #: vanilla_installer/gtk/widget-partition.ui:187
 msgid ""
 "Swap acts as a virtual extension of your RAM and enables hibernation. "
-"Vanilla OS already uses zram to provide swapping at no storage cost."
+"PikaOS already uses zram to provide swapping at no storage cost."
 msgstr ""
 "Swap agiert als virtuelle Erweiterung des Arbeitsspeichers und ermöglicht "
-"den Ruhezustand. Vanilla OS verwendet bereits zram, um Swapping ohne "
+"den Ruhezustand. PikaOS verwendet bereits zram, um Swapping ohne "
 "Speicherplatzverlust zu ermöglichen."
 
 #: vanilla_installer/gtk/widget-partition.ui:191
@@ -692,8 +692,8 @@ msgstr "Bitte wenden Sie sich an die Entwickler der Distribution."
 #~ msgid "page-changed"
 #~ msgstr "Seite geändert"
 
-#~ msgid "Vanilla OS Recovery"
-#~ msgstr "Vanilla OS Wiederherstellung"
+#~ msgid "PikaOS Recovery"
+#~ msgstr "PikaOS Wiederherstellung"
 
 #~ msgid "Open a Terminal."
 #~ msgstr "Öffnen Sie ein Terminal."
@@ -701,8 +701,8 @@ msgstr "Bitte wenden Sie sich an die Entwickler der Distribution."
 #~ msgid "Manage disks and partitions."
 #~ msgstr "Verwalten Sie Festplatten und Partitionen."
 
-#~ msgid "Read the Vanilla OS Handbook."
-#~ msgstr "Lesen Sie das Vanilla OS-Handbuch."
+#~ msgid "Read the PikaOS Handbook."
+#~ msgstr "Lesen Sie das PikaOS-Handbuch."
 
 #~ msgid "Search online for help."
 #~ msgstr "Suchen Sie online nach Hilfe."
@@ -710,9 +710,9 @@ msgstr "Bitte wenden Sie sich an die Entwickler der Distribution."
 #~ msgid "Select a Disk"
 #~ msgstr "Wählen Sie eine Festplatte aus"
 
-#~ msgid "Select the disk where you want to install Vanilla OS"
+#~ msgid "Select the disk where you want to install PikaOS"
 #~ msgstr ""
-#~ "Wählen Sie die Festplatte aus, auf der Vanilla OS installiert werden soll"
+#~ "Wählen Sie die Festplatte aus, auf der PikaOS installiert werden soll"
 
 #~ msgid "Configure"
 #~ msgstr "Konfigurieren"
@@ -720,9 +720,9 @@ msgstr "Bitte wenden Sie sich an die Entwickler der Distribution."
 #~ msgid "Disk Allocation"
 #~ msgstr "Festplattenzuordnung"
 
-#~ msgid "Choose how to install Vanilla OS on your drive."
+#~ msgid "Choose how to install PikaOS on your drive."
 #~ msgstr ""
-#~ "Wählen Sie, wie Vanilla OS auf Ihrem Laufwerk installiert werden soll."
+#~ "Wählen Sie, wie PikaOS auf Ihrem Laufwerk installiert werden soll."
 
 #~ msgid "This will erase all data on the disk."
 #~ msgstr "Dadurch werden alle Daten auf der Festplatte gelöscht."
@@ -771,5 +771,5 @@ msgstr "Bitte wenden Sie sich an die Entwickler der Distribution."
 #~ msgid "Search for a language"
 #~ msgstr "Suche nach einer Sprache"
 
-#~ msgid "Try Vanilla OS"
-#~ msgstr "Vanilla OS ausprobieren"
+#~ msgid "Try PikaOS"
+#~ msgstr "PikaOS ausprobieren"

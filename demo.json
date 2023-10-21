@@ -23,9 +23,9 @@
     },
     {
       "users": {
-        "fullname": "OEM Vanilla OS",
-        "username": "vanilla",
-        "password": "vanilla"
+        "fullname": "OEM PikaOS",
+        "username": "pikaos",
+        "password": "pikaos"
       }
     }
   ]

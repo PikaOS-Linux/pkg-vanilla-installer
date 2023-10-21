@@ -25,11 +25,11 @@ msgstr ""
 "X-Generator: Weblate 5.0-dev\n"
 
 #: data/org.vanillaos.Installer.desktop.in:3 vanilla_installer/gtk/window.ui:8
-msgid "Vanilla OS Installer"
+msgid "PikaOS Installer"
 msgstr "مُثبِّتُ نِظام فانيلا"
 
 #: data/org.vanillaos.Installer.appdata.xml.in:7
-msgid "Tweak your Vanilla OS installation."
+msgid "Tweak your PikaOS installation."
 msgstr "طوِّع تثبيتك لنظام فانيلا."
 
 #: data/org.vanillaos.Installer.appdata.xml.in:10
@@ -49,7 +49,7 @@ msgid "The following changes will be made to your system:"
 msgstr "ستطبق التعديلات التالية على نظامك:"
 
 #: vanilla_installer/gtk/confirm.ui:28
-msgid "Install Vanilla OS"
+msgid "Install PikaOS"
 msgstr "ثبِّت نظام فانيلا"
 
 #: vanilla_installer/gtk/default-disk.ui:19
@@ -71,7 +71,7 @@ msgstr "تأكيد التثبيت"
 
 #: vanilla_installer/gtk/default-disk.ui:30
 msgid ""
-"Select the disk where you want to install Vanilla OS. Alternatively, you can "
+"Select the disk where you want to install PikaOS. Alternatively, you can "
 "select one or more disks to configure manually."
 msgstr ""
 
@@ -95,7 +95,7 @@ msgstr ""
 
 #: vanilla_installer/gtk/default-encryption.ui:29
 msgid ""
-"Vanilla OS provides full-disk encryption through LUKS2 to protect your "
+"PikaOS provides full-disk encryption through LUKS2 to protect your "
 "personal information in case your device gets stolen."
 msgstr ""
 
@@ -164,7 +164,7 @@ msgstr ""
 
 #: vanilla_installer/gtk/default-nvidia.ui:78
 msgid ""
-"A proprietary driver has private code that neither Vanilla OS nor Debian "
+"A proprietary driver has private code that neither PikaOS nor Debian "
 "developers can review.\n"
 "\n"
 "Security and other updates are dependent on the driver vendor."
@@ -224,8 +224,8 @@ msgstr "اسم المستخدم"
 
 #: vanilla_installer/gtk/default-welcome.ui:12
 #, fuzzy
-#| msgid "Try Vanilla OS"
-msgid "Welcome to Vanilla OS!"
+#| msgid "Try PikaOS"
+msgid "Welcome to PikaOS!"
 msgstr "جرِّب نظام فانيلا"
 
 #: vanilla_installer/gtk/default-welcome.ui:19
@@ -313,8 +313,8 @@ msgstr "كتيب"
 
 #: vanilla_installer/gtk/dialog-recovery.ui:61
 #, fuzzy
-#| msgid "Read the Vanilla OS Handbook."
-msgid "Read the Vanilla OS Handbook"
+#| msgid "Read the PikaOS Handbook."
+msgid "Read the PikaOS Handbook"
 msgstr "اقرأ كتيب نظام فانيلا"
 
 #: vanilla_installer/gtk/dialog-recovery.ui:77
@@ -332,7 +332,7 @@ msgid "All done!"
 msgstr "تم!"
 
 #: vanilla_installer/gtk/done.ui:13
-msgid "Restart your device to enjoy your Vanilla OS experience"
+msgid "Restart your device to enjoy your PikaOS experience"
 msgstr "أعد تشغيل الحاسوب للاستمتاع بتجربة نظام التشغيل فانيلا"
 
 #: vanilla_installer/gtk/done.ui:23
@@ -378,7 +378,7 @@ msgstr "قسم الإقلاع"
 #: vanilla_installer/gtk/widget-partition.ui:30
 msgid ""
 "The partition to mount under “/boot”. This directory stores files for "
-"booting in Vanilla OS."
+"booting in PikaOS."
 msgstr ""
 
 #: vanilla_installer/gtk/widget-partition.ui:33
@@ -449,7 +449,7 @@ msgstr ""
 
 #: vanilla_installer/gtk/widget-partition.ui:106
 msgid ""
-"Vanilla OS uses an A/B partition system managed by ABRoot,\n"
+"PikaOS uses an A/B partition system managed by ABRoot,\n"
 "which switches between two root partitions between updates."
 msgstr ""
 
@@ -491,7 +491,7 @@ msgstr "تقسيم Swap"
 #: vanilla_installer/gtk/widget-partition.ui:187
 msgid ""
 "Swap acts as a virtual extension of your RAM and enables hibernation. "
-"Vanilla OS already uses zram to provide swapping at no storage cost."
+"PikaOS already uses zram to provide swapping at no storage cost."
 msgstr ""
 
 #: vanilla_installer/gtk/widget-partition.ui:191
@@ -674,13 +674,13 @@ msgstr "يرجى التواصل مع مطوري التوزيعة."
 #~ msgstr "الصفحة تغيرت"
 
 #, fuzzy
-#~ msgid "Vanilla OS Recovery"
+#~ msgid "PikaOS Recovery"
 #~ msgstr "مُثبِّتُ نِظام فانيلا"
 
 #~ msgid "Select a Disk"
 #~ msgstr "حدد قُرْصًا"
 
-#~ msgid "Select the disk where you want to install Vanilla OS"
+#~ msgid "Select the disk where you want to install PikaOS"
 #~ msgstr "حدد القرص لتثبيت نظام فانيلا عليه"
 
 #~ msgid "Configure"
@@ -689,7 +689,7 @@ msgstr "يرجى التواصل مع مطوري التوزيعة."
 #~ msgid "Disk Allocation"
 #~ msgstr "تخصيص القرص"
 
-#~ msgid "Choose how to install Vanilla OS on your drive."
+#~ msgid "Choose how to install PikaOS on your drive."
 #~ msgstr "اختر كيفية تثبيت نظام فانيلا على محرك الأقراص الخاص بك."
 
 #~ msgid "This will erase all data on the disk."

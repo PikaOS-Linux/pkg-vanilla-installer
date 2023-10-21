@@ -21,12 +21,12 @@ msgstr ""
 "X-Generator: Weblate 5.0-dev\n"
 
 #: data/org.vanillaos.Installer.desktop.in:3 vanilla_installer/gtk/window.ui:8
-msgid "Vanilla OS Installer"
-msgstr "Vanilla OS Telepítő"
+msgid "PikaOS Installer"
+msgstr "PikaOS Telepítő"
 
 #: data/org.vanillaos.Installer.appdata.xml.in:7
-msgid "Tweak your Vanilla OS installation."
-msgstr "Módosítsa a Vanilla OS telepítését."
+msgid "Tweak your PikaOS installation."
+msgstr "Módosítsa a PikaOS telepítését."
 
 #: data/org.vanillaos.Installer.appdata.xml.in:10
 msgid "No description"
@@ -45,8 +45,8 @@ msgid "The following changes will be made to your system:"
 msgstr "A következő változtatások lesznek végrehajtva a rendszerén:"
 
 #: vanilla_installer/gtk/confirm.ui:28
-msgid "Install Vanilla OS"
-msgstr "A Vanilla OS telepítése"
+msgid "Install PikaOS"
+msgstr "A PikaOS telepítése"
 
 #: vanilla_installer/gtk/default-disk.ui:19
 #: vanilla_installer/gtk/default-encryption.ui:18
@@ -65,10 +65,10 @@ msgstr "Telepítés helye"
 
 #: vanilla_installer/gtk/default-disk.ui:30
 msgid ""
-"Select the disk where you want to install Vanilla OS. Alternatively, you can "
+"Select the disk where you want to install PikaOS. Alternatively, you can "
 "select one or more disks to configure manually."
 msgstr ""
-"Válassza ki a lemezt, amelyre a Vanilla OS-t telepíteni szeretné! Egy vagy "
+"Válassza ki a lemezt, amelyre a PikaOS-t telepíteni szeretné! Egy vagy "
 "több lemezt is kiválaszthat a tetszőleges beállításhoz."
 
 #: vanilla_installer/gtk/default-disk.ui:44
@@ -89,10 +89,10 @@ msgstr "Eszköz titkosítása"
 
 #: vanilla_installer/gtk/default-encryption.ui:29
 msgid ""
-"Vanilla OS provides full-disk encryption through LUKS2 to protect your "
+"PikaOS provides full-disk encryption through LUKS2 to protect your "
 "personal information in case your device gets stolen."
 msgstr ""
-"A Vanilla OS teljes lemezes titkosítást biztosít a LUKS2 segítségével, hogy "
+"A PikaOS teljes lemezes titkosítást biztosít a LUKS2 segítségével, hogy "
 "megvédje személyes adatait, ha ellopják a készülékét."
 
 #: vanilla_installer/gtk/default-encryption.ui:36
@@ -162,7 +162,7 @@ msgstr "A védjegyezett illesztőprogramokról"
 
 #: vanilla_installer/gtk/default-nvidia.ui:78
 msgid ""
-"A proprietary driver has private code that neither Vanilla OS nor Debian "
+"A proprietary driver has private code that neither PikaOS nor Debian "
 "developers can review.\n"
 "\n"
 "Security and other updates are dependent on the driver vendor."
@@ -226,9 +226,9 @@ msgstr "Felhasználónév"
 
 #: vanilla_installer/gtk/default-welcome.ui:12
 #, fuzzy
-#| msgid "Try Vanilla OS"
-msgid "Welcome to Vanilla OS!"
-msgstr "A Vanilla OS kipróbálása"
+#| msgid "Try PikaOS"
+msgid "Welcome to PikaOS!"
+msgstr "A PikaOS kipróbálása"
 
 #: vanilla_installer/gtk/default-welcome.ui:19
 #, fuzzy
@@ -314,8 +314,8 @@ msgstr "Kézikönyv"
 
 #: vanilla_installer/gtk/dialog-recovery.ui:61
 #, fuzzy
-msgid "Read the Vanilla OS Handbook"
-msgstr "Olvassa el a Vanilla OS kézikönyvet."
+msgid "Read the PikaOS Handbook"
+msgstr "Olvassa el a PikaOS kézikönyvet."
 
 #: vanilla_installer/gtk/dialog-recovery.ui:77
 msgid "Web Browser"
@@ -331,8 +331,8 @@ msgid "All done!"
 msgstr "Készen vagyunk!"
 
 #: vanilla_installer/gtk/done.ui:13
-msgid "Restart your device to enjoy your Vanilla OS experience"
-msgstr "Indítsa újra eszközét, hogy élvezze Vanilla OS élményét"
+msgid "Restart your device to enjoy your PikaOS experience"
+msgstr "Indítsa újra eszközét, hogy élvezze PikaOS élményét"
 
 #: vanilla_installer/gtk/done.ui:23
 msgid "Show Log"
@@ -377,9 +377,9 @@ msgstr "Boot partíció"
 #: vanilla_installer/gtk/widget-partition.ui:30
 msgid ""
 "The partition to mount under “/boot”. This directory stores files for "
-"booting in Vanilla OS."
+"booting in PikaOS."
 msgstr ""
-"A \"/boot\" alá csatolandó partíció. Ez a könyvtár tárolja a Vanilla OS-ben "
+"A \"/boot\" alá csatolandó partíció. Ez a könyvtár tárolja a PikaOS-ben "
 "való indításhoz szükséges fájlokat."
 
 #: vanilla_installer/gtk/widget-partition.ui:33
@@ -455,10 +455,10 @@ msgstr ""
 
 #: vanilla_installer/gtk/widget-partition.ui:106
 msgid ""
-"Vanilla OS uses an A/B partition system managed by ABRoot,\n"
+"PikaOS uses an A/B partition system managed by ABRoot,\n"
 "which switches between two root partitions between updates."
 msgstr ""
-"A Vanilla OS az ABRoot által kezelt A/B partíciós rendszert használja,\n"
+"A PikaOS az ABRoot által kezelt A/B partíciós rendszert használja,\n"
 "amely a frissítéseknél két root partíció között váltogat."
 
 #: vanilla_installer/gtk/widget-partition.ui:150
@@ -498,10 +498,10 @@ msgstr "Swap partíció"
 #: vanilla_installer/gtk/widget-partition.ui:187
 msgid ""
 "Swap acts as a virtual extension of your RAM and enables hibernation. "
-"Vanilla OS already uses zram to provide swapping at no storage cost."
+"PikaOS already uses zram to provide swapping at no storage cost."
 msgstr ""
 "A Swap a RAM virtuális kiterjesztéseként működik, és lehetővé teszi a "
-"hibernációt. A Vanilla OS már használja a zramot, hogy tárolási költség "
+"hibernációt. A PikaOS már használja a zramot, hogy tárolási költség "
 "nélkül biztosítsa a swapolást."
 
 #: vanilla_installer/gtk/widget-partition.ui:191
@@ -687,8 +687,8 @@ msgstr "Kérjük, lépjen kapcsolatba a disztribúció fejlesztőivel."
 #~ msgid "page-changed"
 #~ msgstr "oldal-megváltozott"
 
-#~ msgid "Vanilla OS Recovery"
-#~ msgstr "Vanilla OS helyreállítás"
+#~ msgid "PikaOS Recovery"
+#~ msgstr "PikaOS helyreállítás"
 
 #~ msgid "Open a Terminal."
 #~ msgstr "Nyisson meg egy terminált."
@@ -696,8 +696,8 @@ msgstr "Kérjük, lépjen kapcsolatba a disztribúció fejlesztőivel."
 #~ msgid "Manage disks and partitions."
 #~ msgstr "Lemezek és partíciók kezelése."
 
-#~ msgid "Read the Vanilla OS Handbook."
-#~ msgstr "Olvassa el a Vanilla OS kézikönyvet."
+#~ msgid "Read the PikaOS Handbook."
+#~ msgstr "Olvassa el a PikaOS kézikönyvet."
 
 #~ msgid "Search online for help."
 #~ msgstr "Keressen segítséget az interneten."
@@ -705,9 +705,9 @@ msgstr "Kérjük, lépjen kapcsolatba a disztribúció fejlesztőivel."
 #~ msgid "Select a Disk"
 #~ msgstr "Válasszon egy lemezt"
 
-#~ msgid "Select the disk where you want to install Vanilla OS"
+#~ msgid "Select the disk where you want to install PikaOS"
 #~ msgstr ""
-#~ "Válassza ki azt a lemezt, amelyre a Vanilla OS-t telepíteni szeretné"
+#~ "Válassza ki azt a lemezt, amelyre a PikaOS-t telepíteni szeretné"
 
 #~ msgid "Configure"
 #~ msgstr "Konfigurálás"
@@ -715,8 +715,8 @@ msgstr "Kérjük, lépjen kapcsolatba a disztribúció fejlesztőivel."
 #~ msgid "Disk Allocation"
 #~ msgstr "Lemezkiosztás"
 
-#~ msgid "Choose how to install Vanilla OS on your drive."
-#~ msgstr "Válassza ki a lemezt, amelyre telepíteni szeretné a Vanilla OS-t."
+#~ msgid "Choose how to install PikaOS on your drive."
+#~ msgstr "Válassza ki a lemezt, amelyre telepíteni szeretné a PikaOS-t."
 
 #~ msgid "This will erase all data on the disk."
 #~ msgstr "Ez törli az összes adatot a lemezről."

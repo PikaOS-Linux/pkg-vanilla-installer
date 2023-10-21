@@ -23,12 +23,12 @@ msgstr ""
 "X-Generator: Weblate 5.0-dev\n"
 
 #: data/org.vanillaos.Installer.desktop.in:3 vanilla_installer/gtk/window.ui:8
-msgid "Vanilla OS Installer"
-msgstr "Instalátor Vanilla OS"
+msgid "PikaOS Installer"
+msgstr "Instalátor PikaOS"
 
 #: data/org.vanillaos.Installer.appdata.xml.in:7
-msgid "Tweak your Vanilla OS installation."
-msgstr "Vylaďte si instalaci Vanilla OS."
+msgid "Tweak your PikaOS installation."
+msgstr "Vylaďte si instalaci PikaOS."
 
 #: data/org.vanillaos.Installer.appdata.xml.in:10
 msgid "No description"
@@ -47,8 +47,8 @@ msgid "The following changes will be made to your system:"
 msgstr "V systému budou provedeny následující změny:"
 
 #: vanilla_installer/gtk/confirm.ui:28
-msgid "Install Vanilla OS"
-msgstr "Nainstalovat Vanilla OS"
+msgid "Install PikaOS"
+msgstr "Nainstalovat PikaOS"
 
 #: vanilla_installer/gtk/default-disk.ui:19
 #: vanilla_installer/gtk/default-encryption.ui:18
@@ -69,7 +69,7 @@ msgstr "Potvrďte instalaci"
 
 #: vanilla_installer/gtk/default-disk.ui:30
 msgid ""
-"Select the disk where you want to install Vanilla OS. Alternatively, you can "
+"Select the disk where you want to install PikaOS. Alternatively, you can "
 "select one or more disks to configure manually."
 msgstr ""
 
@@ -93,7 +93,7 @@ msgstr ""
 
 #: vanilla_installer/gtk/default-encryption.ui:29
 msgid ""
-"Vanilla OS provides full-disk encryption through LUKS2 to protect your "
+"PikaOS provides full-disk encryption through LUKS2 to protect your "
 "personal information in case your device gets stolen."
 msgstr ""
 
@@ -162,7 +162,7 @@ msgstr ""
 
 #: vanilla_installer/gtk/default-nvidia.ui:78
 msgid ""
-"A proprietary driver has private code that neither Vanilla OS nor Debian "
+"A proprietary driver has private code that neither PikaOS nor Debian "
 "developers can review.\n"
 "\n"
 "Security and other updates are dependent on the driver vendor."
@@ -222,9 +222,9 @@ msgstr "Uživatelské jméno"
 
 #: vanilla_installer/gtk/default-welcome.ui:12
 #, fuzzy
-#| msgid "Try Vanilla OS"
-msgid "Welcome to Vanilla OS!"
-msgstr "Vyzkoušet Vanilla OS"
+#| msgid "Try PikaOS"
+msgid "Welcome to PikaOS!"
+msgstr "Vyzkoušet PikaOS"
 
 #: vanilla_installer/gtk/default-welcome.ui:19
 #, fuzzy
@@ -310,9 +310,9 @@ msgstr "Příručka"
 
 #: vanilla_installer/gtk/dialog-recovery.ui:61
 #, fuzzy
-#| msgid "Read the Vanilla OS Handbook."
-msgid "Read the Vanilla OS Handbook"
-msgstr "Přečíst příručku Vanilla OS."
+#| msgid "Read the PikaOS Handbook."
+msgid "Read the PikaOS Handbook"
+msgstr "Přečíst příručku PikaOS."
 
 #: vanilla_installer/gtk/dialog-recovery.ui:77
 msgid "Web Browser"
@@ -329,9 +329,9 @@ msgid "All done!"
 msgstr "Hotovo!"
 
 #: vanilla_installer/gtk/done.ui:13
-msgid "Restart your device to enjoy your Vanilla OS experience"
+msgid "Restart your device to enjoy your PikaOS experience"
 msgstr ""
-"Restartujte zařízení, abyste si mohli užívat operačního systému Vanilla OS"
+"Restartujte zařízení, abyste si mohli užívat operačního systému PikaOS"
 
 #: vanilla_installer/gtk/done.ui:23
 msgid "Show Log"
@@ -376,10 +376,10 @@ msgstr "Boot oddíl"
 #: vanilla_installer/gtk/widget-partition.ui:30
 msgid ""
 "The partition to mount under “/boot”. This directory stores files for "
-"booting in Vanilla OS."
+"booting in PikaOS."
 msgstr ""
 "Oddíl, který se připojí pod \"/boot\". V tomto adresáři jsou uloženy soubory "
-"pro spouštění systému Vanilla OS."
+"pro spouštění systému PikaOS."
 
 #: vanilla_installer/gtk/widget-partition.ui:33
 #: vanilla_installer/gtk/widget-partition.ui:54
@@ -453,10 +453,10 @@ msgstr ""
 
 #: vanilla_installer/gtk/widget-partition.ui:106
 msgid ""
-"Vanilla OS uses an A/B partition system managed by ABRoot,\n"
+"PikaOS uses an A/B partition system managed by ABRoot,\n"
 "which switches between two root partitions between updates."
 msgstr ""
-"Vanilla OS používá systém oddílů A/B spravovaný systémem ABRoot,\n"
+"PikaOS používá systém oddílů A/B spravovaný systémem ABRoot,\n"
 "který mezi aktualizacemi přepíná mezi dvěma kořenovými oddíly."
 
 #: vanilla_installer/gtk/widget-partition.ui:150
@@ -496,10 +496,10 @@ msgstr "Swap oddíl"
 #: vanilla_installer/gtk/widget-partition.ui:187
 msgid ""
 "Swap acts as a virtual extension of your RAM and enables hibernation. "
-"Vanilla OS already uses zram to provide swapping at no storage cost."
+"PikaOS already uses zram to provide swapping at no storage cost."
 msgstr ""
 "Swap funguje jako virtuální rozšíření paměti RAM a umožňuje hibernaci. "
-"Operační systém Vanilla OS již používá zram k zajištění swapování bez "
+"Operační systém PikaOS již používá zram k zajištění swapování bez "
 "nákladů na úložiště."
 
 #: vanilla_installer/gtk/widget-partition.ui:191
@@ -685,14 +685,14 @@ msgstr "Obraťte se prosím na vývojáře distribuce."
 #~ msgid "page-changed"
 #~ msgstr "stránka změněna"
 
-#~ msgid "Vanilla OS Recovery"
-#~ msgstr "Obnova Vanilla OS"
+#~ msgid "PikaOS Recovery"
+#~ msgstr "Obnova PikaOS"
 
 #~ msgid "Select a Disk"
 #~ msgstr "Vyberte disk"
 
-#~ msgid "Select the disk where you want to install Vanilla OS"
-#~ msgstr "Vyberte disk, kam chcete nainstalovat Vanilla OS"
+#~ msgid "Select the disk where you want to install PikaOS"
+#~ msgstr "Vyberte disk, kam chcete nainstalovat PikaOS"
 
 #~ msgid "Configure"
 #~ msgstr "Konfigurace"
@@ -700,8 +700,8 @@ msgstr "Obraťte se prosím na vývojáře distribuce."
 #~ msgid "Disk Allocation"
 #~ msgstr "Přidělování disků"
 
-#~ msgid "Choose how to install Vanilla OS on your drive."
-#~ msgstr "Vybrat, jak nainstalovat Vanilla OS na Váš disk."
+#~ msgid "Choose how to install PikaOS on your drive."
+#~ msgstr "Vybrat, jak nainstalovat PikaOS na Váš disk."
 
 #~ msgid "This will erase all data on the disk."
 #~ msgstr "Tím se vymažou všechna data na disku."
@@ -727,7 +727,7 @@ msgstr "Obraťte se prosím na vývojáře distribuce."
 #~ msgstr "Vítejte"
 
 #~ msgid "This software will guide you through the installation process."
-#~ msgstr "Tento program vás provede procesem instalace Vanilla OS."
+#~ msgstr "Tento program vás provede procesem instalace PikaOS."
 
 #~ msgid "The following partitions were found on the disk"
 #~ msgstr "Na disku byly nalezeny následující oddíly"

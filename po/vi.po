@@ -21,11 +21,11 @@ msgstr ""
 "X-Generator: Weblate 5.0-dev\n"
 
 #: data/org.vanillaos.Installer.desktop.in:3 vanilla_installer/gtk/window.ui:8
-msgid "Vanilla OS Installer"
+msgid "PikaOS Installer"
 msgstr "Trình cài đặt hệ điều hành Vanilla"
 
 #: data/org.vanillaos.Installer.appdata.xml.in:7
-msgid "Tweak your Vanilla OS installation."
+msgid "Tweak your PikaOS installation."
 msgstr "Chỉnh sửa cài đặt hệ điều hành Vanilla của bạn."
 
 #: data/org.vanillaos.Installer.appdata.xml.in:10
@@ -45,7 +45,7 @@ msgid "The following changes will be made to your system:"
 msgstr "Các thay đổi sau sẽ được thực hiện đối với hệ thống của bạn:"
 
 #: vanilla_installer/gtk/confirm.ui:28
-msgid "Install Vanilla OS"
+msgid "Install PikaOS"
 msgstr "Cài đặt hệ điều hành Vanilla"
 
 #: vanilla_installer/gtk/default-disk.ui:19
@@ -66,7 +66,7 @@ msgstr "Xác nhận cài đặt"
 
 #: vanilla_installer/gtk/default-disk.ui:30
 msgid ""
-"Select the disk where you want to install Vanilla OS. Alternatively, you can "
+"Select the disk where you want to install PikaOS. Alternatively, you can "
 "select one or more disks to configure manually."
 msgstr ""
 
@@ -89,7 +89,7 @@ msgstr ""
 
 #: vanilla_installer/gtk/default-encryption.ui:29
 msgid ""
-"Vanilla OS provides full-disk encryption through LUKS2 to protect your "
+"PikaOS provides full-disk encryption through LUKS2 to protect your "
 "personal information in case your device gets stolen."
 msgstr ""
 
@@ -158,7 +158,7 @@ msgstr ""
 
 #: vanilla_installer/gtk/default-nvidia.ui:78
 msgid ""
-"A proprietary driver has private code that neither Vanilla OS nor Debian "
+"A proprietary driver has private code that neither PikaOS nor Debian "
 "developers can review.\n"
 "\n"
 "Security and other updates are dependent on the driver vendor."
@@ -218,8 +218,8 @@ msgstr "Tên người dùng"
 
 #: vanilla_installer/gtk/default-welcome.ui:12
 #, fuzzy
-#| msgid "Try Vanilla OS"
-msgid "Welcome to Vanilla OS!"
+#| msgid "Try PikaOS"
+msgid "Welcome to PikaOS!"
 msgstr "Thử hệ điều hành Vanilla"
 
 #: vanilla_installer/gtk/default-welcome.ui:19
@@ -303,7 +303,7 @@ msgid "Handbook"
 msgstr ""
 
 #: vanilla_installer/gtk/dialog-recovery.ui:61
-msgid "Read the Vanilla OS Handbook"
+msgid "Read the PikaOS Handbook"
 msgstr ""
 
 #: vanilla_installer/gtk/dialog-recovery.ui:77
@@ -319,7 +319,7 @@ msgid "All done!"
 msgstr "Tất cả đã xong!"
 
 #: vanilla_installer/gtk/done.ui:13
-msgid "Restart your device to enjoy your Vanilla OS experience"
+msgid "Restart your device to enjoy your PikaOS experience"
 msgstr ""
 "Khởi động lại thiết bị để tận hưởng trải nghiệm hệ điều hành Vanilla của bạn"
 
@@ -368,7 +368,7 @@ msgstr "Các phân vùng"
 #: vanilla_installer/gtk/widget-partition.ui:30
 msgid ""
 "The partition to mount under “/boot”. This directory stores files for "
-"booting in Vanilla OS."
+"booting in PikaOS."
 msgstr ""
 
 #: vanilla_installer/gtk/widget-partition.ui:33
@@ -441,7 +441,7 @@ msgstr ""
 
 #: vanilla_installer/gtk/widget-partition.ui:106
 msgid ""
-"Vanilla OS uses an A/B partition system managed by ABRoot,\n"
+"PikaOS uses an A/B partition system managed by ABRoot,\n"
 "which switches between two root partitions between updates."
 msgstr ""
 
@@ -480,7 +480,7 @@ msgstr "Các phân vùng"
 #: vanilla_installer/gtk/widget-partition.ui:187
 msgid ""
 "Swap acts as a virtual extension of your RAM and enables hibernation. "
-"Vanilla OS already uses zram to provide swapping at no storage cost."
+"PikaOS already uses zram to provide swapping at no storage cost."
 msgstr ""
 
 #: vanilla_installer/gtk/widget-partition.ui:191
@@ -658,21 +658,21 @@ msgstr "Xin hãy liên hệ tới các nhà phát triển bản phân phối."
 #~ msgstr "Chọn ngôn ngữ của bạn"
 
 #, fuzzy
-#~ msgid "Vanilla OS Recovery"
+#~ msgid "PikaOS Recovery"
 #~ msgstr "Trình cài đặt hệ điều hành Vanilla"
 
 #~ msgid "Select a Disk"
 #~ msgstr "Chọn một ổ đĩa"
 
 #, fuzzy
-#~ msgid "Select the disk where you want to install Vanilla OS"
+#~ msgid "Select the disk where you want to install PikaOS"
 #~ msgstr "Chọn ổ đĩa để cài đặt hệ điều hành Vanilla"
 
 #~ msgid "Configure"
 #~ msgstr "Định hình"
 
 #, fuzzy
-#~ msgid "Choose how to install Vanilla OS on your drive."
+#~ msgid "Choose how to install PikaOS on your drive."
 #~ msgstr "Chọn ổ đĩa để cài đặt hệ điều hành Vanilla"
 
 #~ msgid "This will erase all data on the disk."

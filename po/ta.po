@@ -19,11 +19,11 @@ msgstr ""
 "X-Generator: Weblate 5.0.1-dev\n"
 
 #: data/org.vanillaos.Installer.desktop.in:3 vanilla_installer/gtk/window.ui:8
-msgid "Vanilla OS Installer"
+msgid "PikaOS Installer"
 msgstr "வெண்ணிலா OS நிறுவி"
 
 #: data/org.vanillaos.Installer.appdata.xml.in:7
-msgid "Tweak your Vanilla OS installation."
+msgid "Tweak your PikaOS installation."
 msgstr "உங்கள் வெண்ணிலா OS நிறுவலை மாற்றி அமையுங்கள்."
 
 #: data/org.vanillaos.Installer.appdata.xml.in:10
@@ -43,7 +43,7 @@ msgid "The following changes will be made to your system:"
 msgstr "உங்கள் கணினியில் பின்வரும் மாற்றங்கள் செய்யப்படும்:"
 
 #: vanilla_installer/gtk/confirm.ui:28
-msgid "Install Vanilla OS"
+msgid "Install PikaOS"
 msgstr "வெண்ணிலா OS ஐ நிறுவவும்"
 
 #: vanilla_installer/gtk/default-disk.ui:19
@@ -63,7 +63,7 @@ msgstr "நிறுவல் இடம்"
 
 #: vanilla_installer/gtk/default-disk.ui:30
 msgid ""
-"Select the disk where you want to install Vanilla OS. Alternatively, you can "
+"Select the disk where you want to install PikaOS. Alternatively, you can "
 "select one or more disks to configure manually."
 msgstr ""
 "நீங்கள் வெண்ணிலா OS ஐ நிறுவ விரும்பும் வட்டைத் தேர்ந்தெடுக்கவும். மாற்றாக, கைமுறையாக "
@@ -87,7 +87,7 @@ msgstr "சாதன குறியாக்கம்"
 
 #: vanilla_installer/gtk/default-encryption.ui:29
 msgid ""
-"Vanilla OS provides full-disk encryption through LUKS2 to protect your "
+"PikaOS provides full-disk encryption through LUKS2 to protect your "
 "personal information in case your device gets stolen."
 msgstr ""
 "உங்கள் சாதனம் திருடப்பட்டால் உங்கள் தனிப்பட்ட தகவலைப் பாதுகாக்க வெண்ணிலா OS ஆனது LUKS2 "
@@ -158,7 +158,7 @@ msgstr "தனியுரிம இயக்கிகள் பற்றி"
 
 #: vanilla_installer/gtk/default-nvidia.ui:78
 msgid ""
-"A proprietary driver has private code that neither Vanilla OS nor Debian "
+"A proprietary driver has private code that neither PikaOS nor Debian "
 "developers can review.\n"
 "\n"
 "Security and other updates are dependent on the driver vendor."
@@ -221,7 +221,7 @@ msgid "Username"
 msgstr "பயனர் பெயர்"
 
 #: vanilla_installer/gtk/default-welcome.ui:12
-msgid "Welcome to Vanilla OS!"
+msgid "Welcome to PikaOS!"
 msgstr "வெண்ணிலா OS க்கு வரவேற்கிறோம்!"
 
 #: vanilla_installer/gtk/default-welcome.ui:19
@@ -301,7 +301,7 @@ msgid "Handbook"
 msgstr "கைப்புத்தகம்"
 
 #: vanilla_installer/gtk/dialog-recovery.ui:61
-msgid "Read the Vanilla OS Handbook"
+msgid "Read the PikaOS Handbook"
 msgstr "வெண்ணிலா OS கைப்புத்தகத்தை படியுங்கள்"
 
 #: vanilla_installer/gtk/dialog-recovery.ui:77
@@ -317,7 +317,7 @@ msgid "All done!"
 msgstr "அனைத்தும் முடிந்தது!"
 
 #: vanilla_installer/gtk/done.ui:13
-msgid "Restart your device to enjoy your Vanilla OS experience"
+msgid "Restart your device to enjoy your PikaOS experience"
 msgstr "உங்கள் வெண்ணிலா OS அனுபவத்தை அனுபவிக்க உங்கள் சாதனத்தை மறுதொடக்கம் செய்யவும்"
 
 #: vanilla_installer/gtk/done.ui:23
@@ -363,7 +363,7 @@ msgstr "துவக்க பகிர்வு"
 #: vanilla_installer/gtk/widget-partition.ui:30
 msgid ""
 "The partition to mount under “/boot”. This directory stores files for "
-"booting in Vanilla OS."
+"booting in PikaOS."
 msgstr ""
 "\"/boot\" இன் கீழ் மவுண்ட் செய்ய வேண்டிய பகிர்வு. இந்த அடைவு வெண்ணிலா OS இல் துவக்க "
 "கோப்புகளை சேமிக்கிறது."
@@ -440,7 +440,7 @@ msgstr ""
 
 #: vanilla_installer/gtk/widget-partition.ui:106
 msgid ""
-"Vanilla OS uses an A/B partition system managed by ABRoot,\n"
+"PikaOS uses an A/B partition system managed by ABRoot,\n"
 "which switches between two root partitions between updates."
 msgstr ""
 "வெண்ணிலா OS ஆனது ABRoot ஆல் நிர்வகிக்கப்படும் A/B பகிர்வு அமைப்பைப் பயன்படுத்துகிறது,\n"
@@ -481,7 +481,7 @@ msgstr "ஸ்வாப் பகிர்வு"
 #: vanilla_installer/gtk/widget-partition.ui:187
 msgid ""
 "Swap acts as a virtual extension of your RAM and enables hibernation. "
-"Vanilla OS already uses zram to provide swapping at no storage cost."
+"PikaOS already uses zram to provide swapping at no storage cost."
 msgstr ""
 "ஸ்வாப் உங்கள் RAMமின் மெய்நிகர் நீட்டிப்பாக செயல்படுகிறது மற்றும் உறக்கநிலையை "
 "செயல்படுத்துகிறது. வெண்ணிலா OS ஏற்கனவே zram ஐப் பயன்படுத்தி, சேமிப்பகச் செலவில் "
@@ -670,13 +670,13 @@ msgstr "விநியோக டெவலப்பர்களைத் தொ�
 #~ msgid "page-changed"
 #~ msgstr "பக்கம் மாற்றப்பட்டது"
 
-#~ msgid "Vanilla OS Recovery"
+#~ msgid "PikaOS Recovery"
 #~ msgstr "வெண்ணிலா OS மீட்பு"
 
 #~ msgid "Select a Disk"
 #~ msgstr "ஒரு வட்டைத் தேர்ந்தெடுக்கவும்"
 
-#~ msgid "Select the disk where you want to install Vanilla OS"
+#~ msgid "Select the disk where you want to install PikaOS"
 #~ msgstr "நீங்கள் வெண்ணிலா OS ஐ நிறுவ விரும்பும் வட்டைத் தேர்ந்தெடுக்கவும்"
 
 #~ msgid "Configure"
@@ -685,7 +685,7 @@ msgstr "விநியோக டெவலப்பர்களைத் தொ�
 #~ msgid "Disk Allocation"
 #~ msgstr "வட்டு ஒதுக்கீடு"
 
-#~ msgid "Choose how to install Vanilla OS on your drive."
+#~ msgid "Choose how to install PikaOS on your drive."
 #~ msgstr "உங்கள் ஓட்டில் வெண்ணிலா OS ஐ எவ்வாறு நிறுவுவது என்பதைத் தேர்வுசெய்யவும்."
 
 #~ msgid "This will erase all data on the disk."
@@ -735,7 +735,7 @@ msgstr "விநியோக டெவலப்பர்களைத் தொ�
 #~ msgid "Manage disks and partitions."
 #~ msgstr "வட்டுகள் மற்றும் பகிர்வுகளை நிர்வகிக்கவும்."
 
-#~ msgid "Read the Vanilla OS Handbook."
+#~ msgid "Read the PikaOS Handbook."
 #~ msgstr "வெண்ணிலா OS கைப்புத்தகத்தை படியுங்கள்."
 
 #~ msgid "Search online for help."
@@ -744,5 +744,5 @@ msgstr "விநியோக டெவலப்பர்களைத் தொ�
 #~ msgid "Search for a language"
 #~ msgstr "ஒரு மொழியைத் தேடவும்"
 
-#~ msgid "Try Vanilla OS"
+#~ msgid "Try PikaOS"
 #~ msgstr "வெண்ணிலா OS ஐ முயற்சிக்கவும்"

@@ -23,12 +23,12 @@ msgstr ""
 "X-Generator: Weblate 5.0-dev\n"
 
 #: data/org.vanillaos.Installer.desktop.in:3 vanilla_installer/gtk/window.ui:8
-msgid "Vanilla OS Installer"
-msgstr "Vanilla OS インストーラー"
+msgid "PikaOS Installer"
+msgstr "PikaOS インストーラー"
 
 #: data/org.vanillaos.Installer.appdata.xml.in:7
-msgid "Tweak your Vanilla OS installation."
-msgstr "お使いのVanilla OSを調整します。"
+msgid "Tweak your PikaOS installation."
+msgstr "お使いのPikaOSを調整します。"
 
 #: data/org.vanillaos.Installer.appdata.xml.in:10
 msgid "No description"
@@ -47,8 +47,8 @@ msgid "The following changes will be made to your system:"
 msgstr "システムに以下の変更が行われます:"
 
 #: vanilla_installer/gtk/confirm.ui:28
-msgid "Install Vanilla OS"
-msgstr "Vanilla OS をインストール"
+msgid "Install PikaOS"
+msgstr "PikaOS をインストール"
 
 #: vanilla_installer/gtk/default-disk.ui:19
 #: vanilla_installer/gtk/default-encryption.ui:18
@@ -67,10 +67,10 @@ msgstr "インストール先"
 
 #: vanilla_installer/gtk/default-disk.ui:30
 msgid ""
-"Select the disk where you want to install Vanilla OS. Alternatively, you can "
+"Select the disk where you want to install PikaOS. Alternatively, you can "
 "select one or more disks to configure manually."
 msgstr ""
-"Vanilla OSをインストールするディスクを選択します。または、1つ以上のディスクを"
+"PikaOSをインストールするディスクを選択します。または、1つ以上のディスクを"
 "選択して手動で設定することもできます。"
 
 #: vanilla_installer/gtk/default-disk.ui:44
@@ -91,10 +91,10 @@ msgstr "デバイスの暗号化"
 
 #: vanilla_installer/gtk/default-encryption.ui:29
 msgid ""
-"Vanilla OS provides full-disk encryption through LUKS2 to protect your "
+"PikaOS provides full-disk encryption through LUKS2 to protect your "
 "personal information in case your device gets stolen."
 msgstr ""
-"Vanilla OSはLUKS2によるフルディスク暗号化を提供し、万が一デバイスが盗難にあっ"
+"PikaOSはLUKS2によるフルディスク暗号化を提供し、万が一デバイスが盗難にあっ"
 "た場合でも個人情報を保護します。"
 
 #: vanilla_installer/gtk/default-encryption.ui:36
@@ -164,12 +164,12 @@ msgstr "プロプライエタリドライバについて"
 
 #: vanilla_installer/gtk/default-nvidia.ui:78
 msgid ""
-"A proprietary driver has private code that neither Vanilla OS nor Debian "
+"A proprietary driver has private code that neither PikaOS nor Debian "
 "developers can review.\n"
 "\n"
 "Security and other updates are dependent on the driver vendor."
 msgstr ""
-"プロプライエタリドライバには、Vanilla OSやDebianの開発者が検査不能な非公開の"
+"プロプライエタリドライバには、PikaOSやDebianの開発者が検査不能な非公開の"
 "コードが含まれます。\n"
 "\n"
 "セキュリティアップデートやそのほかのアップデートは、ドライバーの開発元に左右"
@@ -229,9 +229,9 @@ msgstr "ユーザー名"
 
 #: vanilla_installer/gtk/default-welcome.ui:12
 #, fuzzy
-#| msgid "Try Vanilla OS"
-msgid "Welcome to Vanilla OS!"
-msgstr "Vanilla OS を試用"
+#| msgid "Try PikaOS"
+msgid "Welcome to PikaOS!"
+msgstr "PikaOS を試用"
 
 #: vanilla_installer/gtk/default-welcome.ui:19
 #, fuzzy
@@ -312,8 +312,8 @@ msgid "Handbook"
 msgstr "ハンドブック"
 
 #: vanilla_installer/gtk/dialog-recovery.ui:61
-msgid "Read the Vanilla OS Handbook"
-msgstr "Vanilla OS ハンドブックを読む"
+msgid "Read the PikaOS Handbook"
+msgstr "PikaOS ハンドブックを読む"
 
 #: vanilla_installer/gtk/dialog-recovery.ui:77
 msgid "Web Browser"
@@ -328,8 +328,8 @@ msgid "All done!"
 msgstr "すべて完了しました！"
 
 #: vanilla_installer/gtk/done.ui:13
-msgid "Restart your device to enjoy your Vanilla OS experience"
-msgstr "デバイスを再起動して、Vanilla OS をお楽しみください"
+msgid "Restart your device to enjoy your PikaOS experience"
+msgstr "デバイスを再起動して、PikaOS をお楽しみください"
 
 #: vanilla_installer/gtk/done.ui:23
 msgid "Show Log"
@@ -374,9 +374,9 @@ msgstr "ブート パーティション"
 #: vanilla_installer/gtk/widget-partition.ui:30
 msgid ""
 "The partition to mount under “/boot”. This directory stores files for "
-"booting in Vanilla OS."
+"booting in PikaOS."
 msgstr ""
-"「/boot」の下にマウントするパーティション。このディレクトリはVanilla OSの起動"
+"「/boot」の下にマウントするパーティション。このディレクトリはPikaOSの起動"
 "に必要なファイルが格納されます。"
 
 #: vanilla_installer/gtk/widget-partition.ui:33
@@ -452,10 +452,10 @@ msgstr ""
 
 #: vanilla_installer/gtk/widget-partition.ui:106
 msgid ""
-"Vanilla OS uses an A/B partition system managed by ABRoot,\n"
+"PikaOS uses an A/B partition system managed by ABRoot,\n"
 "which switches between two root partitions between updates."
 msgstr ""
-"Vanilla OS は ABRootによって管理されているA/Bパーティション システムを使って"
+"PikaOS は ABRootによって管理されているA/Bパーティション システムを使って"
 "います、\n"
 "これは更新のたびに2つのルートパーティションが切り替わります。"
 
@@ -494,10 +494,10 @@ msgstr "スワップ パーティション"
 #: vanilla_installer/gtk/widget-partition.ui:187
 msgid ""
 "Swap acts as a virtual extension of your RAM and enables hibernation. "
-"Vanilla OS already uses zram to provide swapping at no storage cost."
+"PikaOS already uses zram to provide swapping at no storage cost."
 msgstr ""
 "スワップはRAMの仮想的な拡張として機能し、ハイバネーションを可能にします。現"
-"に、現在起動中のVanilla OSはzramを使用することで、ストレージを一切使用せずに"
+"に、現在起動中のPikaOSはzramを使用することで、ストレージを一切使用せずに"
 "スワップを提供しています。"
 
 #: vanilla_installer/gtk/widget-partition.ui:191
@@ -686,14 +686,14 @@ msgstr "ディストリビューションの開発者にご連絡ください。
 #~ msgstr "ページ変更"
 
 #, fuzzy
-#~ msgid "Vanilla OS Recovery"
-#~ msgstr "Vanilla OS インストーラー"
+#~ msgid "PikaOS Recovery"
+#~ msgstr "PikaOS インストーラー"
 
 #~ msgid "Select a Disk"
 #~ msgstr "ディスクを選択"
 
-#~ msgid "Select the disk where you want to install Vanilla OS"
-#~ msgstr "Vanilla OSをインストールするディスクを選択してください"
+#~ msgid "Select the disk where you want to install PikaOS"
+#~ msgstr "PikaOSをインストールするディスクを選択してください"
 
 #~ msgid "Configure"
 #~ msgstr "設定"
@@ -702,8 +702,8 @@ msgstr "ディストリビューションの開発者にご連絡ください。
 #~ msgstr "ディスクの割り当て"
 
 #, fuzzy
-#~ msgid "Choose how to install Vanilla OS on your drive."
-#~ msgstr "Vanilla OS のインストール先ディスクを選択してください。"
+#~ msgid "Choose how to install PikaOS on your drive."
+#~ msgstr "PikaOS のインストール先ディスクを選択してください。"
 
 #~ msgid "This will erase all data on the disk."
 #~ msgstr "この操作は、ディスク全体のデータを消去します。"

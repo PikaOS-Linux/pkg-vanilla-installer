@@ -22,12 +22,12 @@ msgstr ""
 "X-Generator: Weblate 4.18.1\n"
 
 #: data/org.vanillaos.Installer.desktop.in:3 vanilla_installer/gtk/window.ui:8
-msgid "Vanilla OS Installer"
-msgstr "Vanilla OS Yükleyici"
+msgid "PikaOS Installer"
+msgstr "PikaOS Yükleyici"
 
 #: data/org.vanillaos.Installer.appdata.xml.in:7
-msgid "Tweak your Vanilla OS installation."
-msgstr "Vanilla OS kurulumunuzda ince ayar yapın."
+msgid "Tweak your PikaOS installation."
+msgstr "PikaOS kurulumunuzda ince ayar yapın."
 
 #: data/org.vanillaos.Installer.appdata.xml.in:10
 msgid "No description"
@@ -46,8 +46,8 @@ msgid "The following changes will be made to your system:"
 msgstr "Aşağıdaki değişiklikler sisteminize uygulanacaktır:"
 
 #: vanilla_installer/gtk/confirm.ui:28
-msgid "Install Vanilla OS"
-msgstr "Vanilla OS'u yükleyin"
+msgid "Install PikaOS"
+msgstr "PikaOS'u yükleyin"
 
 #: vanilla_installer/gtk/default-disk.ui:19
 #: vanilla_installer/gtk/default-encryption.ui:18
@@ -68,7 +68,7 @@ msgstr "Kurulumu Doğrulayın"
 
 #: vanilla_installer/gtk/default-disk.ui:30
 msgid ""
-"Select the disk where you want to install Vanilla OS. Alternatively, you can "
+"Select the disk where you want to install PikaOS. Alternatively, you can "
 "select one or more disks to configure manually."
 msgstr ""
 
@@ -92,7 +92,7 @@ msgstr ""
 
 #: vanilla_installer/gtk/default-encryption.ui:29
 msgid ""
-"Vanilla OS provides full-disk encryption through LUKS2 to protect your "
+"PikaOS provides full-disk encryption through LUKS2 to protect your "
 "personal information in case your device gets stolen."
 msgstr ""
 
@@ -161,7 +161,7 @@ msgstr ""
 
 #: vanilla_installer/gtk/default-nvidia.ui:78
 msgid ""
-"A proprietary driver has private code that neither Vanilla OS nor Debian "
+"A proprietary driver has private code that neither PikaOS nor Debian "
 "developers can review.\n"
 "\n"
 "Security and other updates are dependent on the driver vendor."
@@ -221,9 +221,9 @@ msgstr "Kullanıcı Adı"
 
 #: vanilla_installer/gtk/default-welcome.ui:12
 #, fuzzy
-#| msgid "Try Vanilla OS"
-msgid "Welcome to Vanilla OS!"
-msgstr "Vanilla OS'u deneyimleyin"
+#| msgid "Try PikaOS"
+msgid "Welcome to PikaOS!"
+msgstr "PikaOS'u deneyimleyin"
 
 #: vanilla_installer/gtk/default-welcome.ui:19
 #, fuzzy
@@ -311,9 +311,9 @@ msgstr "El Kitabı"
 
 #: vanilla_installer/gtk/dialog-recovery.ui:61
 #, fuzzy
-#| msgid "Read the Vanilla OS Handbook."
-msgid "Read the Vanilla OS Handbook"
-msgstr "Vanilla OS El Kitabını okuyun."
+#| msgid "Read the PikaOS Handbook."
+msgid "Read the PikaOS Handbook"
+msgstr "PikaOS El Kitabını okuyun."
 
 #: vanilla_installer/gtk/dialog-recovery.ui:77
 msgid "Web Browser"
@@ -330,9 +330,9 @@ msgid "All done!"
 msgstr "Her şey tamam!"
 
 #: vanilla_installer/gtk/done.ui:13
-msgid "Restart your device to enjoy your Vanilla OS experience"
+msgid "Restart your device to enjoy your PikaOS experience"
 msgstr ""
-"Vanilla OS deneyiminizin keyfini çıkarmak için aygıtınızı yeniden başlatın"
+"PikaOS deneyiminizin keyfini çıkarmak için aygıtınızı yeniden başlatın"
 
 #: vanilla_installer/gtk/done.ui:23
 msgid "Show Log"
@@ -377,9 +377,9 @@ msgstr "Önyükleme Bölümleniyor"
 #: vanilla_installer/gtk/widget-partition.ui:30
 msgid ""
 "The partition to mount under “/boot”. This directory stores files for "
-"booting in Vanilla OS."
+"booting in PikaOS."
 msgstr ""
-"Bu Bölüm \"/boot\". olarak bağlanacak. Bu dizin Vanilla OS'un önyüklenebilir "
+"Bu Bölüm \"/boot\". olarak bağlanacak. Bu dizin PikaOS'un önyüklenebilir "
 "dosyalarını depolar."
 
 #: vanilla_installer/gtk/widget-partition.ui:33
@@ -417,7 +417,7 @@ msgid ""
 "The partition to mount under “/boot/efi”. This directory stores files for "
 "booting in the bootloader."
 msgstr ""
-"Bu Bölüm \"/boot/efi\". olarak bağlanacak. Bu dizin Vanilla OS'un "
+"Bu Bölüm \"/boot/efi\". olarak bağlanacak. Bu dizin PikaOS'un "
 "önyükleyiçinin önyükleme dosyalarını depolar."
 
 #: vanilla_installer/gtk/widget-partition.ui:66
@@ -455,10 +455,10 @@ msgstr ""
 
 #: vanilla_installer/gtk/widget-partition.ui:106
 msgid ""
-"Vanilla OS uses an A/B partition system managed by ABRoot,\n"
+"PikaOS uses an A/B partition system managed by ABRoot,\n"
 "which switches between two root partitions between updates."
 msgstr ""
-"Vanilla OS ABROOT tarafından yönetilen A/B sistem bölümü kullanır\n"
+"PikaOS ABROOT tarafından yönetilen A/B sistem bölümü kullanır\n"
 "Güncelleme sırasında iki kök bölümü kendi arasında değişir."
 
 #: vanilla_installer/gtk/widget-partition.ui:150
@@ -499,10 +499,10 @@ msgstr "Swap bölümü"
 #: vanilla_installer/gtk/widget-partition.ui:187
 msgid ""
 "Swap acts as a virtual extension of your RAM and enables hibernation. "
-"Vanilla OS already uses zram to provide swapping at no storage cost."
+"PikaOS already uses zram to provide swapping at no storage cost."
 msgstr ""
 "Swap aslında ekstra sanal RAM olarak davranır ve hazırda beklemeyi "
-"aktifleştirir. Vanilla OS zaten depolama kaybı olmadan (swap) depolamayı "
+"aktifleştirir. PikaOS zaten depolama kaybı olmadan (swap) depolamayı "
 "zram kullanarak karşılar."
 
 #: vanilla_installer/gtk/widget-partition.ui:191
@@ -689,14 +689,14 @@ msgstr "Lütfen dağıtım geliştiricileri ile irtibata geçin."
 #~ msgid "page-changed"
 #~ msgstr "Sayfa-değişti"
 
-#~ msgid "Vanilla OS Recovery"
-#~ msgstr "Vanilla OS Kurtarma"
+#~ msgid "PikaOS Recovery"
+#~ msgstr "PikaOS Kurtarma"
 
 #~ msgid "Select a Disk"
 #~ msgstr "Disk seçin"
 
-#~ msgid "Select the disk where you want to install Vanilla OS"
-#~ msgstr "Vanilla OS'u yüklemek istediğiniz diski seçin"
+#~ msgid "Select the disk where you want to install PikaOS"
+#~ msgstr "PikaOS'u yüklemek istediğiniz diski seçin"
 
 #~ msgid "Configure"
 #~ msgstr "Yapılandır"
@@ -704,8 +704,8 @@ msgstr "Lütfen dağıtım geliştiricileri ile irtibata geçin."
 #~ msgid "Disk Allocation"
 #~ msgstr "Disk Tahsisi"
 
-#~ msgid "Choose how to install Vanilla OS on your drive."
-#~ msgstr "Vanilla OS'u diskinize nasıl yükleyeceğinizi seçin."
+#~ msgid "Choose how to install PikaOS on your drive."
+#~ msgstr "PikaOS'u diskinize nasıl yükleyeceğinizi seçin."
 
 #~ msgid "This will erase all data on the disk."
 #~ msgstr "Bu işlem, diskteki tüm veriyi silecektir."

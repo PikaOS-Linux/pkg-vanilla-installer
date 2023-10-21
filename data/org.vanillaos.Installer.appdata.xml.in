@@ -3,8 +3,8 @@
 	<id>org.vanillaos.Installer.desktop</id>
 	<metadata_license>CC0-1.0</metadata_license>
     <project_license>GPL-3.0-only</project_license>
-    <name translatable="no">Vanilla OS Installer</name>
-    <summary>Tweak your Vanilla OS installation.</summary>
+    <name translatable="no">PikaOS Installer</name>
+    <summary>Tweak your PikaOS installation.</summary>
     <developer_name translatable="no">Mirko Brombin</developer_name>
 	<description>
 	  <p>No description</p>

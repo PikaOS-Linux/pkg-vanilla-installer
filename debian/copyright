@@ -1,5 +1,5 @@
 Format: http://dep.debian.net/deps/dep5
-Upstream-Name: Vanilla OS Installer
+Upstream-Name: PikaOS Installer
 Source: https://github.com/mirko-brombin/vanilla-installer
 
 Files: *
