@@ -41,9 +41,9 @@
   </gresource>
   <gresource prefix="/org/vanillaos/Installer">
     <file>assets/welcome.svg</file>
-    <file>assets/complete.svg</file>
-    <file>assets/control-center.svg</file>
-    <file>assets/containerized.svg</file>
+    <file>assets/patch.svg</file>
+    <file>assets/pikman.svg</file>
+    <file>assets/rolling.svg</file>
 </gresource>
   <gresource prefix="/org/vanillaos/Installer/icons/scalable/actions/">
     <file preprocess="xml-stripblanks">../data/icons/hicolor/symbolic/actions/background-app-ghost-symbolic.svg</file>
