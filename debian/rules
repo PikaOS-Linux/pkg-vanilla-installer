@@ -11,3 +11,17 @@
 
 %:
 	dh $@ --buildsystem=meson
+
+
+override_dh_missing:
+	dh_missing
+	mkdir -pv debian/vanilla-installer/usr/share/applications/
+	mkdir -pv debian/vanilla-installer/etc/xdg/autostart/
+	mkdir -pv debian/vanilla-installer/usr/bin/
+	cp -vf debian/extras/pika-installer.desktop debian/vanilla-installer/usr/share/applications/
+	cp -vf debian/extras/pika-installer-autostart.desktop debian/vanilla-installer/etc/xdg/autostart/
+	cp -vf debian/extras/pika-installer debian/vanilla-installer/usr/bin/
+	chmod +x debian/vanilla-installer/usr/bin/pika-installer
+	
+
+	
