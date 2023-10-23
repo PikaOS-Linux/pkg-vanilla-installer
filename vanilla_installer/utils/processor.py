@@ -41,9 +41,9 @@ rm -rfv /mnt/a/boot/*arch*
 echo "KEYMAP=$(cat /mnt/a/etc/vconsole.conf | grep XKBLAYOUT | cut -d"=" -f2)" >> /mnt/a/etc/vconsole.conf 
 /usr/lib/pika/pikainstall/partition-helper.sh flag /mnt/a/boot/efi bls_boot on
 touch /mnt/a/boot/refind_linux.conf
-echo '"'Boot with standard options'"'  '"'amd_pstate=active nowatchdog amd_prefcore=enable nvidia-drm.modeset=1 rd.luks.name={ROOT_PART_UUID}=crypt_root root=UUID=$(blkid "$(df -P -h -T /mnt/a | awk 'END{print $1}')" -s UUID -o value) quiet splash ---'"'  > /mnt/a/boot/refind_linux.conf
-echo '"'Boot with logging'"'  '"'amd_pstate=active nowatchdog amd_prefcore=enable nvidia-drm.modeset=1 rd.luks.name={ROOT_PART_UUID}=crypt_root root=UUID=$(blkid "$(df -P -h -T /mnt/a | awk 'END{print $1}')" -s UUID -o value) ---'"'  >>  /mnt/a/boot/refind_linux.conf
-echo '"'Boot with safe graphics'"'  '"'amd_pstate=active nowatchdog amd_prefcore=enable nvidia-drm.modeset=1 rd.luks.name={ROOT_PART_UUID}=crypt_root root=UUID=$(blkid "$(df -P -h -T /mnt/a | awk 'END{print $1}')" -s UUID -o value) nomodeset ---'"'  >>  /mnt/a/boot/refind_linux.conf
+echo '"'Boot with standard options'"'  '"'amd_pstate=active nowatchdog amd_prefcore=enable nvidia-drm.modeset=1 rd.luks.name=$(cat /mnt/a/etc/crypttab | grep -v '^#' | head -n1 | cut -f2 | sed "s#UUID=##")=crypt_root root=UUID=$(blkid "$(df -P -h -T /mnt/a | awk 'END{print $1}')" -s UUID -o value) quiet splash ---'"'  > /mnt/a/boot/refind_linux.conf
+echo '"'Boot with logging'"'  '"'amd_pstate=active nowatchdog amd_prefcore=enable nvidia-drm.modeset=1 rd.luks.name=$(cat /mnt/a/etc/crypttab | grep -v '^#' | head -n1 | cut -f2 | sed "s#UUID=##")=crypt_root root=UUID=$(blkid "$(df -P -h -T /mnt/a | awk 'END{print $1}')" -s UUID -o value) ---'"'  >>  /mnt/a/boot/refind_linux.conf
+echo '"'Boot with safe graphics'"'  '"'amd_pstate=active nowatchdog amd_prefcore=enable nvidia-drm.modeset=1 rd.luks.name=$(cat /mnt/a/etc/crypttab | grep -v '^#' | head -n1 | cut -f2 | sed "s#UUID=##")=crypt_root root=UUID=$(blkid "$(df -P -h -T /mnt/a | awk 'END{print $1}')" -s UUID -o value) nomodeset ---'"'  >>  /mnt/a/boot/refind_linux.conf
 """
 
 _CRYPTTAB_SETUP_FILE = """#!/usr/bin/bash
@@ -450,11 +450,8 @@ class Processor:
             # Run `grub-install` with the boot partition as target
             if Systeminfo.is_uefi():
                 if encrypt:
-                    with open("/tmp/albius-refind_linux.sh", "w") as file:
-                        albius_refind_file = _REFIND_CRYPT_SETUP_FILE.format(
-                            ROOT_PART_UUID=root_part_uuid,
-                        )
-                        file.write(albius_refind_file)
+                    with open("/tmp/albius-refind_linux.sh", "w+") as f:
+                        f.write(_REFIND_CRYPT_SETUP_FILE)
                 else:
                     with open("/tmp/albius-refind_linux.sh", "w+") as f:
                         f.write(_REFIND_SETUP_FILE)
