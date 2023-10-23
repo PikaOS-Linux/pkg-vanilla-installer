@@ -462,15 +462,6 @@ class Processor:
                 recipe.add_postinstall_step(
                     "shell",
                     [
-                        "chmod +x /tmp/albius-refind_linux.sh",
-                        "/tmp/albius-refind_linux.sh",
-                    ],
-                    late=True,
-                )
-
-                recipe.add_postinstall_step(
-                    "shell",
-                    [
                         "refind-install",
                         "apt install -y /var/cache/apt/archives/pika-refind-theme*.deb /var/cache/apt/archives/booster*.deb",
                         "apt remove casper vanilla-installer -y",
@@ -478,6 +469,15 @@ class Processor:
                     ],
                     late=True,
                     chroot=True,
+                )
+
+                recipe.add_postinstall_step(
+                    "shell",
+                    [
+                        "chmod +x /tmp/albius-refind_linux.sh",
+                        "/tmp/albius-refind_linux.sh",
+                    ],
+                    late=True,
                 )
             else:
                 grub_type = "bios"

@@ -59,7 +59,7 @@ class VanillaDone(Adw.Bin):
             self.btn_close.set_visible(True)
 
     def __on_reboot_clicked(self, button):
-        subprocess.run(["gnome-session-quit", "--reboot"])
+        subprocess.run(["reboot"])
 
     def __on_close_clicked(self, button):
         self.__window.close()
