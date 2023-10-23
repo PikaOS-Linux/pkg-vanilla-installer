@@ -31,9 +31,19 @@ rm -rfv /mnt/a/boot/*arch*
 echo "KEYMAP=$(cat /mnt/a/etc/vconsole.conf | grep XKBLAYOUT | cut -d"=" -f2)" >> /mnt/a/etc/vconsole.conf 
 /usr/lib/pika/pikainstall/partition-helper.sh flag /mnt/a/boot/efi bls_boot on
 touch /mnt/a/boot/refind_linux.conf
-echo '"'Boot with standard options'"'  '"'nvidia-drm.modeset=1 root=UUID=$(blkid "$(df -P -h -T /mnt/a | awk 'END{print $1}')" -s UUID -o value) quiet splash ---'"'  > /mnt/a/boot/refind_linux.conf
-echo '"'Boot with logging'"'  '"'nvidia-drm.modeset=1 root=UUID=$(blkid "$(df -P -h -T /mnt/a | awk 'END{print $1}')" -s UUID -o value) ---'"'  >>  /mnt/a/boot/refind_linux.conf
-echo '"'Boot with safe graphics'"'  '"'nvidia-drm.modeset=1 root=UUID=$(blkid "$(df -P -h -T /mnt/a | awk 'END{print $1}')" -s UUID -o value) nomodeset ---'"'  >>  /mnt/a/boot/refind_linux.conf
+echo '"'Boot with standard options'"'  '"'amd_pstate=active nowatchdog amd_prefcore=enable nvidia-drm.modeset=1 root=UUID=$(blkid "$(df -P -h -T /mnt/a | awk 'END{print $1}')" -s UUID -o value) quiet splash ---'"'  > /mnt/a/boot/refind_linux.conf
+echo '"'Boot with logging'"'  '"' amd_pstate=active nowatchdog amd_prefcore=enable nvidia-drm.modeset=1 root=UUID=$(blkid "$(df -P -h -T /mnt/a | awk 'END{print $1}')" -s UUID -o value) ---'"'  >>  /mnt/a/boot/refind_linux.conf
+echo '"'Boot with safe graphics'"'  '"' amd_pstate=active nowatchdog amd_prefcore=enable nvidia-drm.modeset=1 root=UUID=$(blkid "$(df -P -h -T /mnt/a | awk 'END{print $1}')" -s UUID -o value) nomodeset ---'"'  >>  /mnt/a/boot/refind_linux.conf
+"""
+
+_REFIND_CRYPT_SETUP_FILE = """#!/usr/bin/bash
+rm -rfv /mnt/a/boot/*arch*
+echo "KEYMAP=$(cat /mnt/a/etc/vconsole.conf | grep XKBLAYOUT | cut -d"=" -f2)" >> /mnt/a/etc/vconsole.conf 
+/usr/lib/pika/pikainstall/partition-helper.sh flag /mnt/a/boot/efi bls_boot on
+touch /mnt/a/boot/refind_linux.conf
+echo '"'Boot with standard options'"'  '"'rd.luks.name={ROOT_PART_UUID}=crypt_root amd_pstate=active nowatchdog amd_prefcore=enable nvidia-drm.modeset=1 root=UUID=$(blkid "$(df -P -h -T /mnt/a | awk 'END{print $1}')" -s UUID -o value) quiet splash ---'"'  > /mnt/a/boot/refind_linux.conf
+echo '"'Boot with logging'"'  '"'rd.luks.name={ROOT_PART_UUID}=crypt_root amd_pstate=active nowatchdog amd_prefcore=enable nvidia-drm.modeset=1 root=UUID=$(blkid "$(df -P -h -T /mnt/a | awk 'END{print $1}')" -s UUID -o value) ---'"'  >>  /mnt/a/boot/refind_linux.conf
+echo '"'Boot with safe graphics'"'  '"'rd.luks.name={ROOT_PART_UUID}=crypt_root amd_pstate=active nowatchdog amd_prefcore=enable nvidia-drm.modeset=1 root=UUID=$(blkid "$(df -P -h -T /mnt/a | awk 'END{print $1}')" -s UUID -o value) nomodeset ---'"'  >>  /mnt/a/boot/refind_linux.conf
 """
 
 _CRYPTTAB_SETUP_FILE = """#!/usr/bin/bash
@@ -339,7 +349,7 @@ class Processor:
                 "shell",
                 [
                     "touch /etc/fstab",
-                    "genfstab -U / | grep -v zram | grep -v portal  > /etc/fstab",
+                    "genfstab -U / | grep -v zram | grep -v portal | grep -v loop > /etc/fstab",
                     "mount -av",
                 ],
                 chroot=True,
@@ -439,8 +449,15 @@ class Processor:
             # Install Refind if target is UEFI, Install grub-pc if target is BIOS
             # Run `grub-install` with the boot partition as target
             if Systeminfo.is_uefi():
-                with open("/tmp/albius-refind_linux.sh", "w+") as f:
-                    f.write(_REFIND_SETUP_FILE)
+                if encrypt:
+                    with open("/tmp/albius-refind_linux.sh", "w+") as f:
+                        f.write(_REFIND_SETUP_FILE)
+                else:
+                    with open("/tmp/albius-refind_linux.sh", "w") as file:
+                        albius_refind_file = _REFIND_CRYPT_SETUP_FILE.format(
+                            ROOT_PART_UUID=root_part_uuid,
+                        )
+                        file.write(albius_refind_file)
 
                 recipe.add_postinstall_step(
                     "shell",
@@ -450,12 +467,12 @@ class Processor:
                     ],
                     late=True,
                 )
+
                 recipe.add_postinstall_step(
                     "shell",
                     [
                         "refind-install",
-                        "apt install -y /var/cache/apt/archives/pika-refind-theme*.deb",
-                        "apt install -y /var/cache/apt/archives/booster*.deb",
+                        "apt install -y /var/cache/apt/archives/pika-refind-theme*.deb /var/cache/apt/archives/booster*.deb",
                         "apt remove casper vanilla-installer -y",
                         "apt autoremove -y",
                     ],
