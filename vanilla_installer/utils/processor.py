@@ -349,7 +349,7 @@ class Processor:
                 "shell",
                 [
                     "touch /etc/fstab",
-                    "genfstab -U / | grep -v zram | grep -v portal | grep -v loop > /etc/fstab",
+                    "genfstab -U / | grep -v zram | grep -v portal | grep -v loop | grep -v cdrom > /etc/fstab",
                     "mount -av",
                 ],
                 chroot=True,
