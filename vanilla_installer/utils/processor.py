@@ -427,8 +427,8 @@ class Processor:
                 [
                     "mkdir -p /etc/gdm3",
                     "mkdir -p /etc/sddm.conf.d/",
-                    "echo -e '[daemon]\nAutomaticLogin=pikaos\nAutomaticLoginEnable=True' >> /etc/gdm3/custom.conf",
-                    "echo -e '[Autologin]\nUser=pikaos\nSession=plasma' > /etc/sddm.conf.d/autologin.conf",
+                    "echo '[daemon]\nAutomaticLogin=pikaos\nAutomaticLoginEnable=True' >> /etc/gdm3/custom.conf",
+                    "echo '[Autologin]\nUser=pikaos\nSession=plasma' > /etc/sddm.conf.d/zautologin.conf",
                     "mkdir -p /home/pikaos",
                     "cp -rvf /etc/skel/.* /home/pikaos/ || true",
                 ],
