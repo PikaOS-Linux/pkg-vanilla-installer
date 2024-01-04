@@ -27,9 +27,10 @@ from vanilla_installer.core.system import Systeminfo
 logger = logging.getLogger("Installer::Processor")
 
 _REFIND_SETUP_FILE = """#!/usr/bin/bash
-rm -rfv /mnt/a/boot/*arch*
+rm -rfv /mnt/a/boot/*arch* || true
 echo "KEYMAP=$(cat /mnt/a/etc/vconsole.conf | grep XKBLAYOUT | cut -d"=" -f2)" >> /mnt/a/etc/vconsole.conf 
-/usr/lib/pika/pikainstall/partition-helper.sh flag /mnt/a/boot/efi bls_boot on
+/usr/lib/pika/pikainstall/partition-helper.sh flag /mnt/a/boot bls_boot on
+/usr/lib/pika/pikainstall/partition-helper.sh flag /mnt/a/boot/efi esp on
 touch /mnt/a/boot/refind_linux.conf
 echo '"'Boot with standard options'"'  '"'amd_pstate=active nowatchdog amd_prefcore=enable nvidia-drm.modeset=1 root=UUID=$(blkid "$(df -P -h -T /mnt/a | awk 'END{print $1}')" -s UUID -o value) quiet splash ---'"'  > /mnt/a/boot/refind_linux.conf
 echo '"'Boot with logging'"'  '"'amd_pstate=active nowatchdog amd_prefcore=enable nvidia-drm.modeset=1 root=UUID=$(blkid "$(df -P -h -T /mnt/a | awk 'END{print $1}')" -s UUID -o value) ---'"'  >>  /mnt/a/boot/refind_linux.conf
@@ -37,9 +38,10 @@ echo '"'Boot with safe graphics'"'  '"'amd_pstate=active nowatchdog amd_prefcore
 """
 
 _REFIND_CRYPT_SETUP_FILE = """#!/usr/bin/bash
-rm -rfv /mnt/a/boot/*arch*
+rm -rfv /mnt/a/boot/*arch* || true
 echo "KEYMAP=$(cat /mnt/a/etc/vconsole.conf | grep XKBLAYOUT | cut -d"=" -f2)" >> /mnt/a/etc/vconsole.conf 
-/usr/lib/pika/pikainstall/partition-helper.sh flag /mnt/a/boot/efi bls_boot on
+/usr/lib/pika/pikainstall/partition-helper.sh flag /mnt/a/boot bls_boot on
+/usr/lib/pika/pikainstall/partition-helper.sh flag /mnt/a/boot/efi esp on
 touch /mnt/a/boot/refind_linux.conf
 echo '"'Boot with standard options'"'  '"'amd_pstate=active nowatchdog amd_prefcore=enable nvidia-drm.modeset=1 rd.luks.name=$(cat /mnt/a/etc/crypttab | grep -v '^#' | head -n1 | cut -f2 | sed "s#UUID=##")=crypt_root root=UUID=$(blkid "$(df -P -h -T /mnt/a | awk 'END{print $1}')" -s UUID -o value) quiet splash ---'"'  > /mnt/a/boot/refind_linux.conf
 echo '"'Boot with logging'"'  '"'amd_pstate=active nowatchdog amd_prefcore=enable nvidia-drm.modeset=1 rd.luks.name=$(cat /mnt/a/etc/crypttab | grep -v '^#' | head -n1 | cut -f2 | sed "s#UUID=##")=crypt_root root=UUID=$(blkid "$(df -P -h -T /mnt/a | awk 'END{print $1}')" -s UUID -o value) ---'"'  >>  /mnt/a/boot/refind_linux.conf
@@ -470,6 +472,8 @@ class Processor:
                     [
                         "refind-install",
                         "apt install -y /var/cache/apt/archives/pika-refind-theme*.deb /var/cache/apt/archives/booster*.deb",
+                        "mkdir -p /boot/EFI/BOOT",
+                        "cp -vf  /boot/EFI/refind/refind_x64.efi /boot/EFI/BOOT/BOOTX64.EFI",
                         "apt remove casper vanilla-installer -y",
                         "apt autoremove -y",
                     ],
