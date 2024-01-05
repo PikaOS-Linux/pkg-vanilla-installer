@@ -1,4 +1,4 @@
-vanilla-installer (2.3.8-100pika2) pikauwu; urgency=critical
+vanilla-installer (2.3.8-100pika3) pikauwu; urgency=critical
 
   * Should fix the crash on network page
 
